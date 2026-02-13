@@ -1,0 +1,1 @@
+// MOVED TO: components/effects/SparkleTrail.tsx

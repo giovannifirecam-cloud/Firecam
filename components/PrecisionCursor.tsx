@@ -1,0 +1,1 @@
+// MOVED TO: components/ui/PrecisionCursor.tsx

@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  background-color: #fdfdfd;
+  color: #09090b;
+  letter-spacing: -0.01em;
+  overflow-x: hidden;
+}
+
+/* 
+  PRECISION CURSOR UTILITY 
+  Forces the system cursor to disappear when the custom cursor is active.
+  Scoped to non-touch devices via media query in React, but enforced here.
+*/
+body.hide-system-cursor, 
+body.hide-system-cursor * {
+  cursor: none !important;
+}
+
+/* Smooth Scrollbar */
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: #ffffff; }
+::-webkit-scrollbar-thumb { background: #e4e4e7; border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #d4d4d8; }
+
+/* Hide scrollbar utility */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+
+.glass-nav {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(24, 24, 27, 0.06);
+}
+
+/* Shadows */
+.shadow-soft-xl {
+  box-shadow: 0 20px 40px -12px rgba(9, 9, 11, 0.08);
+}
+.shadow-angled {
+  box-shadow: 12px 12px 24px -6px rgba(9, 9, 11, 0.06), 0 4px 8px -4px rgba(9, 9, 11, 0.03);
+}
+
+.text-motif { color: #ea580c; }
+
+/* Scroll Reveal */
+.reveal {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.reveal-stagger > * {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+.reveal-stagger.active > * {
+  opacity: 1;
+  transform: translateY(0);
+}
+.reveal-stagger.active > *:nth-child(1) { transition-delay: 0.05s; }
+.reveal-stagger.active > *:nth-child(2) { transition-delay: 0.1s; }
+.reveal-stagger.active > *:nth-child(3) { transition-delay: 0.15s; }
+.reveal-stagger.active > *:nth-child(4) { transition-delay: 0.2s; }
+
+/* Interactions */
+.card-interactive {
+  transition: transform 0.3s cubic-bezier(0.2, 0, 0, 1), box-shadow 0.3s cubic-bezier(0.2, 0, 0, 1);
+}
+.card-interactive:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 25px 50px -12px rgba(9, 9, 11, 0.12);
+}
+
+.icon-hover {
+  transition: transform 0.3s ease-out, color 0.3s ease;
+}
+.group:hover .icon-hover {
+  transform: scale(1.1) rotate(2deg);
+}
