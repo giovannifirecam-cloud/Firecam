@@ -1,271 +1,774 @@
 <!DOCTYPE html>
 <html lang="pt-BR" class="scroll-smooth">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    
-    <!-- Primary Meta Tags -->
-    <title>Firecam | Instalação de Sistemas Eletrônicos em Joinville</title>
-    <meta name="title" content="Firecam | Instalação de Sistemas Eletrônicos em Joinville" />
-    <meta name="description" content="Especialistas em infraestrutura para sistemas. Instalação e manutenção de Alarme de Incêndio (NBR 17240), Controle de Acesso e Cabeamento Estruturado. Integração física e lógica." />
-    <meta name="keywords" content="instalação alarme incêndio joinville, controle de acesso e integração, cabeamento estruturado, manutenção sistemas eletrônicos, infraestrutura de redes, adequação nbr 17240" />
-    <meta name="author" content="Firecam Tecnologia e Infraestrutura" />
-    <meta name="robots" content="index, follow" />
-    <meta name="theme-color" content="#09090b" />
-    
-    <!-- Local SEO Geo Tags -->
-    <meta name="geo.region" content="BR-SC" />
-    <meta name="geo.placename" content="Joinville" />
-    <meta name="geo.position" content="-26.3044;-48.8464" />
-    <meta name="ICBM" content="-26.3044, -48.8464" />
 
-    <!-- Favicon (SVG Data URI) -->
-    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ea580c'%3E%3Cpath d='M12 2L4 5V11C4 16.55 7.4 21.74 12 23C16.6 21.74 20 16.55 20 11V5L12 2ZM12 18C9.24 18 7 15.76 7 13C7 10.24 9.24 8 12 8C14.76 8 17 10.24 17 13C17 15.76 14.76 18 12 18Z'/%3E%3C/svg%3E">
-    <link rel="manifest" href="/manifest.json" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.firecam.com.br/" />
-    <meta property="og:title" content="Firecam | Infraestrutura para Sistemas Inteligentes" />
-    <meta property="og:description" content="A base física que sua tecnologia precisa. Instalação técnica de Detecção de Incêndio, Acesso e Redes em Joinville." />
-    <meta property="og:image" content="https://drive.google.com/thumbnail?id=110tspJUA7z28d5I5ulacNHJgWfi8pyXK&sz=w1920" />
-    <meta property="og:locale" content="pt_BR" />
-    <meta property="og:site_name" content="Firecam Tecnologia" />
+  <!-- Primary Meta Tags -->
+  <title>Firecam | Instalação de Sistemas Eletrônicos em Joinville</title>
+  <meta name="title" content="Firecam | Instalação de Sistemas Eletrônicos em Joinville" />
+  <meta name="description"
+    content="Especialistas em infraestrutura para sistemas. Instalação e manutenção de Alarme de Incêndio (NBR 17240), Controle de Acesso e Cabeamento Estruturado. Integração física e lógica." />
+  <meta name="keywords"
+    content="instalação alarme incêndio joinville, controle de acesso e integração, cabeamento estruturado, manutenção sistemas eletrônicos, infraestrutura de redes, adequação nbr 17240" />
+  <meta name="author" content="Firecam Tecnologia e Infraestrutura" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#09090b" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://www.firecam.com.br/" />
-    <meta property="twitter:title" content="Firecam | Instalação Técnica em Joinville" />
-    <meta property="twitter:description" content="Especialistas em Incêndio, Acesso e Redes. Infraestrutura organizada para sistemas inteligentes." />
-    <meta property="twitter:image" content="https://drive.google.com/thumbnail?id=110tspJUA7z28d5I5ulacNHJgWfi8pyXK&sz=w1920" />
+  <!-- Local SEO Geo Tags -->
+  <meta name="geo.region" content="BR-SC" />
+  <meta name="geo.placename" content="Joinville" />
+  <meta name="geo.position" content="-26.3044;-48.8464" />
+  <meta name="ICBM" content="-26.3044, -48.8464" />
 
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://www.firecam.com.br/" />
+  <!-- Favicon (SVG Data URI) -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ea580c'%3E%3Cpath d='M12 2L4 5V11C4 16.55 7.4 21.74 12 23C16.6 21.74 20 16.55 20 11V5L12 2ZM12 18C9.24 18 7 15.76 7 13C7 10.24 9.24 8 12 8C14.76 8 17 10.24 17 13C17 15.76 14.76 18 12 18Z'/%3E%3C/svg%3E">
+  <link rel="manifest" href="manifest.json" />
 
-    <!-- Performance: Preconnect to Fonts & Scripts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="preconnect" href="https://drive.google.com" />
-    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <!-- Open Graph / Facebook -->
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://www.firecam.com.br/" />
+  <meta property="og:title" content="Firecam | Infraestrutura para Sistemas Inteligentes" />
+  <meta property="og:description"
+    content="A base física que sua tecnologia precisa. Instalação técnica de Detecção de Incêndio, Acesso e Redes em Joinville." />
+  <meta property="og:image" content="https://www.firecam.com.br/assets/img/_MG_6845.webp" />
+  <meta property="og:locale" content="pt_BR" />
+  <meta property="og:site_name" content="Firecam Tecnologia" />
 
-    <!-- Performance: Preload Critical Hero Image (LCP Optimization) -->
-    <link rel="preload" as="image" href="https://drive.google.com/thumbnail?id=110tspJUA7z28d5I5ulacNHJgWfi8pyXK&sz=w1920" />
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://www.firecam.com.br/" />
+  <meta property="twitter:title" content="Firecam | Instalação Técnica em Joinville" />
+  <meta property="twitter:description"
+    content="Especialistas em Incêndio, Acesso e Redes. Infraestrutura organizada para sistemas inteligentes." />
+  <meta property="twitter:image" content="https://www.firecam.com.br/assets/img/_MG_6845.webp" />
 
-    <!-- Scripts and Styles -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://www.firecam.com.br/" />
 
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "LocalBusiness",
-      "name": "Firecam Tecnologia e Infraestrutura",
-      "image": [
-        "https://drive.google.com/thumbnail?id=110tspJUA7z28d5I5ulacNHJgWfi8pyXK&sz=w1920",
-        "https://drive.google.com/thumbnail?id=1P19CAANDyTzllutCIWne2W7W7hIAlR0_&sz=w1920"
-      ],
-      "telephone": "+55 47 3086-3186",
-      "email": "comercial@firecam.com.br",
-      "address": {
-        "@type": "PostalAddress",
-        "streetAddress": "Rua XV de Novembro, 5008 - Vila Nova",
-        "addressLocality": "Joinville",
-        "addressRegion": "SC",
-        "postalCode": "89237-000",
-        "addressCountry": "BR"
-      },
-      "geo": {
-        "@type": "GeoCoordinates",
-        "latitude": -26.3044,
-        "longitude": -48.8464
-      },
-      "url": "https://www.firecam.com.br",
-      "areaServed": [
-        "Joinville",
-        "Araquari",
-        "Jaraguá do Sul",
-        "São Francisco do Sul",
-        "Garuva"
-      ],
-      "openingHoursSpecification": {
-        "@type": "OpeningHoursSpecification",
-        "dayOfWeek": [
-          "Monday",
-          "Tuesday",
-          "Wednesday",
-          "Thursday",
-          "Friday"
-        ],
-        "opens": "08:00",
-        "closes": "18:00"
-      },
-      "priceRange": "$$",
-      "description": "Integrador técnico em Joinville. Especialistas em sistemas eletrônicos: Alarme de Incêndio, Controle de Acesso e Redes. Instalação e manutenção.",
-      "sameAs": [
-        "https://www.instagram.com/firecam",
-        "https://www.linkedin.com/company/firecam"
-      ],
-      "makesOffer": [
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Instalação de Controle de Acesso e Catracas"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Instalação de Detecção de Incêndio (NBR 17240)"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Cabeamento Estruturado e Redes"
-          }
-        },
-        {
-          "@type": "Offer",
-          "itemOffered": {
-            "@type": "Service",
-            "name": "Infraestrutura de CFTV"
-          }
-        }
-      ]
-    }
-    </script>
-    <script>
-      tailwind.config = {
-        theme: {
-          extend: {
-            fontFamily: {
-              sans: ['Inter', 'sans-serif'],
-              mono: ['JetBrains Mono', 'monospace'],
-            },
-            colors: {
-              fire: {
-                50: '#fff7ed',
-                100: '#ffedd5',
-                200: '#fed7aa',
-                300: '#fdba74',
-                400: '#fb923c',
-                500: '#f97316',
-                600: '#ea580c',
-                700: '#c2410c',
-                800: '#9a3412',
-                900: '#7c2d12',
-                950: '#431407',
-              },
-              zinc: {
-                850: '#1f1f22',
-                900: '#18181b',
-                950: '#09090b',
-              }
-            },
-            animation: {
-              'marquee': 'marquee 60s linear infinite',
-              'marquee-reverse': 'marqueeReverse 60s linear infinite',
-              'fade-in': 'fadeIn 0.7s ease-out forwards',
-              'slide-up': 'slideUp 0.7s ease-out forwards',
-              'word-reveal': 'wordReveal 1.0s cubic-bezier(0.2, 0, 0.2, 1) forwards',
-              'letter-text-1': 'letterText1 5s ease-in-out infinite',
-              'letter-text-2': 'letterText2 5s ease-in-out infinite',
-              'letter-text-3': 'letterText3 5s ease-in-out infinite',
-              'ember': 'ember 1s ease-out forwards',
-              'shimmer': 'shimmer 2s linear infinite',
-              'shine': 'shine 1.5s ease-in-out infinite',
-              'pulse-slow': 'pulseSlow 6s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-              'scan-vertical': 'scanVertical 2s ease-in-out infinite',
-            },
-            keyframes: {
-              marquee: {
-                '0%': { transform: 'translateX(0%)' },
-                '100%': { transform: 'translateX(-50%)' },
-              },
-              marqueeReverse: {
-                '0%': { transform: 'translateX(-50%)' },
-                '100%': { transform: 'translateX(0%)' },
-              },
-              fadeIn: {
-                '0%': { opacity: '0' },
-                '100%': { opacity: '1' },
-              },
-              slideUp: {
-                '0%': { opacity: '0', transform: 'translateY(20px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)' },
-              },
-              wordReveal: {
-                '0%': { opacity: '0', transform: 'translateY(15px)', filter: 'blur(8px)' },
-                '100%': { opacity: '1', transform: 'translateY(0)', filter: 'blur(0)' },
-              },
-              letterText1: {
-                '0%, 10%': { color: 'var(--initial-color, #09090b)', textShadow: 'none' },
-                '18%': { color: 'var(--final-color)', textShadow: '0 0 20px var(--final-color)' },
-                '28%': { color: 'var(--final-color)', textShadow: '0 0 20px var(--final-color)' },
-                '40%': { color: 'var(--initial-color, #09090b)', textShadow: 'none' },
-                '100%': { color: 'var(--initial-color, #09090b)', textShadow: 'none' }
-              },
-              letterText2: {
-                '0%, 30%': { color: 'var(--initial-color, #09090b)', textShadow: 'none' },
-                '38%': { color: 'var(--final-color)', textShadow: '0 0 20px var(--final-color)' },
-                '48%': { color: 'var(--final-color)', textShadow: '0 0 20px var(--final-color)' },
-                '60%': { color: 'var(--initial-color, #09090b)', textShadow: 'none' },
-                '100%': { color: 'var(--initial-color, #09090b)', textShadow: 'none' }
-              },
-              letterText3: {
-                '0%, 50%': { color: 'var(--initial-color, #09090b)', textShadow: 'none' },
-                '58%': { color: 'var(--final-color)', textShadow: '0 0 20px var(--final-color)' },
-                '68%': { color: 'var(--final-color)', textShadow: '0 0 20px var(--final-color)' },
-                '80%': { color: 'var(--initial-color, #09090b)', textShadow: 'none' },
-                '100%': { color: 'var(--initial-color, #09090b)', textShadow: 'none' }
-              },
-              ember: {
-                '0%': { transform: 'translate(0, 0) scale(1)', opacity: '0.8' },
-                '100%': { transform: 'translate(var(--x-drift), var(--y-drift)) scale(0)', opacity: '0' },
-              },
-              shimmer: {
-                '0%': { backgroundPosition: '0 0' },
-                '100%': { backgroundPosition: '-200% 0' },
-              },
-              shine: {
-                '0%': { transform: 'translateX(-100%)' },
-                '100%': { transform: 'translateX(100%)' },
-              },
-              pulseSlow: {
-                '0%, 100%': { opacity: '1' },
-                '50%': { opacity: '.5' },
-              },
-              scanVertical: {
-                '0%': { top: '0%' },
-                '50%': { top: '100%' },
-                '100%': { top: '0%' },
-              }
-            }
-          },
-        },
-      }
-    </script>
-    <script type="importmap">
-{
-  "imports": {
-    "react": "https://esm.sh/react@^19.2.3",
-    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
-    "react/": "https://esm.sh/react@^19.2.3/",
-    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
-    "swiper/react": "https://esm.sh/swiper@11.0.5/react",
-    "swiper/modules": "https://esm.sh/swiper@11.0.5/modules",
-    "swiper/": "https://esm.sh/swiper@11.0.5/",
-    "swiper": "https://esm.sh/swiper@11.0.5"
-  }
-}
-</script>
-  </head>
-  <body>
-    <div id="root"></div>
-  </body>
+  <!-- Performance: Preconnect to Fonts & Scripts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+
+  <!-- Performance: Preload Critical Hero Image (LCP Optimization) -->
+  <link rel="preload" as="image" href="assets/img/_MG_6845.webp" fetchpriority="high" />
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" />
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" />
+
+  <!-- Scripts and Styles -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script defer src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+</head>
+
+<body class="bg-mesh-dark text-zinc-400 selection:bg-fire-600 selection:text-white relative font-sans">
+  <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+  <!-- End fire glows -->
+
+  <!-- UI ELEMENTS -->
+  <div id="precision-cursor" aria-hidden="true"
+    class="fixed top-0 left-0 w-7 h-7 rounded-full pointer-events-none z-[9999] opacity-0 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 hidden md:block border border-zinc-400"
+    style="transition: opacity 300ms, transform 80ms linear;">
+  </div>
+
+  <canvas id="spark-canvas" aria-hidden="true" class="fixed inset-0 pointer-events-none z-[9998]"></canvas>
+  <!-- Global dot grid flashlight (fixed, full-page) -->
+  <div id="dot-grid-base" aria-hidden="true"
+    class="fixed inset-0 pointer-events-none z-0 opacity-10 bg-[radial-gradient(circle,#d4d4d8_1px,transparent_1px)]"
+    style="background-size: 24px 24px;"></div>
+  <div id="dot-grid-flashlight" aria-hidden="true"></div>
+  <div id="scroll-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+    aria-label="Progresso de leitura"
+    class="fixed top-0 left-0 h-1 bg-fire-600 z-[100] transition-all duration-300 shadow-[0_0_10px_rgba(234,88,12,0.8)]"
+    style="width: 0%"></div>
+
+  <!-- WHATSAPP BUTTON -->
+  <a href="https://wa.me/5547996660234" target="_blank" rel="noopener noreferrer"
+    class="fixed bottom-6 right-6 z-[90] p-4 bg-[#25D366] text-white rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group">
+    <i data-lucide="message-square" class="w-6 h-6"></i>
+    <span
+      class="absolute right-full mr-4 bg-zinc-900 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Falar
+      no WhatsApp</span>
+  </a>
+
+  <!-- 1. ATMOSPHERE LAYER -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
+    <div id="blob1"
+      class="absolute top-[-20%] left-[10%] w-[40%] h-[70%] bg-gradient-to-br from-indigo-50/50 via-zinc-100/30 to-transparent blur-[120px] opacity-30"
+      style="animation: blobDrift1 22s ease-in-out infinite;">
+    </div>
+    <div id="blob2"
+      class="absolute top-[-10%] right-[5%] w-[50%] h-[80%] bg-gradient-to-bl from-orange-50/40 via-white to-transparent blur-[100px] opacity-25"
+      style="animation: blobDrift2 28s ease-in-out infinite;">
+    </div>
+    <div id="blob3"
+      class="absolute bottom-[10%] left-[30%] w-[45%] h-[50%] bg-gradient-to-tr from-fire-600/5 via-transparent to-transparent blur-[140px] opacity-20"
+      style="animation: blobDrift3 16s ease-in-out infinite;">
+    </div>
+    <div id="blob4"
+      class="absolute top-[40%] left-[-15%] w-[40%] h-[60%] bg-gradient-to-tr from-fire-600/15 via-zinc-400/5 to-transparent blur-[130px] opacity-30"
+      style="animation: blobDrift1 20s ease-in-out infinite reverse;">
+    </div>
+
+    <!-- Deep Ambient Mouse Glow (Strictly Z-0 Background) -->
+    <div id="ambient-mouse-glow" class="absolute inset-0 pointer-events-none"
+      style="background: radial-gradient(1200px circle at calc(50% + var(--mouse-x, 0) * 15%) calc(50% + var(--mouse-y, 0) * 15%), rgba(234, 88, 12, 0.05), transparent 100%);">
+    </div>
+  </div>
+
+
+  <!-- NAVBAR TRIGGER -->
+  <div id="navbar-trigger" aria-hidden="true"
+    class="fixed top-0 left-0 right-0 h-10 z-[49] group cursor-pointer hidden">
+    <div
+      class="absolute top-0 left-1/2 -translate-x-1/2 bg-zinc-950/40 backdrop-blur-md border border-white/10 border-t-0 rounded-b-xl px-6 py-2 shadow-lg transform translate-y-0 group-hover:bg-zinc-950/90 transition-all duration-300 flex items-center gap-2 opacity-60 group-hover:opacity-100">
+      <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest">Menu</span>
+      <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-fire-500"></i>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <nav id="navbar" aria-label="Navegação principal"
+    class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-5 lg:py-6">
+    <div id="navbar-bg"
+      class="absolute inset-0 w-full h-full -z-10 transition-all duration-500 opacity-0 bg-transparent"></div>
+    <div class="container max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center relative z-20">
+      <button type="button"
+        class="flex items-center gap-3 group cursor-pointer relative z-50 bg-transparent border-0 p-0"
+        onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Voltar ao topo">
+        <img src="assets/logo/firecam-logo-web.png" alt="Firecam" width="480" height="320" decoding="async"
+          class="h-16 md:h-20 w-auto object-contain transition-all duration-500 group-hover:scale-105" />
+      </button>
+      <div class="hidden lg:flex items-center gap-8">
+        <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
+          class="text-sm font-bold text-zinc-200 hover:text-white transition-colors"
+          aria-label="Voltar ao início">Início</button>
+        <button onclick="document.getElementById('institutional').scrollIntoView({behavior: 'smooth'})"
+          class="text-sm font-bold text-zinc-200 hover:text-white transition-colors"
+          aria-label="Ir para seção A Firecam">A Firecam</button>
+
+        <!-- Solutions Dropdown -->
+        <div class="relative group/solutions" id="dropdown-solutions">
+          <button onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})"
+            class="flex items-center gap-1 text-sm font-bold text-zinc-200 hover:text-white transition-colors py-2"
+            aria-expanded="false" aria-haspopup="true" aria-controls="dropdown-solutions-menu">
+            Soluções
+            <i data-lucide="chevron-down"
+              class="w-3.5 h-3.5 transition-transform group-hover/solutions:rotate-180 group-focus-within/solutions:rotate-180"></i>
+          </button>
+          <div id="dropdown-solutions-menu" role="menu"
+            class="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 invisible group-hover/solutions:opacity-100 group-hover/solutions:visible group-focus-within/solutions:opacity-100 group-focus-within/solutions:visible transition-all duration-300 transform group-hover/solutions:translate-y-0 group-focus-within/solutions:translate-y-0 translate-y-2">
+            <div
+              class="bg-zinc-950/60 backdrop-blur-3xl rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 ring-1 ring-white/5 p-2 min-w-[260px] flex flex-col gap-1 overflow-hidden">
+              <a href="alarme-incendio.html" role="menuitem"
+                class="w-full px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 text-left whitespace-nowrap">Alarme
+                de Incêndio (NBR 17240)</a>
+              <button role="menuitem" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})"
+                class="w-full px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 text-left whitespace-nowrap">Controle
+                de Acesso Biométrico</button>
+              <button role="menuitem" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})"
+                class="w-full px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 text-left whitespace-nowrap">Cabeamento
+                Estruturado & Redes</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cases Dropdown -->
+        <div class="relative group/cases" id="dropdown-cases">
+          <button onclick="document.getElementById('cases').scrollIntoView({behavior: 'smooth'})"
+            class="flex items-center gap-1 text-sm font-bold text-zinc-200 hover:text-white transition-colors py-2"
+            aria-expanded="false" aria-haspopup="true" aria-controls="dropdown-cases-menu">
+            Casos de Sucesso
+            <i data-lucide="chevron-down"
+              class="w-3.5 h-3.5 transition-transform group-hover/cases:rotate-180 group-focus-within/cases:rotate-180"></i>
+          </button>
+          <div id="dropdown-cases-menu" role="menu"
+            class="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 invisible group-hover/cases:opacity-100 group-hover/cases:visible group-focus-within/cases:opacity-100 group-focus-within/cases:visible transition-all duration-300 transform group-hover/cases:translate-y-0 group-focus-within/cases:translate-y-0 translate-y-2">
+            <div
+              class="bg-zinc-950/60 backdrop-blur-3xl rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 ring-1 ring-white/5 p-2 min-w-[260px] flex flex-col gap-1 overflow-hidden">
+              <button role="menuitem" onclick="document.getElementById('cases').scrollIntoView({behavior: 'smooth'})"
+                class="w-full px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 text-left">Indústrias
+                & Metalúrgicas</button>
+              <button role="menuitem" onclick="document.getElementById('cases').scrollIntoView({behavior: 'smooth'})"
+                class="w-full px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 text-left">Condomínios
+                Logísticos</button>
+              <button role="menuitem" onclick="document.getElementById('cases').scrollIntoView({behavior: 'smooth'})"
+                class="w-full px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 text-left">Redes
+                Corporativas</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="hidden lg:block">
+        <button type="button" class="link-cta sm"
+          onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">
+          <div class="premium-cta">
+            <span class="premium-cta-text">Quero Saber Mais</span>
+          </div>
+        </button>
+      </div>
+      <button id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu"
+        class="lg:hidden p-2 relative z-50 text-white">
+        <i data-lucide="menu" size="28"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- MOBILE MENU OVERLAY -->
+  <div id="mobile-menu"
+    class="fixed inset-0 bg-zinc-950/95 backdrop-blur-3xl z-40 lg:hidden transition-all duration-500 opacity-0 invisible -translate-y-4 pointer-events-none">
+    <div class="h-full w-full overflow-y-auto flex flex-col items-center justify-start pt-32 pb-12 px-6 gap-8">
+      <button class="mobile-link text-3xl font-black text-white" data-target="hero">Início</button>
+      <button class="mobile-link text-3xl font-black text-white" data-target="institutional">A Firecam</button>
+      <button class="mobile-link text-3xl font-black text-white" data-target="contato">Soluções</button>
+      <div class="w-16 h-px bg-zinc-800"></div>
+      <button class="mobile-link text-3xl font-black text-white" data-target="cases">Casos de Sucesso</button>
+      <button type="button" class="link-cta md w-full max-w-xs"
+        onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">
+        <div class="premium-cta">
+          <span class="premium-cta-text">Quero Saber Mais</span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <main id="main-content" class="relative z-10">
+    <!-- HERO -->
+    <section id="hero" class="relative h-[100dvh] min-h-[600px] w-full overflow-hidden bg-zinc-950 text-white">
+      <div class="swiper hero-swiper w-full h-full">
+        <div class="swiper-wrapper">
+          <!-- Slides will be injected by JS -->
+        </div>
+        <div class="hero-scanning-overlay"></div>
+        <div class="hero-controls absolute bottom-10 left-0 w-full z-30 pointer-events-none">
+          <div class="container max-w-7xl mx-auto px-6 lg:px-12 flex justify-start">
+            <div
+              class="pointer-events-auto flex items-center gap-5 px-4 py-2 bg-zinc-950/60 backdrop-blur-md border border-white/10 rounded-full">
+              <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest" id="hero-index">01 / 05</span>
+              <div class="h-4 w-px bg-white/10"></div>
+              <div class="flex gap-2">
+                <button
+                  class="hero-prev w-8 h-8 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-zinc-300 hover:bg-white hover:text-zinc-950"><i
+                    data-lucide="chevron-left" class="w-4 h-4"></i></button>
+                <button
+                  class="hero-next w-8 h-8 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-zinc-300 hover:bg-fire-600 hover:text-white"><i
+                    data-lucide="chevron-right" class="w-4 h-4"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOGO MARQUEE -->
+    <section
+      class="relative z-20 border-t border-b border-white/5 glass-panel-dark rounded-none py-8 md:py-10 overflow-hidden group noise-overlay premium-shadow">
+      <!-- Particles Background -->
+      <div id="particles-marquee" aria-hidden="true" class="absolute inset-0 z-0 pointer-events-none opacity-40"></div>
+
+      <!-- Marquee Wrapper with mask for soft edges -->
+      <div class="container max-w-7xl mx-auto px-6 overflow-hidden relative z-10 select-none"
+        style="-webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent); mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);">
+
+        <!-- Swiper Container -->
+        <div class="swiper marquee-slider cursor-grab active:cursor-grabbing">
+          <div class="swiper-wrapper" id="marquee-track">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NARRATIVE -->
+    <section class="section-pad relative z-10 bg-transparent overflow-hidden reveal">
+      <div class="container max-w-7xl mx-auto px-6 lg:px-12">
+        <div class="flex flex-col gap-12 lg:gap-16">
+          <div class="max-w-none mx-auto text-center px-4">
+            <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.35em] mb-6 hud-text hud-pulse">Padrão
+              Industrial</p>
+            <h2 id="narrative-quote" class="section-hero-title text-zinc-300 transition-all duration-700">
+            </h2>
+          </div>
+          <div
+            class="glass-panel-dark rounded-[2rem] p-8 md:p-16 relative overflow-hidden group noise-overlay premium-shadow">
+            <div id="particles-narrative" aria-hidden="true"
+              class="absolute inset-0 z-0 pointer-events-none opacity-60"></div>
+            <div id="narrative-content" class="relative z-10 grid md:grid-cols-12 gap-6 lg:gap-10 items-center">
+              <div class="md:col-span-6">
+                <div class="mb-4 flex items-center gap-2 text-zinc-400">
+                  <i data-lucide="badge-check" class="text-fire-600 w-5 h-5"></i>
+                  <span class="text-xs font-bold uppercase tracking-[0.2em]">Fornecedor Homologado</span>
+                </div>
+                <p id="narrative-highlight"
+                  class="text-3xl md:text-4xl font-bold text-white leading-tight tracking-tighter"></p>
+              </div>
+              <div class="hidden md:block md:col-span-1 h-24 border-l border-white/10 mx-auto opacity-50"></div>
+              <div id="narrative-desc" class="md:col-span-5 space-y-4 text-lg"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-transparent pt-0 pb-10 md:pb-16 relative overflow-hidden reveal" id="resultados">
+
+      <div class="container max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+
+        <!-- Kicker + Headline -->
+        <div class="border-b border-white/8 pb-10 mb-0 text-center flex flex-col items-center">
+          <div class="w-8 h-px bg-fire-600/50 mb-6"></div>
+          <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.35em] mb-4">Resultados Comprovados</p>
+          <div class="max-w-4xl">
+            <p class="text-lg md:text-xl font-medium text-zinc-500 tracking-tight mb-2">Não entregamos apenas
+              implantação.</p>
+            <h2 class="section-hero-title text-white tracking-tighter leading-[1.1]">
+              Garantimos continuidade operacional.
+            </h2>
+            <p class="mt-4 text-zinc-400 text-xs md:text-sm font-light max-w-md mx-auto leading-relaxed">
+              Performance auditável e suporte estratégico para infraestruturas de missão crítica.
+            </p>
+          </div>
+        </div>
+
+        <!-- Stats: 4-column with strong labels -->
+        <div class="grid grid-cols-2 lg:grid-cols-4 divide-x divide-white/8 border-b border-white/8"
+          id="metrics-container">
+          <!-- Populated via JS -->
+        </div>
+
+        <!-- Value Props row -->
+        <div class="pt-10 pb-4 flex items-center gap-4">
+          <div class="w-6 h-px bg-fire-600/40"></div>
+          <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.35em]">Nossa Filosofia</p>
+        </div>
+        <div class="grid md:grid-cols-2 divide-x divide-white/8 divide-y md:divide-y-0" id="value-props-container">
+          <!-- Populated via JS -->
+        </div>
+
+      </div>
+    </section>
+
+    <section id="institutional" class="section-pad pb-6 md:pb-10 reveal relative bg-transparent">
+
+
+      <div class="container max-w-7xl mx-auto px-6 lg:px-12 relative z-20">
+        <div class="grid lg:grid-cols-12 gap-8 lg:gap-16">
+          <div class="lg:col-span-12 xl:col-span-5 mb-8 lg:mb-0">
+            <div class="lg:sticky lg:top-32">
+
+              <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.35em] mb-4 hud-text">Diagnóstico &amp;
+                Correção
+              </p>
+              <h2 class="section-hero-title mb-6 tracking-tighter leading-tight">Seu sistema <span
+                  class="text-zinc-400 font-light">está</span> <br /> <span class="highlight-word"
+                  data-text="Mudo?">Mudo?</span></h2>
+              <p class="text-zinc-500 text-base md:text-xl font-light mb-10">Equipamentos eletrônicos falham em
+                silêncio.
+                A
+                luz verde no painel muitas vezes é uma mentira.</p>
+              <div
+                class="glass-panel-dark p-8 rounded-[2rem] relative overflow-hidden group premium-shadow noise-overlay">
+                <div class="absolute top-0 left-0 w-full h-[2px] bg-fire-500 animate-scan-vertical"></div>
+                <div class="flex items-start gap-5 relative z-10">
+                  <i data-lucide="shield-check" class="text-fire-600 w-7 h-7"></i>
+                  <div>
+                    <h4 class="text-xs font-bold text-white uppercase tracking-widest mb-3">Auditoria p/ Seguradoras
+                    </h4>
+                    <p class="text-zinc-400 text-sm text-balance">"A falta de comprovação de manutenção preventiva pode
+                      acarretar na perda do direito à indenização do seguro."</p>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+          <div class="lg:col-span-12 xl:col-span-7 space-y-4" id="institutional-steps">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+
+    <!-- TESTIMONIALS + CTA (merged) -->
+    <section id="cases" class="pt-12 pb-20 reveal relative z-10 overflow-hidden bg-transparent"
+      style="background-image: repeating-linear-gradient(0deg, transparent, transparent 79px, rgba(255,255,255,0.02) 80px);">
+      <div class="container max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+
+        <div class="flex flex-col items-center text-center mb-10">
+          <div
+            class="flex items-center gap-3 bg-white/90 backdrop-blur-sm border border-zinc-100 px-5 py-2 rounded-full mb-10 shadow-sm cursor-default hover:shadow-md transition-shadow">
+            <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_92x30dp.png"
+              class="h-4 w-auto" alt="Google Logo" width="92" height="30" loading="lazy" decoding="async" />
+            <div class="flex items-baseline gap-2 leading-none ml-1">
+              <span class="text-[11px] font-bold text-zinc-400 uppercase tracking-wider">Excelência</span>
+              <span class="text-sm font-black text-zinc-800">4.9/5</span>
+            </div>
+            <div class="flex gap-1 ml-2">
+              <i data-lucide="star" class="w-3 h-3 text-[#FBBC05] fill-[#FBBC05]"></i>
+              <i data-lucide="star" class="w-3 h-3 text-[#FBBC05] fill-[#FBBC05]"></i>
+              <i data-lucide="star" class="w-3 h-3 text-[#FBBC05] fill-[#FBBC05]"></i>
+              <i data-lucide="star" class="w-3 h-3 text-[#FBBC05] fill-[#FBBC05]"></i>
+              <i data-lucide="star" class="w-3 h-3 text-[#FBBC05] fill-[#FBBC05]"></i>
+            </div>
+          </div>
+          <div class="flex items-center gap-4 mb-5">
+            <div class="w-10 h-px bg-fire-600"></div>
+            <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.35em] hud-text">O Que Nossos Clientes
+              Dizem</span>
+            <div class="w-10 h-px bg-fire-600"></div>
+          </div>
+          <h2 class="section-hero-title text-white tracking-tighter leading-tight uppercase">Resultados que <span
+              class="text-fire-600">falam por si.</span></h2>
+        </div>
+
+        <div class="border border-white/5 rounded-2xl overflow-hidden">
+          <div class="swiper testimonial-swiper w-full">
+            <div class="swiper-wrapper" id="testimonial-slider"></div>
+          </div>
+        </div>
+
+        <!-- Minimal centered controls below card -->
+        <div class="flex items-center justify-center gap-6 py-4">
+          <button id="testimonial-prev" class="testimonial-btn" aria-label="Anterior">
+            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+          </button>
+          <div id="testimonial-dots" class="flex gap-2 items-center"></div>
+          <button id="testimonial-next" class="testimonial-btn" aria-label="Próximo">
+            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+          </button>
+        </div>
+
+        <!-- CTA Section -->
+        <div id="contato" class="mt-16 flex flex-col items-center text-center">
+          <div id="cta-card"
+            class="relative w-full glass-panel-dark rounded-[2rem] px-8 py-14 md:px-16 md:py-20 overflow-hidden noise-overlay premium-shadow transition-all duration-500">
+
+            <!-- Ambient fire glow -->
+            <div
+              class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-48 bg-fire-600/10 blur-[80px] pointer-events-none rounded-full">
+            </div>
+            <!-- Top accent -->
+            <div
+              class="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-fire-500/60 to-transparent">
+            </div>
+
+            <div class="relative z-10">
+              <!-- Kicker -->
+              <p class="text-[10px] font-bold uppercase tracking-[0.35em] text-zinc-500 mb-6">Próximo Passo</p>
+
+              <!-- Headline -->
+              <h2 class="section-hero-title text-white tracking-tighter leading-[1.05] mb-4">
+                Precisa de um orçamento<br class="hidden md:block" />
+                <span class="text-zinc-400 font-light">ou</span> visita técnica?
+              </h2>
+
+              <!-- Subtitle -->
+              <p class="text-zinc-400 text-base mb-10 max-w-md mx-auto">Conversa técnica, sem compromisso. Respondemos
+                com diagnóstico real, não com proposta genérica.</p>
+
+              <!-- Primary CTA -->
+              <button id="btn-start-cta" aria-label="Começar diagnóstico"
+                class="group inline-flex items-center gap-3 bg-white text-zinc-950 font-bold text-sm px-8 py-4 rounded-full shadow-[0_4px_24px_rgba(255,255,255,0.15)] hover:shadow-[0_6px_32px_rgba(255,255,255,0.25)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-200">
+                Quero Saber Mais
+                <span
+                  class="w-7 h-7 rounded-full bg-zinc-950 text-white flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
+                  <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                </span>
+              </button>
+
+              <!-- Trust row -->
+              <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
+                <div class="flex items-center gap-2 text-xs text-zinc-500">
+                  <i data-lucide="clock" class="w-3.5 h-3.5 text-zinc-600"></i>
+                  <span>Retorno em até <strong class="text-zinc-400 font-semibold">4h úteis</strong></span>
+                </div>
+                <div class="w-px h-3 bg-zinc-800 hidden sm:block"></div>
+                <a href="https://wa.me/5547996660234" target="_blank" rel="noopener noreferrer"
+                  class="flex items-center gap-2 text-xs text-zinc-500 hover:text-zinc-300 transition-colors group/wa">
+                  <i data-lucide="message-circle"
+                    class="w-3.5 h-3.5 text-green-500/60 group-hover/wa:text-green-400 transition-colors"></i>
+                  <span>Ou fale no <strong class="text-zinc-400 font-semibold">WhatsApp</strong></span>
+                </a>
+                <div class="w-px h-3 bg-zinc-800 hidden sm:block"></div>
+                <div class="flex items-center gap-2 text-xs text-zinc-500">
+                  <i data-lucide="phone" class="w-3.5 h-3.5 text-zinc-600"></i>
+                  <span><strong class="text-zinc-400 font-semibold">(47) 3086-3186</strong></span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA Form -->
+        <div id="cta-form" class="hidden mt-10 max-w-xl mx-auto text-left">
+          <div class="mb-8">
+            <div class="flex justify-between items-center mb-4">
+              <button id="cta-back"
+                class="text-xs font-bold text-zinc-500 uppercase tracking-widest flex items-center gap-2"
+                aria-label="Voltar">
+                <i data-lucide="chevron-left" class="w-3.5 h-3.5"></i> Voltar
+              </button>
+              <span id="cta-step-count" class="text-xs font-mono font-bold text-zinc-700">01/04</span>
+            </div>
+            <div class="w-full h-1 bg-zinc-800 rounded-full overflow-hidden">
+              <div id="cta-progress-bar" class="h-full bg-fire-600 transition-all duration-300" style="width: 25%">
+              </div>
+            </div>
+          </div>
+          <div class="min-h-[150px]">
+            <label id="cta-q-label" for="cta-q-input"
+              class="block text-3xl md:text-4xl font-black text-white mb-10 tracking-tighter">Seu
+              Nome</label>
+            <input id="cta-q-input" type="text" placeholder="Digite seu nome"
+              class="w-full bg-transparent border-b-2 border-zinc-800 py-4 text-2xl md:text-3xl font-medium text-white placeholder-zinc-700 focus:outline-none focus:border-fire-500 focus:shadow-[0_4px_20px_-10px_rgba(234,88,12,0.4)] transition-all duration-500" />
+            <p id="cta-error" class="text-red-500 text-sm font-bold mt-6 h-4 opacity-0 transition-opacity duration-300" aria-live="polite" role="alert"></p>
+          </div>
+          <div class="mt-10 flex justify-between items-center">
+            <button id="cta-cancel" class="text-xs font-bold text-zinc-600 uppercase tracking-widest">Cancelar</button>
+            <button id="cta-next"
+              class="bg-white text-zinc-950 px-6 py-3 rounded-lg text-xs font-bold shadow-lg flex items-center">Continuar
+              <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i></button>
+          </div>
+        </div>
+
+        <!-- CTA Success -->
+        <div id="cta-success" class="hidden py-10 text-center max-w-xl mx-auto">
+          <div
+            class="w-16 h-16 bg-green-900/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
+            <i data-lucide="check-circle-2" class="w-8 h-8"></i>
+          </div>
+          <h3 class="text-2xl font-bold text-white mb-3">Recebemos sua solicitação.</h3>
+          <p class="text-zinc-400 text-sm">Nossa equipe entrará em contato em breve.</p>
+          <button id="cta-success-back"
+            class="mt-8 border border-zinc-700 text-zinc-400 hover:text-white px-8 py-3 rounded-lg text-xs">Voltar ao
+            Início</button>
+        </div>
+
+        <div id="particles-cta" class="hidden"></div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="relative z-20 overflow-hidden mt-10">
+    <!-- Fire accent top border -->
+    <div
+      class="h-px w-full bg-gradient-to-r from-transparent via-fire-600/60 to-transparent absolute top-0 left-0 z-30 opacity-70">
+    </div>
+
+    <!-- Footer glass panel -->
+    <div class="glass-panel-dark border-t border-white/5 pt-24 pb-12 relative noise-overlay">
+      <!-- Glow effect -->
+      <div
+        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-full max-w-2xl h-64 bg-fire-600/5 blur-[100px] pointer-events-none z-0">
+      </div>
+
+      <div id="particles-footer" aria-hidden="true" class="absolute inset-0 z-0 pointer-events-none opacity-20"></div>
+
+      <div class="container max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+
+        <!-- Main Footer Grid: 4 columns -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-8 pb-16 border-b border-white/5">
+
+          <!-- Column 1: Brand & Contact -->
+          <div>
+            <!-- Logo container with fixed height to match the adjacent column header + gap -->
+            <div class="h-[76px] flex items-start -ml-3 mb-6">
+              <img src="assets/logo/firecam-logo-web.png" class="h-16 w-auto opacity-100 transition-opacity"
+                alt="Firecam" width="480" height="320" loading="lazy" decoding="async" />
+            </div>
+            <p class="text-zinc-500 text-sm leading-relaxed mb-6 max-w-xs">
+              Infraestrutura técnica premium para sistemas de segurança eletrônica e prevenção de incêndio.
+            </p>
+            <!-- Contact blocks -->
+            <div class="space-y-4">
+              <a href="mailto:comercial@firecam.com.br"
+                class="flex items-center gap-4 group text-sm text-zinc-400 hover:text-white transition-colors">
+                <span
+                  class="w-10 h-10 rounded-xl bg-zinc-900/50 border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-fire-600/40 group-hover:bg-fire-600/10 transition-all shadow-sm">
+                  <i data-lucide="mail" class="w-4 h-4 text-zinc-500 group-hover:text-fire-400 transition-colors"></i>
+                </span>
+                comercial@firecam.com.br
+              </a>
+              <a href="tel:+554730863186"
+                class="flex items-center gap-4 group text-sm text-zinc-400 hover:text-white transition-colors">
+                <span
+                  class="w-10 h-10 rounded-xl bg-zinc-900/50 border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-fire-600/40 group-hover:bg-fire-600/10 transition-all shadow-sm">
+                  <i data-lucide="phone" class="w-4 h-4 text-zinc-500 group-hover:text-fire-400 transition-colors"></i>
+                </span>
+                +55 (47) 3086-3186
+              </a>
+            </div>
+          </div>
+
+          <!-- Column 2: Site Map -->
+          <div>
+            <div class="h-[76px] flex items-start mb-6 pt-5">
+              <h3 class="text-xs font-semibold text-zinc-500 flex items-center gap-2">
+                <span class="w-3.5 h-3.5 flex items-center justify-center"><span
+                    class="w-1.5 h-1.5 rounded-full bg-fire-600/40"></span></span> Mapa do site
+              </h3>
+            </div>
+            <ul class="space-y-4">
+              <li>
+                <a href="#hero"
+                  class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group">
+                  <i data-lucide="chevron-right"
+                    class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>
+                  Início
+                </a>
+              </li>
+              <li>
+                <a href="#institutional"
+                  class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group">
+                  <i data-lucide="chevron-right"
+                    class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>
+                  A Firecam
+                </a>
+              </li>
+              <li>
+                <a href="#contato"
+                  class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group">
+                  <i data-lucide="chevron-right"
+                    class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>
+                  Contato
+                </a>
+              </li>
+              <li>
+                <a href="#cases"
+                  class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group">
+                  <i data-lucide="chevron-right"
+                    class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>
+                  Casos de Sucesso
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 3: Solutions -->
+          <div>
+            <div class="h-[76px] flex items-start mb-6 pt-5">
+              <h3 class="text-xs font-semibold text-zinc-500 flex items-center gap-2">
+                <span class="w-3.5 h-3.5 flex items-center justify-center"><span
+                    class="w-1.5 h-1.5 rounded-full bg-fire-600/40"></span></span> Soluções
+              </h3>
+            </div>
+            <ul class="space-y-4">
+              <li>
+                <a href="alarme-incendio.html"
+                  class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group">
+                  <i data-lucide="chevron-right"
+                    class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>
+                  Alarme de Incêndio
+                </a>
+              </li>
+              <li>
+                <a href="#contato"
+                  class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group">
+                  <i data-lucide="chevron-right"
+                    class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>
+                  Controle de Acesso
+                </a>
+              </li>
+              <li>
+                <a href="#contato"
+                  class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group">
+                  <i data-lucide="chevron-right"
+                    class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>
+                  Cabeamento Estruturado
+                </a>
+              </li>
+              <li>
+                <a href="#contato"
+                  class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group">
+                  <i data-lucide="chevron-right"
+                    class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>
+                  Videomonitoramento
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Column 4: Social -->
+          <div>
+            <div class="h-[76px] flex items-start mb-6 pt-5">
+              <h3 class="text-xs font-semibold text-zinc-500 flex items-center gap-2">
+                <span class="w-3.5 h-3.5 flex items-center justify-center"><span
+                    class="w-1.5 h-1.5 rounded-full bg-fire-600/40"></span></span> Social
+              </h3>
+            </div>
+            <ul class="space-y-4">
+              <li>
+                <a href="https://www.instagram.com/firecam" target="_blank" rel="noopener noreferrer"
+                  class="flex items-center gap-4 text-sm font-medium text-zinc-400 hover:text-white transition-colors group">
+                  <span
+                    class="w-10 h-10 rounded-xl bg-zinc-900/50 border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-fire-600/40 group-hover:bg-fire-600/10 transition-all shadow-sm">
+                    <i data-lucide="instagram"
+                      class="w-4 h-4 text-zinc-400 group-hover:text-fire-400 transition-colors"></i>
+                  </span>
+                  Instagram
+                  <i data-lucide="arrow-up-right"
+                    class="w-3.5 h-3.5 opacity-0 group-hover:opacity-50 transition-opacity ml-auto"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://www.linkedin.com/company/firecam" target="_blank" rel="noopener noreferrer"
+                  class="flex items-center gap-4 text-sm font-medium text-zinc-400 hover:text-white transition-colors group">
+                  <span
+                    class="w-10 h-10 rounded-xl bg-zinc-900/50 border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-fire-600/40 group-hover:bg-fire-600/10 transition-all shadow-sm">
+                    <i data-lucide="linkedin"
+                      class="w-4 h-4 text-zinc-400 group-hover:text-fire-400 transition-colors"></i>
+                  </span>
+                  LinkedIn
+                  <i data-lucide="arrow-up-right"
+                    class="w-3.5 h-3.5 opacity-0 group-hover:opacity-50 transition-opacity ml-auto"></i>
+                </a>
+              </li>
+              <li>
+                <a href="https://wa.me/5547996660234" target="_blank" rel="noopener noreferrer"
+                  class="flex items-center gap-4 text-sm font-medium text-zinc-400 hover:text-white transition-colors group">
+                  <span
+                    class="w-10 h-10 rounded-xl bg-zinc-900/50 border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-green-600/40 group-hover:bg-green-600/10 transition-all shadow-sm">
+                    <i data-lucide="message-circle"
+                      class="w-4 h-4 text-zinc-400 group-hover:text-green-400 transition-colors"></i>
+                  </span>
+                  WhatsApp
+                  <i data-lucide="arrow-up-right"
+                    class="w-3.5 h-3.5 opacity-0 group-hover:opacity-50 transition-opacity ml-auto"></i>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Bottom Legal Bar -->
+        <div class="pt-8 flex flex-col md:flex-row items-center justify-between gap-4">
+          <span class="text-[11px] font-medium text-zinc-600">
+            © 2026 Firecam Tecnologia. Todos os direitos reservados.
+          </span>
+          <div class="flex items-center gap-6">
+            <a href="#"
+              class="text-[11px] font-medium text-zinc-600 hover:text-zinc-400 transition-colors">Privacidade</a>
+            <div class="w-1 h-1 rounded-full bg-zinc-800"></div>
+            <a href="#" class="text-[11px] font-medium text-zinc-600 hover:text-zinc-400 transition-colors">Termos</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
+  <script type="module" src="assets/js/main.js"></script>
+</body>
+
 </html>

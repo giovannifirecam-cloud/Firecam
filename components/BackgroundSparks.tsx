@@ -1,1 +1,0 @@
-// MOVED TO: components/effects/BackgroundSparks.tsx
