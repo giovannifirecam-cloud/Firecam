@@ -1,0 +1,1051 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>Cabeamento Estruturado e Redes Corporativas | Firecam Tecnologia</title>
+    <meta name="title" content="Cabeamento Estruturado e Redes Corporativas | Firecam Tecnologia" />
+    <meta name="description"
+        content="Instalação, certificação e organização de cabeamento estruturado (Cat6, Cat6A) e fibra óptica. Certificação Fluke para performance real da sua rede." />
+    <meta name="keywords"
+        content="cabeamento estruturado, rede de computadores, fibra óptica, certificação fluke, TI, infraestrutura de rede, Firecam" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#09090b" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.firecam.com.br/cabeamento-estruturado.html" />
+    <meta property="og:title" content="Cabeamento Estruturado e Redes Corporativas | Firecam Tecnologia" />
+    <meta property="og:description"
+        content="Execução completa de infraestrutura de TI: Lançamento de cabos UTP e Fibra Óptica, montagem de racks e certificação Fluke." />
+    <meta property="og:image" content="assets/img/optimized/_MG_6820.webp" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.firecam.com.br/cabeamento-estruturado.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ea580c'%3E%3Cpath d='M12 2L4 5V11C4 16.55 7.4 21.74 12 23C16.6 21.74 20 16.55 20 11V5L12 2ZM12 18C9.24 18 7 15.76 7 13C7 10.24 9.24 8 12 8C14.76 8 17 10.24 17 13C17 15.76 14.76 18 12 18Z'/%3E%3C/svg%3E" />
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Cabeamento Estruturado e Redes Corporativas",
+      "description": "Instalação, Certificação e Organização de Cabeamento Estruturado para Redes Corporativas. Lançamento de cabos Cat 6, 6A e Fibra Óptica.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Firecam Tecnologia",
+        "telephone": "+554730863186",
+        "email": "comercial@firecam.com.br",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Joinville",
+          "addressRegion": "SC",
+          "addressCountry": "BR"
+        }
+      },
+      "areaServed": "Brasil",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Soluções de TI",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Instalação de Rede Cat6/Cat6A" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Certificação de Rede Fluke" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Organização de Racks (Retrofit)" } }
+        ]
+      }
+    }
+    </script>
+
+    <!-- Performance: Preconnect & Preload -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+    <link rel="preload" as="image" href="assets/img/optimized/_MG_6820.webp" fetchpriority="high" />
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Swiper & Lucide -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+</head>
+
+<body class="bg-mesh-dark text-zinc-300 selection:bg-fire-600 selection:text-white relative font-sans">
+    <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+
+    <!-- UI ELEMENTS -->
+    <div id="precision-cursor" aria-hidden="true"
+        class="fixed top-0 left-0 w-7 h-7 rounded-full pointer-events-none z-[9999] opacity-0 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 hidden md:block border border-zinc-400"
+        style="transition: opacity 300ms, transform 80ms linear;"></div>
+
+    <canvas id="spark-canvas" aria-hidden="true" class="fixed inset-0 pointer-events-none z-[9998]"></canvas>
+
+    <div id="dot-grid-base" aria-hidden="true"
+        class="fixed inset-0 pointer-events-none z-0 opacity-10 bg-[radial-gradient(circle,#d4d4d8_1px,transparent_1px)]"
+        style="background-size: 24px 24px;"></div>
+    <div id="dot-grid-flashlight" aria-hidden="true"></div>
+
+    <div id="scroll-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+        aria-label="Progresso de leitura"
+        class="fixed top-0 left-0 h-1 bg-fire-600 z-[100] transition-all duration-300 shadow-[0_0_10px_rgba(234,88,12,0.8)]"
+        style="width: 0%"></div>
+
+    <!-- WHATSAPP BUTTON -->
+    <a data-wa-trigger="true" data-wa-message="Olá, gostaria de saber mais." target="_blank" rel="noopener noreferrer"
+        aria-label="Falar no WhatsApp (abre em nova janela)"
+        class="fixed bottom-6 right-6 z-[90] p-4 bg-[#25D366] text-white rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group">
+        <i data-lucide="message-square" class="w-6 h-6" aria-hidden="true"></i>
+        <span
+            class="absolute right-full mr-4 bg-zinc-900 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none"
+            aria-hidden="true">Falar
+            no WhatsApp</span>
+    </a>
+
+    <!-- ATMOSPHERE LAYER -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
+        <div id="blob1"
+            class="absolute top-[-20%] left-[10%] w-[40%] h-[70%] bg-gradient-to-br from-indigo-50/50 via-zinc-100/30 to-transparent blur-[120px] opacity-30"
+            style="animation: blobDrift1 22s ease-in-out infinite;"></div>
+        <div id="blob2"
+            class="absolute top-[-10%] right-[5%] w-[50%] h-[80%] bg-gradient-to-bl from-orange-50/40 via-white to-transparent blur-[100px] opacity-25"
+            style="animation: blobDrift2 28s ease-in-out infinite;"></div>
+        <div id="blob3"
+            class="absolute bottom-[10%] left-[30%] w-[45%] h-[50%] bg-gradient-to-tr from-fire-600/5 via-transparent to-transparent blur-[140px] opacity-20"
+            style="animation: blobDrift3 16s ease-in-out infinite;"></div>
+        <div id="blob4"
+            class="absolute top-[40%] left-[-15%] w-[40%] h-[60%] bg-gradient-to-tr from-fire-600/15 via-zinc-400/5 to-transparent blur-[130px] opacity-30"
+            style="animation: blobDrift1 20s ease-in-out infinite reverse;"></div>
+        <div id="ambient-mouse-glow" class="absolute inset-0 pointer-events-none"
+            style="background: radial-gradient(1200px circle at calc(50% + var(--mouse-x, 0) * 15%) calc(50% + var(--mouse-y, 0) * 15%), rgba(234, 88, 12, 0.05), transparent 100%);">
+        </div>
+    </div>
+
+    <!-- NAVBAR TRIGGER -->
+    <div id="navbar-trigger" aria-hidden="true"
+        class="fixed top-0 left-0 right-0 h-10 z-[49] group cursor-pointer hidden">
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 bg-zinc-950/40 backdrop-blur-md border border-white/10 border-t-0 rounded-b-xl px-6 py-2 shadow-lg transform translate-y-0 group-hover:bg-zinc-950/90 transition-all duration-300 flex items-center gap-2 opacity-60 group-hover:opacity-100">
+            <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest">Menu</span>
+            <i aria-hidden="true" data-lucide="chevron-down" class="w-3.5 h-3.5 text-fire-500"></i>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar" aria-label="Navegação principal"
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-5 lg:py-6">
+        <div id="navbar-bg"
+            class="absolute inset-0 w-full h-full -z-10 transition-all duration-500 opacity-0 bg-transparent"></div>
+        <div class="container max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center relative z-20">
+            <a href="index.html" class="flex items-center gap-3 group cursor-pointer relative z-50">
+                <img src="assets/logo/firecam-logo-web.png" alt="Firecam" width="480" height="320" decoding="async"
+                    class="h-16 md:h-20 w-auto object-contain transition-all duration-500 group-hover:scale-105"
+                    loading="lazy">
+            </a>
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="index.html" class="text-sm font-bold text-zinc-200 hover:text-white transition-colors"
+                    aria-label="Voltar ao início">Início</a>
+                <a href="sobre.html" class="text-sm font-bold text-zinc-200 hover:text-white transition-colors"
+                    aria-label="Ir para seção A Firecam">A Firecam</a>
+
+                <!-- Solutions Dropdown -->
+                <div class="relative group/solutions" id="dropdown-solutions">
+                    <button
+                        class="flex items-center gap-1 text-sm font-bold text-zinc-200 hover:text-white transition-colors py-2"
+                        aria-expanded="false" aria-haspopup="true" aria-controls="dropdown-solutions-menu">
+                        Soluções
+                        <i aria-hidden="true" data-lucide="chevron-down"
+                            class="w-3.5 h-3.5 transition-transform group-hover/solutions:rotate-180 group-focus-within/solutions:rotate-180"></i>
+                    </button>
+                    <div id="dropdown-solutions-menu" role="menu"
+                        class="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 invisible group-hover/solutions:opacity-100 group-hover/solutions:visible group-focus-within/solutions:opacity-100 group-focus-within/solutions:visible transition-all duration-300 transform group-hover/solutions:translate-y-0 group-focus-within/solutions:translate-y-0 translate-y-2">
+                        <div
+                            class="bg-zinc-950/60 backdrop-blur-3xl rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 ring-1 ring-white/5 p-2 min-w-[260px] flex flex-col gap-1 overflow-hidden">
+                            <a href="alarme-incendio.html" role="menuitem"
+                                class="w-full px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 text-left whitespace-nowrap">Alarme
+                                de Incêndio (NBR 17240)</a>
+                            <a href="cabeamento-estruturado.html" role="menuitem" aria-current="page"
+                                class="w-full px-4 py-3 text-sm font-medium text-white bg-white/10 rounded-lg transition-all duration-200 text-left whitespace-nowrap">Cabeamento
+                                Estruturado &amp; Redes</a>
+                            <a href="cftv.html" role="menuitem"
+                                class="w-full px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 text-left whitespace-nowrap">CFTV
+                                &amp; Videomonitoramento</a>
+                            <a href="controle-acesso.html" role="menuitem"
+                                class="w-full px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 text-left whitespace-nowrap">Controle
+                                de Acesso</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="index.html#cases"
+                    class="text-sm font-bold text-zinc-200 hover:text-white transition-colors">Casos de Sucesso</a>
+            </div>
+            <div class="hidden lg:block">
+                <button type="button" class="link-cta sm"
+                    onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">
+                    <div class="premium-cta">
+                        <span class="premium-cta-text">Orçamento Técnico</span>
+                    </div>
+                </button>
+            </div>
+            <button id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu"
+                class="lg:hidden p-2 relative z-50 text-white">
+                <i aria-hidden="true" data-lucide="menu" size="28"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-zinc-950/95 backdrop-blur-3xl z-40 lg:hidden transition-all duration-500 opacity-0 invisible -translate-y-4 pointer-events-none">
+        <div class="h-full w-full overflow-y-auto flex flex-col items-center justify-start pt-32 pb-12 px-6 gap-8">
+            <a href="index.html" class="mobile-link text-3xl font-black text-white">Início</a>
+            <a href="sobre.html" class="mobile-link text-3xl font-black text-white">A Firecam</a>
+            <a href="cabeamento-estruturado.html" class="mobile-link text-3xl font-black text-fire-500">Cabeamento
+                Estruturado</a>
+            <div class="w-16 h-px bg-zinc-800"></div>
+            <a href="index.html#cases" class="mobile-link text-3xl font-black text-white">Casos de Sucesso</a>
+            <button type="button" class="link-cta md w-full max-w-xs"
+                onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'}); document.getElementById('mobile-menu').classList.add('invisible');">
+                <div class="premium-cta">
+                    <span class="premium-cta-text">Orçamento Técnico</span>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <main id="main-content" class="relative z-10">
+
+        <!-- HERO -->
+        <section class="relative h-[100dvh] min-h-[600px] w-full overflow-hidden bg-zinc-950 text-white">
+            <div class="absolute inset-0 w-full h-full bg-cover bg-center"
+                style="background-image: url(assets/img/_MG_6820.webp); animation: kenburns 20s ease-out forwards; will-change: transform; filter: brightness(1.05) contrast(1.05);">
+            </div>
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/95 via-black/50 to-transparent"></div>
+            <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent"></div>
+            <div class="absolute inset-0 pointer-events-none hero-noise"></div>
+
+            <div class="absolute inset-0 z-20 container max-w-7xl mx-auto px-6 lg:px-12 flex flex-col justify-center">
+                <div class="hero-content opacity-0 translate-y-8 transition-all duration-1000 max-w-3xl">
+
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md mb-6 border border-white/10">
+                        <i aria-hidden="true" data-lucide="network" class="w-3.5 h-3.5 text-fire-500"></i>
+                        <span class="text-zinc-200 text-xs font-bold uppercase tracking-wide">ANSI/TIA-568 · NBR
+                            14565</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-4 leading-tight">
+                        Cabeamento de Rede<br />
+                        <span class="text-zinc-400 font-light">com Performance</span> <span
+                            class="text-fire-600">Certificada.</span>
+                    </h1>
+
+                    <p class="text-zinc-200 text-base md:text-lg max-w-xl mb-8 leading-relaxed">
+                        Lançamento de Cat6, Cat6A e Fibra Óptica com certificação Fluke. Eliminamos a lentidão e a
+                        desorganização da sua TI com <strong class="text-white">infraestrutura de elite</strong>.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 mb-8 max-w-xl">
+                        <div class="flex items-center gap-2">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-fire-600/20 border border-fire-500/30 flex items-center justify-center shrink-0">
+                                <i aria-hidden="true" data-lucide="certified" class="w-4 h-4 text-fire-500"></i>
+                            </div>
+                            <span class="text-zinc-300 text-sm font-medium">Relatórios Fluke (PDF)</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-fire-600/20 border border-fire-500/30 flex items-center justify-center shrink-0">
+                                <i aria-hidden="true" data-lucide="zap" class="w-4 h-4 text-fire-500"></i>
+                            </div>
+                            <span class="text-zinc-300 text-sm font-medium">Redes 10Gbps Prontas</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-fire-600/20 border border-fire-500/30 flex items-center justify-center shrink-0">
+                                <i aria-hidden="true" data-lucide="box" class="w-4 h-4 text-fire-500"></i>
+                            </div>
+                            <span class="text-zinc-300 text-sm font-medium">Retrofit de Racks</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-fire-600/20 border border-fire-500/30 flex items-center justify-center shrink-0">
+                                <i aria-hidden="true" data-lucide="shield" class="w-4 h-4 text-fire-500"></i>
+                            </div>
+                            <span class="text-zinc-300 text-sm font-medium">ANSI/TIA-568 Compliant</span>
+                        </div>
+                    </div>
+
+                    <button type="button" class="link-cta lg"
+                        onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">
+                        <div class="premium-cta">
+                            <span class="premium-cta-text">Cotar Infraestrutura</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- SALES ARGUMENTS -->
+        <section class="section-pad bg-transparent relative overflow-hidden noise-overlay">
+            <div id="particles-narrative" class="absolute inset-0 z-0 pointer-events-none opacity-20"></div>
+            <div class="container max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+                <div class="text-center mb-12 max-w-4xl mx-auto reveal">
+                    <span class="text-fire-600 font-bold uppercase tracking-widest text-xs block mb-4">Atenção</span>
+                    <h2 class="text-editorial-headline text-white mb-6 font-display">
+                        O Custo Invisível de uma <span class="text-fire-600">Infraestrutura Amadora</span>
+                    </h2>
+                    <p class="text-zinc-300 text-xl leading-relaxed">
+                        Computadores travando, Wi-Fi instável e telefones mudos. O problema raramente é o equipamento, e
+                        quase sempre é a <strong class="text-zinc-200">infraestrutura física</strong>.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="alarm-risk-card glass-panel-dark rounded-2xl p-8 relative overflow-hidden reveal">
+                        <div class="alarm-bar" aria-hidden="true"></div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-fire-600/10 border border-fire-600/20 flex items-center justify-center shrink-0">
+                                <i aria-hidden="true" data-lucide="alert-circle" class="w-4 h-4 text-fire-600"></i>
+                            </div>
+                            <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Problema
+                                01</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 tracking-tight">Caus de Cabos</h3>
+                        <p class="text-zinc-400 leading-relaxed text-sm">
+                            O famoso "ninho de rato" que impossibilita manutenções rápidas e gera aquecimento nos
+                            switches.
+                        </p>
+                    </div>
+
+                    <div
+                        class="alarm-risk-card glass-panel-dark rounded-2xl p-8 relative overflow-hidden reveal delay-100">
+                        <div class="alarm-bar" aria-hidden="true"></div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-fire-600/10 border border-fire-600/20 flex items-center justify-center shrink-0">
+                                <i aria-hidden="true" data-lucide="zap-off" class="w-4 h-4 text-fire-600"></i>
+                            </div>
+                            <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Problema
+                                02</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 tracking-tight">Interferência Elétrica</h3>
+                        <p class="text-zinc-400 leading-relaxed text-sm">
+                            Cabos de dados passando junto com energia, gerando erros de pacotes e lentidão extrema na
+                            rede.
+                        </p>
+                    </div>
+
+                    <div
+                        class="alarm-risk-card glass-panel-dark rounded-2xl p-8 relative overflow-hidden reveal delay-200">
+                        <div class="alarm-bar" aria-hidden="true"></div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-fire-600/10 border border-fire-600/20 flex items-center justify-center shrink-0">
+                                <i aria-hidden="true" data-lucide="server" class="w-4 h-4 text-fire-600"></i>
+                            </div>
+                            <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Problema
+                                03</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 tracking-tight">Baixa Categoria</h3>
+                        <p class="text-zinc-400 leading-relaxed text-sm">
+                            Uso de cabos Cat5e legados para tráfego que exige Cat6 ou Cat6A, criando gargalos de
+                            performance.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="max-w-3xl mx-auto reveal delay-300 pt-8 border-t border-zinc-800/50">
+                    <div class="flex items-start gap-4 pt-8">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-fire-600/15 border border-fire-600/25 flex items-center justify-center shrink-0 mt-1">
+                            <i aria-hidden="true" data-lucide="check-check" class="w-4 h-4 text-fire-500"></i>
+                        </div>
+                        <p class="text-zinc-300 text-xl leading-relaxed">
+                            A <strong class="text-white">Firecam</strong> resolve o caos técnico. Transformamos sua sala
+                            de TI em um ambiente <strong class="text-fire-500">organizado, identificado e
+                                certificado</strong>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ESCOPO TECNICO -->
+        <section class="section-pad bg-transparent relative z-20">
+            <div class="container max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="mb-12 reveal">
+                    <span class="text-zinc-500 font-bold uppercase tracking-widest text-xs block mb-4">Escopo Técnico ·
+                        Do Rack ao Ponto Final</span>
+                    <p class="text-zinc-400 text-base leading-relaxed max-w-3xl">
+                        Nossa equipe operacional utiliza materiais de primeira linha e ferramentas de precisão para
+                        garantir a integridade total do sinal.
+                    </p>
+                </div>
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="reveal">
+                        <h2 class="text-editorial-headline font-display font-medium text-white mb-6 tracking-tight">
+                            Cabeamento e Fibra</h2>
+                        <ul class="space-y-8">
+                            <li class="flex items-start gap-5">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-fire-600/10 flex items-center justify-center flex-shrink-0 text-fire-600 border border-fire-600/20 mt-0.5">
+                                    <i aria-hidden="true" data-lucide="connection" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-base font-bold text-white mb-1">Cobre (Cat6 e Cat6A)</h4>
+                                    <p class="text-zinc-400 text-sm leading-relaxed">Instalação de pontos de rede com
+                                        cabos de cobre puro (não cobreados), garantindo largura de banda real e suporte
+                                        a PoE para câmeras e APs.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-5">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-fire-600/10 flex items-center justify-center flex-shrink-0 text-fire-600 border border-fire-600/20 mt-0.5">
+                                    <i aria-hidden="true" data-lucide="activity" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-base font-bold text-white mb-1">Backbone em Fibra Óptica</h4>
+                                    <p class="text-zinc-400 text-sm leading-relaxed">Interligação de racks e galpões com
+                                        fibra multimodo (OM3/OM4) ou monomodo, com fusão óptica de precisão para perdas
+                                        mínimas.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="reveal delay-200">
+                        <div class="glass-panel-dark rounded-2xl overflow-hidden relative">
+                            <div
+                                class="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-fire-600/50 to-transparent">
+                            </div>
+                            <div class="flex items-center gap-2 px-6 pt-5 pb-4 border-b border-white/5">
+                                <span class="spec-terminal-dot bg-zinc-700"></span>
+                                <span class="spec-terminal-dot bg-zinc-700"></span>
+                                <span class="spec-terminal-dot bg-fire-600/60"></span>
+                                <span class="text-[10px] font-bold text-zinc-600 uppercase tracking-widest ml-2">Ficha
+                                    Técnica · Performance</span>
+                            </div>
+                            <div class="px-6 pb-4 divide-y divide-zinc-800/60">
+                                <div class="flex items-start gap-4 py-5">
+                                    <div
+                                        class="w-9 h-9 rounded-lg bg-fire-600/10 flex items-center justify-center flex-shrink-0 border border-fire-600/20 mt-0.5">
+                                        <i aria-hidden="true" data-lucide="monitor" class="w-4 h-4 text-fire-600"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-white font-bold text-sm tracking-tight mb-0.5 font-mono">
+                                            Certificação Fluke DSX</p>
+                                        <p class="text-zinc-500 text-xs leading-relaxed">Testes de NEXT, Return Loss e
+                                            Atenuação com relatório oficial.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4 py-5">
+                                    <div
+                                        class="w-9 h-9 rounded-lg bg-fire-600/10 flex items-center justify-center flex-shrink-0 border border-fire-600/20 mt-0.5">
+                                        <i aria-hidden="true" data-lucide="git-merge" class="w-4 h-4 text-fire-600"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-white font-bold text-sm tracking-tight mb-0.5 font-mono">Fusão
+                                            por Máquina</p>
+                                        <p class="text-zinc-500 text-xs leading-relaxed">Conectorização por fusão (arco
+                                            voltaico) para perdas menores que 0.02dB.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4 py-5">
+                                    <div
+                                        class="w-9 h-9 rounded-lg bg-fire-600/10 flex items-center justify-center flex-shrink-0 border border-fire-600/20 mt-0.5">
+                                        <i aria-hidden="true" data-lucide="tag" class="w-4 h-4 text-fire-600"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-white font-bold text-sm tracking-tight mb-0.5 font-mono">
+                                            Identificação ANSI 606</p>
+                                        <p class="text-zinc-500 text-xs leading-relaxed">Tagging industrial em cada
+                                            ponta de cabo e patch panel.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- COMPONENTES DE REDE -->
+        <section id="native-scroll-section" class="relative w-full bg-transparent text-white">
+
+            <!-- Progress rail -->
+            <div id="device-progress-rail" class="hidden lg:flex" aria-hidden="true">
+                <div class="rail-track">
+                    <div class="rail-fill" id="rail-fill"></div>
+                </div>
+                <div class="rail-node active" data-rail="0">
+                    <span class="rail-num">01</span>
+                    <span class="rail-label">UTP</span>
+                </div>
+                <div class="rail-node" data-rail="1">
+                    <span class="rail-num">02</span>
+                    <span class="rail-label">Fibra</span>
+                </div>
+                <div class="rail-node" data-rail="2">
+                    <span class="rail-num">03</span>
+                    <span class="rail-label">Racks</span>
+                </div>
+                <div class="rail-node" data-rail="3">
+                    <span class="rail-num">04</span>
+                    <span class="rail-label">Panels</span>
+                </div>
+                <div class="rail-node" data-rail="4">
+                    <span class="rail-num">05</span>
+                    <span class="rail-label">Fluke</span>
+                </div>
+            </div>
+
+            <div class="container max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-16">
+                <div class="mb-16 reveal relative flex flex-col items-center text-center">
+                    <div
+                        class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-fire-600/10 blur-[100px] rounded-full pointer-events-none">
+                    </div>
+                    <span class="text-fire-600 font-bold uppercase tracking-widest text-xs block mb-6">Componentes de
+                        Rede</span>
+                    <h2 class="section-hero-title mb-8">Infraestrutura Corporativa</h2>
+                    <p class="text-zinc-300 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+                        Materiais <span class="text-zinc-200 font-medium">Furukawa, Legrand e Commscope</span>,
+                        instalados com precisão técnica absoluta.
+                    </p>
+                </div>
+
+                <div class="lg:grid lg:grid-cols-2 lg:gap-16">
+                    <div class="relative z-10 pb-16">
+                        <!-- Item 01 -->
+                        <div class="scroll-item min-h-[60vh] flex items-center py-10" data-index="0"
+                            data-name="Cabeamento Cat6/6A" data-category="COBRE">
+                            <div class="relative flex flex-col justify-center w-full">
+                                <span class="device-watermark" aria-hidden="true">01</span>
+                                <div
+                                    class="item-mobile-img lg:hidden w-full aspect-video rounded-2xl overflow-hidden mb-8 opacity-30 scale-95 transition-all duration-500">
+                                    <img src="assets/img/_MG_6820.webp" class="w-full h-full object-cover" alt="Cat6"
+                                        loading="lazy">
+                                </div>
+                                <div
+                                    class="w-12 h-12 bg-zinc-900/60 rounded-xl flex items-center justify-center text-fire-600 mb-6 item-icon transition-all duration-500">
+                                    <i aria-hidden="true" data-lucide="cable" class="w-5 h-5"></i>
+                                </div>
+                                <div
+                                    class="flex items-center gap-4 mb-5 item-counter transition-all duration-500 opacity-0 translate-y-2">
+                                    <span
+                                        class="text-fire-600/25 text-2xl font-display font-bold tracking-tighter">01</span>
+                                    <span class="device-category-pill">Cobre</span>
+                                </div>
+                                <h3
+                                    class="text-4xl md:text-5xl font-display font-medium text-white tracking-tighter mb-6 transition-all duration-700 opacity-40 item-title transform-gpu">
+                                    Cabeamento Metálico</h3>
+                                <p
+                                    class="text-zinc-300 text-base md:text-lg font-light leading-relaxed transition-all duration-700 opacity-40 item-desc max-w-lg mb-8">
+                                    Lançamento de cabos UTP Categoria 6 e 6A com separadores internos que reduzem a
+                                    diafonia e garantem performance Gigabit estável.
+                                </p>
+                                <div
+                                    class="flex flex-wrap gap-2.5 item-specs transition-all duration-500 opacity-0 translate-x-[-8px]">
+                                    <span class="device-spec-badge">23 AWG</span>
+                                    <span class="device-spec-badge">Crossfiller Interno</span>
+                                    <span class="device-spec-badge">LSZH/CM</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 02 -->
+                        <div class="scroll-item min-h-[60vh] flex items-center py-10" data-index="1"
+                            data-name="Fibra Óptica OM3/OS2" data-category="ÓPTICA">
+                            <div class="relative flex flex-col justify-center w-full">
+                                <span class="device-watermark" aria-hidden="true">02</span>
+                                <div
+                                    class="item-mobile-img lg:hidden w-full aspect-video rounded-2xl overflow-hidden mb-8 opacity-30 scale-95 transition-all duration-500">
+                                    <img src="assets/img/_MG_6802.webp" class="w-full h-full object-cover" alt="Fibra"
+                                        loading="lazy">
+                                </div>
+                                <div
+                                    class="w-12 h-12 bg-zinc-900/60 rounded-xl flex items-center justify-center text-fire-600 mb-6 item-icon transition-all duration-500">
+                                    <i aria-hidden="true" data-lucide="zap" class="w-5 h-5"></i>
+                                </div>
+                                <div
+                                    class="flex items-center gap-4 mb-5 item-counter transition-all duration-500 opacity-0 translate-y-2">
+                                    <span
+                                        class="text-fire-600/25 text-2xl font-display font-bold tracking-tighter">02</span>
+                                    <span class="device-category-pill">Óptica</span>
+                                </div>
+                                <h3
+                                    class="text-4xl md:text-5xl font-display font-medium text-white tracking-tighter mb-6 transition-all duration-700 opacity-40 item-title transform-gpu">
+                                    Backbone de Fibra</h3>
+                                <p
+                                    class="text-zinc-300 text-base md:text-lg font-light leading-relaxed transition-all duration-700 opacity-40 item-desc max-w-lg mb-8">
+                                    Interligação em alta velocidade entre andares ou prédios. Fusão de fibra multimodo
+                                    para 10-40Gbps ou monomodo para longas distâncias.
+                                </p>
+                                <div
+                                    class="flex flex-wrap gap-2.5 item-specs transition-all duration-500 opacity-0 translate-x-[-8px]">
+                                    <span class="device-spec-badge">Fusão por Arco</span>
+                                    <span class="device-spec-badge">OM3 / OM4</span>
+                                    <span class="device-spec-badge">Backbone Vertical</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 03 -->
+                        <div class="scroll-item min-h-[60vh] flex items-center py-10" data-index="2"
+                            data-name="Racks de Piso e Parede" data-category="ORGANIZAÇÃO">
+                            <div class="relative flex flex-col justify-center w-full">
+                                <span class="device-watermark" aria-hidden="true">03</span>
+                                <div
+                                    class="item-mobile-img lg:hidden w-full aspect-video rounded-2xl overflow-hidden mb-8 opacity-30 scale-95 transition-all duration-500">
+                                    <img src="assets/img/_MG_6820.webp" class="w-full h-full object-cover" alt="Racks"
+                                        loading="lazy">
+                                </div>
+                                <div
+                                    class="w-12 h-12 bg-zinc-900/60 rounded-xl flex items-center justify-center text-fire-600 mb-6 item-icon transition-all duration-500">
+                                    <i aria-hidden="true" data-lucide="box" class="w-5 h-5"></i>
+                                </div>
+                                <div
+                                    class="flex items-center gap-4 mb-5 item-counter transition-all duration-500 opacity-0 translate-y-2">
+                                    <span
+                                        class="text-fire-600/25 text-2xl font-display font-bold tracking-tighter">03</span>
+                                    <span class="device-category-pill">Organização</span>
+                                </div>
+                                <h3
+                                    class="text-4xl md:text-5xl font-display font-medium text-white tracking-tighter mb-6 transition-all duration-700 opacity-40 item-title transform-gpu">
+                                    Racks e Salas de TI</h3>
+                                <p
+                                    class="text-zinc-300 text-base md:text-lg font-light leading-relaxed transition-all duration-700 opacity-40 item-desc max-w-lg mb-8">
+                                    Montagem de racks padrão 19" com guias verticais e horizontais. Layout otimizado
+                                    para ventilação e facilidade de manutenção.
+                                </p>
+                                <div
+                                    class="flex flex-wrap gap-2.5 item-specs transition-all duration-500 opacity-0 translate-x-[-8px]">
+                                    <span class="device-spec-badge">12U a 44U</span>
+                                    <span class="device-spec-badge">Guias de Cabo</span>
+                                    <span class="device-spec-badge">Aço 19"</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 04 -->
+                        <div class="scroll-item min-h-[60vh] flex items-center py-10" data-index="3"
+                            data-name="Patch Panels & Identificação" data-category="TERMINAÇÃO">
+                            <div class="relative flex flex-col justify-center w-full">
+                                <span class="device-watermark" aria-hidden="true">04</span>
+                                <div
+                                    class="item-mobile-img lg:hidden w-full aspect-video rounded-2xl overflow-hidden mb-8 opacity-30 scale-95 transition-all duration-500">
+                                    <img src="assets/img/_MG_6820.webp" class="w-full h-full object-cover" alt="Panels"
+                                        loading="lazy">
+                                </div>
+                                <div
+                                    class="w-12 h-12 bg-zinc-900/60 rounded-xl flex items-center justify-center text-fire-600 mb-6 item-icon transition-all duration-500">
+                                    <i aria-hidden="true" data-lucide="layout" class="w-5 h-5"></i>
+                                </div>
+                                <div
+                                    class="flex items-center gap-4 mb-5 item-counter transition-all duration-500 opacity-0 translate-y-2">
+                                    <span
+                                        class="text-fire-600/25 text-2xl font-display font-bold tracking-tighter">04</span>
+                                    <span class="device-category-pill">Terminação</span>
+                                </div>
+                                <h3
+                                    class="text-4xl md:text-5xl font-display font-medium text-white tracking-tighter mb-6 transition-all duration-700 opacity-40 item-title transform-gpu">
+                                    Painéis e Identificação</h3>
+                                <p
+                                    class="text-zinc-300 text-base md:text-lg font-light leading-relaxed transition-all duration-700 opacity-40 item-desc max-w-lg mb-8">
+                                    Identificação rigorosa de cada ponto com rotuladoras industriais. Patch panels de
+                                    alta densidade para gestão eficiente.
+                                </p>
+                                <div
+                                    class="flex flex-wrap gap-2.5 item-specs transition-all duration-500 opacity-0 translate-x-[-8px]">
+                                    <span class="device-spec-badge">Norma TIA-606</span>
+                                    <span class="device-spec-badge">Punch-down 110</span>
+                                    <span class="device-spec-badge">High Density</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Item 05 -->
+                        <div class="scroll-item min-h-[60vh] flex items-center py-10" data-index="4"
+                            data-name="Certificação Fluke DSX" data-category="CERTIFICAÇÃO">
+                            <div class="relative flex flex-col justify-center w-full">
+                                <span class="device-watermark" aria-hidden="true">05</span>
+                                <div
+                                    class="item-mobile-img lg:hidden w-full aspect-video rounded-2xl overflow-hidden mb-8 opacity-30 scale-95 transition-all duration-500">
+                                    <img src="assets/img/_MG_6820.webp" class="w-full h-full object-cover"
+                                        alt="Certificação" loading="lazy">
+                                </div>
+                                <div
+                                    class="w-12 h-12 bg-zinc-900/60 rounded-xl flex items-center justify-center text-fire-600 mb-6 item-icon transition-all duration-500">
+                                    <i aria-hidden="true" data-lucide="award" class="w-5 h-5"></i>
+                                </div>
+                                <div
+                                    class="flex items-center gap-4 mb-5 item-counter transition-all duration-500 opacity-0 translate-y-2">
+                                    <span
+                                        class="text-fire-600/25 text-2xl font-display font-bold tracking-tighter">05</span>
+                                    <span class="device-category-pill">Certificação</span>
+                                </div>
+                                <h3
+                                    class="text-4xl md:text-5xl font-display font-medium text-white tracking-tighter mb-6 transition-all duration-700 opacity-40 item-title transform-gpu">
+                                    Garantia de Performance</h3>
+                                <p
+                                    class="text-zinc-300 text-base md:text-lg font-light leading-relaxed transition-all duration-700 opacity-40 item-desc max-w-lg mb-8">
+                                    Teste de 100% dos pontos com equipamento certificador profissional. Entregamos o
+                                    dossiê em PDF com a performance real da rede.
+                                </p>
+                                <div
+                                    class="flex flex-wrap gap-2.5 item-specs transition-all duration-500 opacity-0 translate-x-[-8px]">
+                                    <span class="device-spec-badge">Fluke Linha DSX</span>
+                                    <span class="device-spec-badge">Relatórios Individuais</span>
+                                    <span class="device-spec-badge">Zero Erro</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- sticky images -->
+                    <div class="hidden lg:flex items-start">
+                        <div class="sticky top-0 h-screen w-full flex items-center py-16">
+                            <div id="device-ambient-glow"
+                                class="absolute inset-0 pointer-events-none transition-opacity duration-1000"
+                                style="background: radial-gradient(ellipse at center, rgba(234,88,12,0.06) 0%, transparent 70%); filter: blur(60px);">
+                            </div>
+                            <div class="device-image-frame relative w-full rounded-3xl overflow-hidden"
+                                style="height: calc(100vh - 8rem);">
+                                <img id="media-img-0" src="assets/img/_MG_6820.webp"
+                                    class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-100 scale-100 transform-gpu"
+                                    alt="Rack e Redes" loading="lazy">
+                                <img id="media-img-1" src="assets/img/_MG_6802.webp"
+                                    class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-0 scale-[1.02] transform-gpu"
+                                    alt="Fibra Óptica" loading="lazy">
+                                <img id="media-img-2" src="assets/img/_MG_6820.webp"
+                                    class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-0 scale-[1.02] transform-gpu"
+                                    alt="Instalação de Rack" loading="lazy">
+                                <img id="media-img-3" src="assets/img/_MG_6820.webp"
+                                    class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-0 scale-[1.02] transform-gpu"
+                                    alt="Patch Panel" loading="lazy">
+                                <img id="media-img-4" src="assets/img/_MG_6820.webp"
+                                    class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-0 scale-[1.02] transform-gpu"
+                                    alt="Certificação" loading="lazy">
+                                <div
+                                    class="absolute inset-0 bg-gradient-to-t from-zinc-950/50 via-transparent to-zinc-950/10 pointer-events-none">
+                                </div>
+                                <div
+                                    class="absolute bottom-0 left-0 right-0 px-6 py-4 bg-gradient-to-t from-zinc-950/95 via-zinc-950/60 to-transparent backdrop-blur-md">
+                                    <div class="flex items-center justify-between">
+                                        <div class="flex items-center gap-3">
+                                            <span id="device-caption-num"
+                                                class="text-fire-600 text-xs font-display font-bold tracking-tight">01</span>
+                                            <span class="w-px h-3 bg-zinc-700"></span>
+                                            <span id="device-caption-name"
+                                                class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest">Cabeamento
+                                                Cat6/6A</span>
+                                        </div>
+                                        <div class="flex items-center gap-3">
+                                            <span id="device-caption-category"
+                                                class="text-[9px] text-fire-600/70 font-bold uppercase tracking-widest">Cobre</span>
+                                            <span class="w-px h-3 bg-zinc-800"></span>
+                                            <div
+                                                class="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-fire-600/10 border border-fire-600/30">
+                                                <span
+                                                    class="w-1.5 h-1.5 rounded-full bg-fire-600 animate-pulse shrink-0"></span>
+                                                <span
+                                                    class="text-[9px] text-zinc-300 font-bold uppercase tracking-widest">Instalação
+                                                    Certificada</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="device-caption-specs"
+                                        class="mt-2.5 pt-2.5 border-t border-zinc-800/50 flex items-center gap-3 text-[9px] text-zinc-500 font-medium tracking-wider uppercase">
+                                        <span>23 AWG</span>
+                                        <span class="text-zinc-800">|</span>
+                                        <span>Crossfiller Interno</span>
+                                        <span class="text-zinc-800">|</span>
+                                        <span>LSZH/CM</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="section-pad relative bg-transparent noise-overlay">
+            <div class="container max-w-4xl mx-auto px-6 lg:px-12">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-editorial-headline font-display font-bold text-white mb-4 tracking-tight">Perguntas
+                        Frequentes</h2>
+                    <p class="text-zinc-400 text-lg">Dúvidas comuns sobre infraestrutura de redes.</p>
+                </div>
+                <div class="space-y-3 max-w-3xl mx-auto">
+                    <!-- Q1 -->
+                    <div class="border border-white/10 rounded-2xl bg-transparent overflow-hidden reveal">
+                        <button aria-expanded="false" aria-controls="faq-answer-1"
+                            class="w-full flex items-center justify-between p-6 text-left" onclick="toggleFAQ(this)">
+                            <span
+                                class="text-base font-bold text-white group-hover:text-fire-600 transition-colors">Qual
+                                a diferença entre Cat5e e Cat6? Vale a pena pagar mais?</span>
+                            <span
+                                class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center text-zinc-400"><i
+                                    data-lucide="chevron-down"
+                                    class="w-5 h-5 transition-transform duration-300"></i></span>
+                        </button>
+                        <div id="faq-answer-1" role="region"
+                            class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                            <div class="px-6 pb-6 text-zinc-400 text-sm leading-relaxed border-t border-zinc-800 pt-4">
+                                O Cat6 tem bitola mais grossa e melhor isolamento, suportando 10x mais dados e
+                                garantindo Gigabit estável. Para empresas modernas, o Cat6 é o investimento correto; o
+                                Cat5e é tecnologia legada.
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Q2 -->
+                    <div class="border border-white/10 rounded-2xl bg-transparent overflow-hidden reveal delay-100">
+                        <button aria-expanded="false" aria-controls="faq-answer-2"
+                            class="w-full flex items-center justify-between p-6 text-left" onclick="toggleFAQ(this)">
+                            <span
+                                class="text-base font-bold text-white group-hover:text-fire-600 transition-colors">Vocês
+                                organizam rack bagunçado (Retrofit)?</span>
+                            <span
+                                class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center text-zinc-400"><i
+                                    data-lucide="chevron-down"
+                                    class="w-5 h-5 transition-transform duration-300"></i></span>
+                        </button>
+                        <div id="faq-answer-2" role="region"
+                            class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                            <div class="px-6 pb-6 text-zinc-400 text-sm leading-relaxed border-t border-zinc-800 pt-4">
+                                Sim. É nossa especialidade. Mapeamos a rede, organizamos os cabos com velcro, trocamos
+                                patch cords e identificamos tudo em janelas programadas para não parar sua operação.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER CTA -->
+        <section id="contato" class="section-pad bg-transparent relative overflow-hidden text-center noise-overlay">
+            <div class="container max-w-7xl mx-auto px-6 lg:px-12">
+                <div
+                    class="relative w-full glass-panel-dark rounded-[2rem] px-8 py-14 md:px-16 md:py-20 overflow-hidden noise-overlay premium-shadow reveal">
+                    <div
+                        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-48 bg-fire-600/10 blur-[80px] pointer-events-none rounded-full">
+                    </div>
+                    <div
+                        class="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-fire-500/60 to-transparent">
+                    </div>
+
+                    <div class="relative z-10">
+                        <p class="text-[10px] font-bold uppercase tracking-[0.35em] text-zinc-500 mb-6">Próximo Passo
+                        </p>
+                        <h3 class="text-4xl md:text-6xl font-bold text-white tracking-tighter leading-[1.05] mb-4">
+                            Sua Rede Sem Gargalos<br class="hidden md:block" />
+                            <span class="text-zinc-400 font-light"> Infraestrutura de TI </span> de Elite.
+                        </h3>
+                        <p class="text-zinc-300 text-base mb-10 max-w-md mx-auto">Tenha uma rede certificada e
+                            organizada. Envie sua planta para a Firecam.</p>
+
+                        <a data-wa-trigger="true" data-wa-message="Olá, gostaria de cotar infraestrutura de rede."
+                            target="_blank" rel="noopener noreferrer"
+                            class="group inline-flex items-center gap-3 bg-white text-zinc-950 font-bold text-sm px-8 py-4 rounded-full shadow-[0_4px_24px_rgba(255,255,255,0.15)] hover:shadow-[0_6px_32px_rgba(255,255,255,0.25)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-200">
+                            Cotar Cabeamento Estruturado
+                            <span
+                                class="w-7 h-7 rounded-full bg-zinc-950 text-white flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
+                                <i data-lucide="arrow-right" class="w-3.5 h-3.5" aria-hidden="true"></i>
+                            </span>
+                            <span class="sr-only">(abre em nova janela)</span>
+                        </a>
+
+                        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
+                            <div class="flex items-center gap-2 text-xs text-zinc-500">
+                                <i aria-hidden="true" data-lucide="shield-check" class="w-3.5 h-3.5 text-zinc-600"></i>
+                                <span>Orçamento completo: Equipamentos + <strong class="text-zinc-400 font-semibold">Mão
+                                        de Obra Especializada</strong></span>
+                            </div>
+                            <div class="w-px h-3 bg-zinc-800 hidden sm:block"></div>
+                            <a data-wa-trigger="true" data-wa-message="Olá, preciso tirar uma dúvida técnica sobre cabeamento."
+                                target="_blank" rel="noopener noreferrer"
+                                class="flex items-center gap-2 text-xs text-zinc-400 hover:text-zinc-200 transition-colors group/wa">
+                                <i data-lucide="message-circle"
+                                    class="w-3.5 h-3.5 text-green-400/80 group-hover/wa:text-green-400 transition-colors"
+                                    aria-hidden="true"></i>
+                                <span>Ou tire sua dúvida com um <strong
+                                        class="text-zinc-300 font-semibold">Técnico</strong></span>
+                                <span class="sr-only">(abre em nova janela)</span>
+                            </a>
+                            <div class="w-px h-3 bg-zinc-800 hidden sm:block"></div>
+                            <div class="flex items-center gap-2 text-xs text-zinc-500">
+                                <i aria-hidden="true" data-lucide="phone" class="w-3.5 h-3.5 text-zinc-600"></i>
+                                <span><strong class="text-zinc-400 font-semibold">(47) 3086-3186</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="relative z-20 overflow-hidden mt-10">
+        <div class="container max-w-7xl mx-auto px-6 lg:px-12 py-16 border-t border-white/5">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+                <!-- Column 1: Brand -->
+                <div class="flex flex-col items-start gap-8">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <img src="assets/logo/firecam-logo-web.png" alt="Firecam"
+                            class="h-16 w-auto transition-all duration-500 group-hover:scale-105" loading="lazy">
+                    </a>
+                    <p class="text-sm font-medium text-zinc-500 leading-relaxed max-w-xs">
+                        Infraestrutura técnica premium para sistemas de segurança eletrônica e prevenção de incêndio.
+                    </p>
+                </div>
+
+                <!-- Column 2: Site Map -->
+                <div>
+                    <div class="h-[76px] flex items-start mb-6 pt-5">
+                        <h3 class="text-xs font-semibold text-zinc-500 flex items-center gap-2">
+                            <span class="w-3.5 h-3.5 flex items-center justify-center"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-fire-600/40"></span></span> Mapa do site
+                        </h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li><a href="index.html"
+                                class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>Início</a>
+                        </li>
+                        <li><a href="sobre.html"
+                                class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>A
+                                Firecam</a></li>
+                        <li><a href="#contato"
+                                class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>Contato</a>
+                        </li>
+                        <li><a href="index.html#cases"
+                                class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>Casos
+                                de Sucesso</a></li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Solutions -->
+                <div>
+                    <div class="h-[76px] flex items-start mb-6 pt-5">
+                        <h3 class="text-xs font-semibold text-zinc-500 flex items-center gap-2">
+                            <span class="w-3.5 h-3.5 flex items-center justify-center"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-fire-600/40"></span></span> Soluções
+                        </h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li><a href="alarme-incendio.html"
+                                class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>Alarme
+                                de Incêndio</a></li>
+                        <li><a href="controle-acesso.html"
+                                class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>Controle
+                                de Acesso</a></li>
+                        <li><a href="cabeamento-estruturado.html"
+                                class="text-sm font-medium text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-3.5 h-3.5 text-fire-600 transition-colors"></i>Cabeamento
+                                Estruturado</a></li>
+                        <li><a href="cftv.html"
+                                class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>Videomonitoramento</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Social -->
+                <div>
+                    <div class="h-[76px] flex items-start mb-6 pt-5">
+                        <h3 class="text-xs font-semibold text-zinc-500 flex items-center gap-2">
+                            <span class="w-3.5 h-3.5 flex items-center justify-center"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-fire-600/40"></span></span> Social
+                        </h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li><a href="https://www.instagram.com/firecam" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center gap-4 text-sm font-medium text-zinc-400 hover:text-white transition-colors group"><span
+                                    class="w-10 h-10 rounded-xl bg-zinc-900/50 border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-fire-600/40 group-hover:bg-fire-600/10 transition-all shadow-sm"><i
+                                        data-lucide="instagram"
+                                        class="w-4 h-4 text-zinc-400 group-hover:text-fire-400 transition-colors"
+                                        aria-hidden="true"></i></span>Instagram<i data-lucide="arrow-up-right"
+                                    class="w-3.5 h-3.5 opacity-0 group-hover:opacity-50 transition-opacity ml-auto"
+                                    aria-hidden="true"></i></a></li>
+                        <li><a href="https://www.linkedin.com/company/firecam" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center gap-4 text-sm font-medium text-zinc-400 hover:text-white transition-colors group"><span
+                                    class="w-10 h-10 rounded-xl bg-zinc-900/50 border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-fire-600/40 group-hover:bg-fire-600/10 transition-all shadow-sm"><i
+                                        data-lucide="linkedin"
+                                        class="w-4 h-4 text-zinc-400 group-hover:text-fire-400 transition-colors"
+                                        aria-hidden="true"></i></span>LinkedIn<i data-lucide="arrow-up-right"
+                                    class="w-3.5 h-3.5 opacity-0 group-hover:opacity-50 transition-opacity ml-auto"
+                                    aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="pt-8 mt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+                <span class="text-[11px] font-medium text-zinc-600">
+                    © 2026 Firecam Tecnologia. Todos os direitos reservados.
+                </span>
+                <div class="flex items-center gap-6">
+                    <a href="#"
+                        class="text-[11px] font-medium text-zinc-600 hover:text-zinc-400 transition-colors">Privacidade</a>
+                    <div class="w-1 h-1 rounded-full bg-zinc-800"></div>
+                    <a href="#"
+                        class="text-[11px] font-medium text-zinc-600 hover:text-zinc-400 transition-colors">Termos</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script type="module" src="assets/js/main.js"></script>
+    <script>
+        function toggleFAQ(btn) {
+            const content = btn.nextElementSibling;
+            const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+            document.querySelectorAll('#faq [role="region"]').forEach(el => el.style.maxHeight = '0px');
+            if (!isOpen) content.style.maxHeight = content.scrollHeight + 'px';
+        }
+
+        // Hero animation
+        window.addEventListener('load', () => {
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent) {
+                setTimeout(() => {
+                    heroContent.classList.remove('opacity-0', 'translate-y-8');
+                    heroContent.classList.add('opacity-100', 'translate-y-0');
+                }, 100);
+            }
+        });
+    </script>
+    <script src="assets/js/lead-router.js" defer></script>
+</body>
+
+</html>

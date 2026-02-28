@@ -34,7 +34,7 @@
   <meta property="og:title" content="Firecam | Infraestrutura para Sistemas Inteligentes" />
   <meta property="og:description"
     content="A base física que sua tecnologia precisa. Instalação técnica de Detecção de Incêndio, Acesso e Redes em Joinville." />
-  <meta property="og:image" content="https://www.firecam.com.br/assets/img/_MG_6845.webp" />
+  <meta property="og:image" content="https://www.firecam.com.br/assets/img/optimized/_MG_6845.webp" />
   <meta property="og:locale" content="pt_BR" />
   <meta property="og:site_name" content="Firecam Tecnologia" />
 
@@ -44,7 +44,7 @@
   <meta property="twitter:title" content="Firecam | Instalação Técnica em Joinville" />
   <meta property="twitter:description"
     content="Especialistas em Incêndio, Acesso e Redes. Infraestrutura organizada para sistemas inteligentes." />
-  <meta property="twitter:image" content="https://www.firecam.com.br/assets/img/_MG_6845.webp" />
+  <meta property="twitter:image" content="https://www.firecam.com.br/assets/img/optimized/_MG_6845.webp" />
 
   <!-- Canonical URL -->
   <link rel="canonical" href="https://www.firecam.com.br/" />
@@ -55,7 +55,7 @@
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
 
   <!-- Performance: Preload Critical Hero Image (LCP Optimization) -->
-  <link rel="preload" as="image" href="assets/img/_MG_6845.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/img/optimized/_MG_6845.webp" fetchpriority="high" />
   <link rel="preload" as="style"
     href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" />
   <link rel="stylesheet"
@@ -89,11 +89,13 @@
     style="width: 0%"></div>
 
   <!-- WHATSAPP BUTTON -->
-  <a href="https://wa.me/5547996660234" target="_blank" rel="noopener noreferrer"
+  <a data-wa-trigger="true" data-wa-message="Olá, gostaria de saber mais." target="_blank" rel="noopener noreferrer"
+    aria-label="Falar no WhatsApp (abre em nova janela)"
     class="fixed bottom-6 right-6 z-[90] p-4 bg-[#25D366] text-white rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group">
-    <i data-lucide="message-square" class="w-6 h-6"></i>
+    <i data-lucide="message-square" class="w-6 h-6" aria-hidden="true"></i>
     <span
-      class="absolute right-full mr-4 bg-zinc-900 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Falar
+      class="absolute right-full mr-4 bg-zinc-900 text-white text-[10px] font-bold tracking-widest px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none"
+      aria-hidden="true">Falar
       no WhatsApp</span>
   </a>
 
@@ -128,8 +130,8 @@
     class="fixed top-0 left-0 right-0 h-10 z-[49] group cursor-pointer hidden">
     <div
       class="absolute top-0 left-1/2 -translate-x-1/2 bg-zinc-950/40 backdrop-blur-md border border-white/10 border-t-0 rounded-b-xl px-6 py-2 shadow-lg transform translate-y-0 group-hover:bg-zinc-950/90 transition-all duration-300 flex items-center gap-2 opacity-60 group-hover:opacity-100">
-      <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest">Menu</span>
-      <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-fire-500"></i>
+      <span class="text-[10px] font-bold text-zinc-300 tracking-widest">Menu</span>
+      <i aria-hidden="true" data-lucide="chevron-down" class="w-3.5 h-3.5 text-fire-500"></i>
     </div>
   </div>
 
@@ -143,23 +145,22 @@
         class="flex items-center gap-3 group cursor-pointer relative z-50 bg-transparent border-0 p-0"
         onclick="window.scrollTo({top: 0, behavior: 'smooth'})" aria-label="Voltar ao topo">
         <img src="assets/logo/firecam-logo-web.png" alt="Firecam" width="480" height="320" decoding="async"
-          class="h-16 md:h-20 w-auto object-contain transition-all duration-500 group-hover:scale-105" />
+          class="h-16 md:h-20 w-auto object-contain transition-all duration-500 group-hover:scale-105" loading="lazy">
       </button>
       <div class="hidden lg:flex items-center gap-8">
         <button onclick="window.scrollTo({top: 0, behavior: 'smooth'})"
           class="text-sm font-bold text-zinc-200 hover:text-white transition-colors"
           aria-label="Voltar ao início">Início</button>
-        <button onclick="document.getElementById('institutional').scrollIntoView({behavior: 'smooth'})"
-          class="text-sm font-bold text-zinc-200 hover:text-white transition-colors"
-          aria-label="Ir para seção A Firecam">A Firecam</button>
+        <a href="sobre.html" class="text-sm font-bold text-zinc-200 hover:text-white transition-colors"
+          aria-label="Ir para a página Sobre a Firecam">A Firecam</a>
 
         <!-- Solutions Dropdown -->
         <div class="relative group/solutions" id="dropdown-solutions">
-          <button onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})"
+          <button id="btn-solutions-dropdown"
             class="flex items-center gap-1 text-sm font-bold text-zinc-200 hover:text-white transition-colors py-2"
             aria-expanded="false" aria-haspopup="true" aria-controls="dropdown-solutions-menu">
             Soluções
-            <i data-lucide="chevron-down"
+            <i aria-hidden="true" data-lucide="chevron-down"
               class="w-3.5 h-3.5 transition-transform group-hover/solutions:rotate-180 group-focus-within/solutions:rotate-180"></i>
           </button>
           <div id="dropdown-solutions-menu" role="menu"
@@ -169,12 +170,15 @@
               <a href="alarme-incendio.html" role="menuitem"
                 class="w-full px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 text-left whitespace-nowrap">Alarme
                 de Incêndio (NBR 17240)</a>
-              <button role="menuitem" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})"
+              <a href="controle-acesso.html" role="menuitem"
                 class="w-full px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 text-left whitespace-nowrap">Controle
-                de Acesso Biométrico</button>
-              <button role="menuitem" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})"
+                de Acesso</a>
+              <a href="cabeamento-estruturado.html" role="menuitem"
                 class="w-full px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 text-left whitespace-nowrap">Cabeamento
-                Estruturado & Redes</button>
+                Estruturado &amp; Redes</a>
+              <a href="cftv.html" role="menuitem"
+                class="w-full px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 text-left whitespace-nowrap">CFTV
+                &amp; Videomonitoramento</a>
             </div>
           </div>
         </div>
@@ -185,7 +189,7 @@
             class="flex items-center gap-1 text-sm font-bold text-zinc-200 hover:text-white transition-colors py-2"
             aria-expanded="false" aria-haspopup="true" aria-controls="dropdown-cases-menu">
             Casos de Sucesso
-            <i data-lucide="chevron-down"
+            <i aria-hidden="true" data-lucide="chevron-down"
               class="w-3.5 h-3.5 transition-transform group-hover/cases:rotate-180 group-focus-within/cases:rotate-180"></i>
           </button>
           <div id="dropdown-cases-menu" role="menu"
@@ -215,7 +219,7 @@
       </div>
       <button id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu"
         class="lg:hidden p-2 relative z-50 text-white">
-        <i data-lucide="menu" size="28"></i>
+        <i aria-hidden="true" data-lucide="menu" size="28"></i>
       </button>
     </div>
   </nav>
@@ -225,7 +229,8 @@
     class="fixed inset-0 bg-zinc-950/95 backdrop-blur-3xl z-40 lg:hidden transition-all duration-500 opacity-0 invisible -translate-y-4 pointer-events-none">
     <div class="h-full w-full overflow-y-auto flex flex-col items-center justify-start pt-32 pb-12 px-6 gap-8">
       <button class="mobile-link text-3xl font-black text-white" data-target="hero">Início</button>
-      <button class="mobile-link text-3xl font-black text-white" data-target="institutional">A Firecam</button>
+      <a href="sobre.html" class="mobile-link text-3xl font-black text-white"
+        aria-label="Ir para a página Sobre a Firecam">A Firecam</a>
       <button class="mobile-link text-3xl font-black text-white" data-target="contato">Soluções</button>
       <div class="w-16 h-px bg-zinc-800"></div>
       <button class="mobile-link text-3xl font-black text-white" data-target="cases">Casos de Sucesso</button>
@@ -239,9 +244,13 @@
   </div>
 
   <main id="main-content" class="relative z-10">
-    <!-- HERO -->
-    <section id="hero" class="relative h-[100dvh] min-h-[600px] w-full overflow-hidden bg-zinc-950 text-white">
-      <div class="swiper hero-swiper w-full h-full">
+    <!-- HERO SLIDER SECTION -->
+    <section id="hero" class="relative h-[100dvh] min-h-[600px] w-full overflow-hidden bg-zinc-950 text-white"
+      aria-label="Destaques">
+      <!-- Screen Reader Only H1 for Page Context -->
+      <h1 class="sr-only">Firecam Tecnologia - Soluções em Segurança Eletrônica e Infraestrutura de TI</h1>
+
+      <div class="swiper hero-swiper h-full w-full">
         <div class="swiper-wrapper">
           <!-- Slides will be injected by JS -->
         </div>
@@ -250,15 +259,15 @@
           <div class="container max-w-7xl mx-auto px-6 lg:px-12 flex justify-start">
             <div
               class="pointer-events-auto flex items-center gap-5 px-4 py-2 bg-zinc-950/60 backdrop-blur-md border border-white/10 rounded-full">
-              <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest" id="hero-index">01 / 05</span>
+              <span class="text-[10px] font-bold text-zinc-300 tracking-widest" id="hero-index">01 / 05</span>
               <div class="h-4 w-px bg-white/10"></div>
               <div class="flex gap-2">
-                <button
-                  class="hero-prev w-8 h-8 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-zinc-300 hover:bg-white hover:text-zinc-950"><i
-                    data-lucide="chevron-left" class="w-4 h-4"></i></button>
-                <button
-                  class="hero-next w-8 h-8 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-zinc-300 hover:bg-fire-600 hover:text-white"><i
-                    data-lucide="chevron-right" class="w-4 h-4"></i></button>
+                <button aria-label="Slide anterior"
+                  class="hero-prev w-11 h-11 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-zinc-300 hover:bg-white hover:text-zinc-950"><i
+                    data-lucide="chevron-left" class="w-4 h-4" aria-hidden="true"></i></button>
+                <button aria-label="Próximo slide"
+                  class="hero-next w-11 h-11 flex items-center justify-center rounded-full bg-white/5 border border-white/10 text-zinc-300 hover:bg-fire-600 hover:text-white"><i
+                    data-lucide="chevron-right" class="w-4 h-4" aria-hidden="true"></i></button>
               </div>
             </div>
           </div>
@@ -290,7 +299,7 @@
       <div class="container max-w-7xl mx-auto px-6 lg:px-12">
         <div class="flex flex-col gap-12 lg:gap-16">
           <div class="max-w-none mx-auto text-center px-4">
-            <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.35em] mb-6 hud-text hud-pulse">Padrão
+            <p class="text-[10px] font-bold text-zinc-400 tracking-[0.35em] mb-6 hud-text hud-pulse">Padrão
               Industrial</p>
             <h2 id="narrative-quote" class="section-hero-title text-zinc-300 transition-all duration-700">
             </h2>
@@ -302,8 +311,8 @@
             <div id="narrative-content" class="relative z-10 grid md:grid-cols-12 gap-6 lg:gap-10 items-center">
               <div class="md:col-span-6">
                 <div class="mb-4 flex items-center gap-2 text-zinc-400">
-                  <i data-lucide="badge-check" class="text-fire-600 w-5 h-5"></i>
-                  <span class="text-xs font-bold uppercase tracking-[0.2em]">Fornecedor Homologado</span>
+                  <i aria-hidden="true" data-lucide="badge-check" class="text-fire-600 w-5 h-5"></i>
+                  <span class="text-xs font-bold tracking-[0.2em]">Fornecedor Homologado</span>
                 </div>
                 <p id="narrative-highlight"
                   class="text-3xl md:text-4xl font-bold text-white leading-tight tracking-tighter"></p>
@@ -323,7 +332,7 @@
         <!-- Kicker + Headline -->
         <div class="border-b border-white/8 pb-10 mb-0 text-center flex flex-col items-center">
           <div class="w-8 h-px bg-fire-600/50 mb-6"></div>
-          <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.35em] mb-4">Resultados Comprovados</p>
+          <p class="text-[10px] font-bold text-zinc-400 tracking-[0.35em] mb-4">Resultados Comprovados</p>
           <div class="max-w-4xl">
             <p class="text-lg md:text-xl font-medium text-zinc-500 tracking-tight mb-2">Não entregamos apenas
               implantação.</p>
@@ -345,9 +354,9 @@
         <!-- Value Props row -->
         <div class="pt-10 pb-4 flex items-center gap-4">
           <div class="w-6 h-px bg-fire-600/40"></div>
-          <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.35em]">Nossa Filosofia</p>
+          <p class="text-[10px] font-bold text-zinc-400 tracking-[0.35em]">Nossa Filosofia</p>
         </div>
-        <div class="grid md:grid-cols-2 divide-x divide-white/8 divide-y md:divide-y-0" id="value-props-container">
+        <div class="grid md:grid-cols-2 gap-4 lg:gap-6" id="value-props-container">
           <!-- Populated via JS -->
         </div>
 
@@ -362,7 +371,7 @@
           <div class="lg:col-span-12 xl:col-span-5 mb-8 lg:mb-0">
             <div class="lg:sticky lg:top-32">
 
-              <p class="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.35em] mb-4 hud-text">Diagnóstico &amp;
+              <p class="text-[10px] font-bold text-zinc-400 tracking-[0.35em] mb-4 hud-text">Diagnóstico &amp;
                 Correção
               </p>
               <h2 class="section-hero-title mb-6 tracking-tighter leading-tight">Seu sistema <span
@@ -376,9 +385,9 @@
                 class="glass-panel-dark p-8 rounded-[2rem] relative overflow-hidden group premium-shadow noise-overlay">
                 <div class="absolute top-0 left-0 w-full h-[2px] bg-fire-500 animate-scan-vertical"></div>
                 <div class="flex items-start gap-5 relative z-10">
-                  <i data-lucide="shield-check" class="text-fire-600 w-7 h-7"></i>
+                  <i aria-hidden="true" data-lucide="shield-check" class="text-fire-600 w-7 h-7"></i>
                   <div>
-                    <h4 class="text-xs font-bold text-white uppercase tracking-widest mb-3">Auditoria p/ Seguradoras
+                    <h4 class="text-xs font-bold text-white tracking-widest mb-3">Auditoria p/ Seguradoras
                     </h4>
                     <p class="text-zinc-400 text-sm text-balance">"A falta de comprovação de manutenção preventiva pode
                       acarretar na perda do direito à indenização do seguro."</p>
@@ -408,24 +417,24 @@
             <img src="https://www.google.com/images/branding/googlelogo/1x/googlelogo_color_92x30dp.png"
               class="h-4 w-auto" alt="Google Logo" width="92" height="30" loading="lazy" decoding="async" />
             <div class="flex items-baseline gap-2 leading-none ml-1">
-              <span class="text-[11px] font-bold text-zinc-400 uppercase tracking-wider">Excelência</span>
+              <span class="text-[11px] font-bold text-zinc-400 tracking-wider">Excelência</span>
               <span class="text-sm font-black text-zinc-800">4.9/5</span>
             </div>
             <div class="flex gap-1 ml-2">
-              <i data-lucide="star" class="w-3 h-3 text-[#FBBC05] fill-[#FBBC05]"></i>
-              <i data-lucide="star" class="w-3 h-3 text-[#FBBC05] fill-[#FBBC05]"></i>
-              <i data-lucide="star" class="w-3 h-3 text-[#FBBC05] fill-[#FBBC05]"></i>
-              <i data-lucide="star" class="w-3 h-3 text-[#FBBC05] fill-[#FBBC05]"></i>
-              <i data-lucide="star" class="w-3 h-3 text-[#FBBC05] fill-[#FBBC05]"></i>
+              <i aria-hidden="true" data-lucide="star" class="w-3 h-3 text-[#FBBC05] fill-[#FBBC05]"></i>
+              <i aria-hidden="true" data-lucide="star" class="w-3 h-3 text-[#FBBC05] fill-[#FBBC05]"></i>
+              <i aria-hidden="true" data-lucide="star" class="w-3 h-3 text-[#FBBC05] fill-[#FBBC05]"></i>
+              <i aria-hidden="true" data-lucide="star" class="w-3 h-3 text-[#FBBC05] fill-[#FBBC05]"></i>
+              <i aria-hidden="true" data-lucide="star" class="w-3 h-3 text-[#FBBC05] fill-[#FBBC05]"></i>
             </div>
           </div>
           <div class="flex items-center gap-4 mb-5">
             <div class="w-10 h-px bg-fire-600"></div>
-            <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-[0.35em] hud-text">O Que Nossos Clientes
+            <span class="text-[10px] font-bold text-zinc-400 tracking-[0.35em] hud-text">O Que Nossos Clientes
               Dizem</span>
             <div class="w-10 h-px bg-fire-600"></div>
           </div>
-          <h2 class="section-hero-title text-white tracking-tighter leading-tight uppercase">Resultados que <span
+          <h2 class="section-hero-title text-white tracking-tighter leading-tight">Resultados que <span
               class="text-fire-600">falam por si.</span></h2>
         </div>
 
@@ -438,11 +447,11 @@
         <!-- Minimal centered controls below card -->
         <div class="flex items-center justify-center gap-6 py-4">
           <button id="testimonial-prev" class="testimonial-btn" aria-label="Anterior">
-            <i data-lucide="chevron-left" class="w-4 h-4"></i>
+            <i aria-hidden="true" data-lucide="chevron-left" class="w-4 h-4"></i>
           </button>
           <div id="testimonial-dots" class="flex gap-2 items-center"></div>
           <button id="testimonial-next" class="testimonial-btn" aria-label="Próximo">
-            <i data-lucide="chevron-right" class="w-4 h-4"></i>
+            <i aria-hidden="true" data-lucide="chevron-right" class="w-4 h-4"></i>
           </button>
         </div>
 
@@ -462,7 +471,7 @@
 
             <div class="relative z-10">
               <!-- Kicker -->
-              <p class="text-[10px] font-bold uppercase tracking-[0.35em] text-zinc-500 mb-6">Próximo Passo</p>
+              <p class="text-[10px] font-bold tracking-[0.35em] text-zinc-400 mb-6">Próximo Passo</p>
 
               <!-- Headline -->
               <h2 class="section-hero-title text-white tracking-tighter leading-[1.05] mb-4">
@@ -480,26 +489,29 @@
                 Quero Saber Mais
                 <span
                   class="w-7 h-7 rounded-full bg-zinc-950 text-white flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
-                  <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                  <i aria-hidden="true" data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
                 </span>
               </button>
 
               <!-- Trust row -->
               <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
                 <div class="flex items-center gap-2 text-xs text-zinc-500">
-                  <i data-lucide="clock" class="w-3.5 h-3.5 text-zinc-600"></i>
+                  <i aria-hidden="true" data-lucide="clock" class="w-3.5 h-3.5 text-zinc-600"></i>
                   <span>Retorno em até <strong class="text-zinc-400 font-semibold">4h úteis</strong></span>
                 </div>
                 <div class="w-px h-3 bg-zinc-800 hidden sm:block"></div>
-                <a href="https://wa.me/5547996660234" target="_blank" rel="noopener noreferrer"
+                <a data-wa-trigger="true" data-wa-message="Olá, gostaria de saber mais." target="_blank"
+                  rel="noopener noreferrer"
                   class="flex items-center gap-2 text-xs text-zinc-500 hover:text-zinc-300 transition-colors group/wa">
                   <i data-lucide="message-circle"
-                    class="w-3.5 h-3.5 text-green-500/60 group-hover/wa:text-green-400 transition-colors"></i>
+                    class="w-3.5 h-3.5 text-green-500/60 group-hover/wa:text-green-400 transition-colors"
+                    aria-hidden="true"></i>
                   <span>Ou fale no <strong class="text-zinc-400 font-semibold">WhatsApp</strong></span>
+                  <span class="sr-only">(abre em nova janela)</span>
                 </a>
                 <div class="w-px h-3 bg-zinc-800 hidden sm:block"></div>
                 <div class="flex items-center gap-2 text-xs text-zinc-500">
-                  <i data-lucide="phone" class="w-3.5 h-3.5 text-zinc-600"></i>
+                  <i aria-hidden="true" data-lucide="phone" class="w-3.5 h-3.5 text-zinc-600"></i>
                   <span><strong class="text-zinc-400 font-semibold">(47) 3086-3186</strong></span>
                 </div>
               </div>
@@ -511,10 +523,9 @@
         <div id="cta-form" class="hidden mt-10 max-w-xl mx-auto text-left">
           <div class="mb-8">
             <div class="flex justify-between items-center mb-4">
-              <button id="cta-back"
-                class="text-xs font-bold text-zinc-500 uppercase tracking-widest flex items-center gap-2"
+              <button id="cta-back" class="text-xs font-bold text-zinc-400 tracking-widest flex items-center gap-2"
                 aria-label="Voltar">
-                <i data-lucide="chevron-left" class="w-3.5 h-3.5"></i> Voltar
+                <i aria-hidden="true" data-lucide="chevron-left" class="w-3.5 h-3.5"></i> Voltar
               </button>
               <span id="cta-step-count" class="text-xs font-mono font-bold text-zinc-700">01/04</span>
             </div>
@@ -529,13 +540,14 @@
               Nome</label>
             <input id="cta-q-input" type="text" placeholder="Digite seu nome"
               class="w-full bg-transparent border-b-2 border-zinc-800 py-4 text-2xl md:text-3xl font-medium text-white placeholder-zinc-700 focus:outline-none focus:border-fire-500 focus:shadow-[0_4px_20px_-10px_rgba(234,88,12,0.4)] transition-all duration-500" />
-            <p id="cta-error" class="text-red-500 text-sm font-bold mt-6 h-4 opacity-0 transition-opacity duration-300" aria-live="polite" role="alert"></p>
+            <p id="cta-error" class="text-red-500 text-sm font-bold mt-6 h-4 opacity-0 transition-opacity duration-300"
+              aria-live="polite" role="alert"></p>
           </div>
           <div class="mt-10 flex justify-between items-center">
-            <button id="cta-cancel" class="text-xs font-bold text-zinc-600 uppercase tracking-widest">Cancelar</button>
+            <button id="cta-cancel" class="text-xs font-bold text-zinc-600 tracking-widest">Cancelar</button>
             <button id="cta-next"
               class="bg-white text-zinc-950 px-6 py-3 rounded-lg text-xs font-bold shadow-lg flex items-center">Continuar
-              <i data-lucide="arrow-right" class="ml-2 w-4 h-4"></i></button>
+              <i aria-hidden="true" data-lucide="arrow-right" class="ml-2 w-4 h-4"></i></button>
           </div>
         </div>
 
@@ -543,7 +555,7 @@
         <div id="cta-success" class="hidden py-10 text-center max-w-xl mx-auto">
           <div
             class="w-16 h-16 bg-green-900/20 text-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-            <i data-lucide="check-circle-2" class="w-8 h-8"></i>
+            <i aria-hidden="true" data-lucide="check-circle-2" class="w-8 h-8"></i>
           </div>
           <h3 class="text-2xl font-bold text-white mb-3">Recebemos sua solicitação.</h3>
           <p class="text-zinc-400 text-sm">Nossa equipe entrará em contato em breve.</p>
@@ -595,7 +607,8 @@
                 class="flex items-center gap-4 group text-sm text-zinc-400 hover:text-white transition-colors">
                 <span
                   class="w-10 h-10 rounded-xl bg-zinc-900/50 border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-fire-600/40 group-hover:bg-fire-600/10 transition-all shadow-sm">
-                  <i data-lucide="mail" class="w-4 h-4 text-zinc-500 group-hover:text-fire-400 transition-colors"></i>
+                  <i aria-hidden="true" data-lucide="mail"
+                    class="w-4 h-4 text-zinc-500 group-hover:text-fire-400 transition-colors"></i>
                 </span>
                 comercial@firecam.com.br
               </a>
@@ -603,7 +616,8 @@
                 class="flex items-center gap-4 group text-sm text-zinc-400 hover:text-white transition-colors">
                 <span
                   class="w-10 h-10 rounded-xl bg-zinc-900/50 border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-fire-600/40 group-hover:bg-fire-600/10 transition-all shadow-sm">
-                  <i data-lucide="phone" class="w-4 h-4 text-zinc-500 group-hover:text-fire-400 transition-colors"></i>
+                  <i aria-hidden="true" data-lucide="phone"
+                    class="w-4 h-4 text-zinc-500 group-hover:text-fire-400 transition-colors"></i>
                 </span>
                 +55 (47) 3086-3186
               </a>
@@ -613,7 +627,7 @@
           <!-- Column 2: Site Map -->
           <div>
             <div class="h-[76px] flex items-start mb-6 pt-5">
-              <h3 class="text-xs font-semibold text-zinc-500 flex items-center gap-2">
+              <h3 class="text-xs font-semibold text-zinc-400 flex items-center gap-2">
                 <span class="w-3.5 h-3.5 flex items-center justify-center"><span
                     class="w-1.5 h-1.5 rounded-full bg-fire-600/40"></span></span> Mapa do site
               </h3>
@@ -622,15 +636,15 @@
               <li>
                 <a href="#hero"
                   class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group">
-                  <i data-lucide="chevron-right"
+                  <i aria-hidden="true" data-lucide="chevron-right"
                     class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>
                   Início
                 </a>
               </li>
               <li>
-                <a href="#institutional"
+                <a href="sobre.html"
                   class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group">
-                  <i data-lucide="chevron-right"
+                  <i aria-hidden="true" data-lucide="chevron-right"
                     class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>
                   A Firecam
                 </a>
@@ -638,7 +652,7 @@
               <li>
                 <a href="#contato"
                   class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group">
-                  <i data-lucide="chevron-right"
+                  <i aria-hidden="true" data-lucide="chevron-right"
                     class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>
                   Contato
                 </a>
@@ -646,7 +660,7 @@
               <li>
                 <a href="#cases"
                   class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group">
-                  <i data-lucide="chevron-right"
+                  <i aria-hidden="true" data-lucide="chevron-right"
                     class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>
                   Casos de Sucesso
                 </a>
@@ -657,7 +671,7 @@
           <!-- Column 3: Solutions -->
           <div>
             <div class="h-[76px] flex items-start mb-6 pt-5">
-              <h3 class="text-xs font-semibold text-zinc-500 flex items-center gap-2">
+              <h3 class="text-xs font-semibold text-zinc-400 flex items-center gap-2">
                 <span class="w-3.5 h-3.5 flex items-center justify-center"><span
                     class="w-1.5 h-1.5 rounded-full bg-fire-600/40"></span></span> Soluções
               </h3>
@@ -666,31 +680,31 @@
               <li>
                 <a href="alarme-incendio.html"
                   class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group">
-                  <i data-lucide="chevron-right"
+                  <i aria-hidden="true" data-lucide="chevron-right"
                     class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>
                   Alarme de Incêndio
                 </a>
               </li>
               <li>
-                <a href="#contato"
+                <a href="controle-acesso.html"
                   class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group">
-                  <i data-lucide="chevron-right"
+                  <i aria-hidden="true" data-lucide="chevron-right"
                     class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>
                   Controle de Acesso
                 </a>
               </li>
               <li>
-                <a href="#contato"
+                <a href="cabeamento-estruturado.html"
                   class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group">
-                  <i data-lucide="chevron-right"
+                  <i aria-hidden="true" data-lucide="chevron-right"
                     class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>
                   Cabeamento Estruturado
                 </a>
               </li>
               <li>
-                <a href="#contato"
+                <a href="cftv.html"
                   class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group">
-                  <i data-lucide="chevron-right"
+                  <i aria-hidden="true" data-lucide="chevron-right"
                     class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>
                   Videomonitoramento
                 </a>
@@ -701,7 +715,7 @@
           <!-- Column 4: Social -->
           <div>
             <div class="h-[76px] flex items-start mb-6 pt-5">
-              <h3 class="text-xs font-semibold text-zinc-500 flex items-center gap-2">
+              <h3 class="text-xs font-semibold text-zinc-400 flex items-center gap-2">
                 <span class="w-3.5 h-3.5 flex items-center justify-center"><span
                     class="w-1.5 h-1.5 rounded-full bg-fire-600/40"></span></span> Social
               </h3>
@@ -712,12 +726,14 @@
                   class="flex items-center gap-4 text-sm font-medium text-zinc-400 hover:text-white transition-colors group">
                   <span
                     class="w-10 h-10 rounded-xl bg-zinc-900/50 border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-fire-600/40 group-hover:bg-fire-600/10 transition-all shadow-sm">
-                    <i data-lucide="instagram"
-                      class="w-4 h-4 text-zinc-400 group-hover:text-fire-400 transition-colors"></i>
+                    <i data-lucide="instagram" class="w-4 h-4 text-zinc-400 group-hover:text-fire-400 transition-colors"
+                      aria-hidden="true"></i>
                   </span>
                   Instagram
                   <i data-lucide="arrow-up-right"
-                    class="w-3.5 h-3.5 opacity-0 group-hover:opacity-50 transition-opacity ml-auto"></i>
+                    class="w-3.5 h-3.5 opacity-0 group-hover:opacity-50 transition-opacity ml-auto"
+                    aria-hidden="true"></i>
+                  <span class="sr-only">(abre em nova janela)</span>
                 </a>
               </li>
               <li>
@@ -725,25 +741,30 @@
                   class="flex items-center gap-4 text-sm font-medium text-zinc-400 hover:text-white transition-colors group">
                   <span
                     class="w-10 h-10 rounded-xl bg-zinc-900/50 border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-fire-600/40 group-hover:bg-fire-600/10 transition-all shadow-sm">
-                    <i data-lucide="linkedin"
-                      class="w-4 h-4 text-zinc-400 group-hover:text-fire-400 transition-colors"></i>
+                    <i data-lucide="linkedin" class="w-4 h-4 text-zinc-400 group-hover:text-fire-400 transition-colors"
+                      aria-hidden="true"></i>
                   </span>
                   LinkedIn
                   <i data-lucide="arrow-up-right"
-                    class="w-3.5 h-3.5 opacity-0 group-hover:opacity-50 transition-opacity ml-auto"></i>
+                    class="w-3.5 h-3.5 opacity-0 group-hover:opacity-50 transition-opacity ml-auto"
+                    aria-hidden="true"></i>
+                  <span class="sr-only">(abre em nova janela)</span>
                 </a>
               </li>
               <li>
-                <a href="https://wa.me/5547996660234" target="_blank" rel="noopener noreferrer"
+                <a data-wa-trigger="true" data-wa-message="Olá, gostaria de saber mais." target="_blank"
+                  rel="noopener noreferrer"
                   class="flex items-center gap-4 text-sm font-medium text-zinc-400 hover:text-white transition-colors group">
                   <span
                     class="w-10 h-10 rounded-xl bg-zinc-900/50 border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-green-600/40 group-hover:bg-green-600/10 transition-all shadow-sm">
                     <i data-lucide="message-circle"
-                      class="w-4 h-4 text-zinc-400 group-hover:text-green-400 transition-colors"></i>
+                      class="w-4 h-4 text-zinc-400 group-hover:text-green-400 transition-colors" aria-hidden="true"></i>
                   </span>
                   WhatsApp
                   <i data-lucide="arrow-up-right"
-                    class="w-3.5 h-3.5 opacity-0 group-hover:opacity-50 transition-opacity ml-auto"></i>
+                    class="w-3.5 h-3.5 opacity-0 group-hover:opacity-50 transition-opacity ml-auto"
+                    aria-hidden="true"></i>
+                  <span class="sr-only">(abre em nova janela)</span>
                 </a>
               </li>
             </ul>
@@ -769,6 +790,7 @@
 
   <script defer src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js"></script>
   <script type="module" src="assets/js/main.js"></script>
+  <script src="assets/js/lead-router.js" defer></script>
 </body>
 
 </html>

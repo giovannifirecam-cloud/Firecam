@@ -134,8 +134,8 @@ function initNavbar() {
         setTimeout(() => trigger.classList.add('nav-trigger-active'), 100);
         isHidden = true;
       }
-    } else if (window.scrollY < lastScrollY - 5 || window.scrollY < 10) {
-      // Show on scroll-up or at the very top
+    } else if (window.scrollY < 10) {
+      // Show ONLY at the very top (auto-reveal on scroll-up removed per request)
       if (isHidden) {
         nav.classList.remove('nav-hidden');
         trigger.classList.remove('nav-trigger-active');
@@ -221,6 +221,25 @@ function initNavbar() {
     }
   });
 
+  // Solutions dropdown: click toggles the menu (hover also works via CSS group)
+  const btnSolutions = document.getElementById('btn-solutions-dropdown');
+  const menuSolutions = document.getElementById('dropdown-solutions-menu');
+  if (btnSolutions && menuSolutions) {
+    btnSolutions.addEventListener('click', () => {
+      const isOpen = btnSolutions.getAttribute('aria-expanded') === 'true';
+      btnSolutions.setAttribute('aria-expanded', String(!isOpen));
+      menuSolutions.classList.toggle('opacity-0', isOpen);
+      menuSolutions.classList.toggle('invisible', isOpen);
+      menuSolutions.classList.toggle('translate-y-2', isOpen);
+    });
+    document.addEventListener('click', (e) => {
+      if (!btnSolutions.closest('#dropdown-solutions').contains(e.target)) {
+        btnSolutions.setAttribute('aria-expanded', 'false');
+        menuSolutions.classList.add('opacity-0', 'invisible', 'translate-y-2');
+      }
+    });
+  }
+
   menu.querySelectorAll('.mobile-link').forEach(link => {
     link.addEventListener('click', () => {
       // Close mobile menu
@@ -253,7 +272,7 @@ function initHero() {
 
   wrapper.innerHTML = HERO_SLIDES.map(s => `
     <div class="swiper-slide relative w-full h-full overflow-hidden bg-zinc-950">
-      ${s.videoUrl ? `<video src="${s.videoUrl}" poster="${s.imageUrl}" autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover ken-burns" ${s.flipped ? 'style="transform: scaleX(-1);"' : ''}></video>` : `<img src="${s.imageUrl}" alt="${s.imageAlt || ''}" class="absolute inset-0 w-full h-full object-cover ken-burns" ${s.flipped ? 'style="transform: scaleX(-1);"' : ''} />`}
+      ${s.videoUrl ? `<video src="${s.videoUrl}" poster="${s.imageUrl}" autoplay muted loop playsinline class="absolute inset-0 w-full h-full object-cover ken-burns" ${s.flipped ? 'style="transform: scaleX(-1);"' : ''}></video>` : `<img src="${s.imageUrl}" alt="${s.imageAlt || ''}" width="1920" height="1080" class="absolute inset-0 w-full h-full object-cover ken-burns" ${s.flipped ? 'style="transform: scaleX(-1);"' : ''} />`}
       <div class="absolute inset-0 bg-black/40"></div>
       <div class="absolute inset-0 bg-gradient-to-r from-black/95 via-black/40 to-transparent"></div>
       <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent"></div>
@@ -263,12 +282,12 @@ function initHero() {
         <div class="hero-content opacity-0 translate-y-8 transition-all duration-1000">
           <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md mb-6 border border-white/10">
             <i data-lucide="hard-hat" class="w-3.5 h-3.5 text-fire-500"></i>
-            <span class="text-zinc-200 text-xs font-bold uppercase tracking-wide">${s.badge}</span>
+            <span class="text-zinc-200 text-xs font-bold tracking-wide">${s.badge}</span>
           </div>
-          <h1 class="text-3xl sm:text-4xl md:text-7xl font-bold tracking-tight mb-3 leading-tight">
+          <h2 class="text-3xl sm:text-4xl md:text-7xl font-bold tracking-tight mb-3 leading-tight">
             ${s.headline.p1}${s.headline.p1Suffix ? ' ' + s.headline.p1Suffix : ''} <br/>
             ${s.headline.connector ? s.headline.connector + ' ' : ''}<span class="text-fire-600">${s.headline.p2}</span>
-          </h1>
+          </h2>
           <p class="text-zinc-200 text-sm md:text-lg max-w-2xl mb-6 leading-relaxed">${s.subheadline.replace(/\n/g, '<br/>')}</p>
           
           <!-- Topics Grid -->
@@ -283,11 +302,11 @@ function initHero() {
             `).join('')}
           </div>
 
-          <div class="link-cta lg" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">
+          <button type="button" class="link-cta lg" onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">
           <div class="premium-cta">
             <span class="premium-cta-text">Quero Saber Mais</span>
           </div>
-          </div>
+          </button>
         </div>
       </div>
     </div>
@@ -404,7 +423,7 @@ function initInstitutional() {
         <div class="glass-panel-dark p-6 md:p-8 rounded-[2rem] relative overflow-hidden noise-overlay transition-all premium-shadow">
           <div id="particles-inst-${i}" class="absolute inset-0 z-0 pointer-events-none opacity-40"></div>
           <div class="relative z-10 flex items-center gap-3 mb-4">
-             <span class="text-[9px] font-black uppercase tracking-[0.2em] px-2 py-0.5 rounded border border-white/5 bg-white/5 text-zinc-400 transition-colors">${s.code}</span>
+             <span class="text-[9px] font-black tracking-[0.2em] px-2 py-0.5 rounded border border-white/5 bg-white/5 text-zinc-400 transition-colors">${s.code}</span>
              <h4 class="text-xl md:text-2xl font-bold text-white transition-colors tracking-tight">${s.title}</h4>
           </div>
           <p class="relative z-10 text-zinc-400 text-base font-light leading-relaxed">${s.desc}</p>
@@ -418,11 +437,17 @@ function initValueProps() {
   const container = document.getElementById('value-props-container');
   if (!container || typeof VALUE_PROPS === 'undefined') return;
   container.innerHTML = VALUE_PROPS.map((p) => `
-    <div class="group px-4 py-6 md:px-8 md:py-8 flex flex-col gap-2.5 cursor-default transition-all duration-300 hover:bg-white/[0.06] hover:border-white/10 reveal border-b border-white/5 last:border-b-0 md:border-b-0">
-      <p class="text-[9px] font-bold text-zinc-600 tracking-[0.35em] uppercase">${p.title}</p>
-      <h3 class="text-xl font-bold text-white tracking-tighter leading-snug">${p.headline}</h3>
-      <p class="text-zinc-400 text-sm font-light leading-relaxed">${p.desc}</p>
-      <p class="text-zinc-400 text-xs mt-1 group-hover:text-zinc-200 transition-colors duration-500">"${p.highlight}"</p>
+    <div class="group px-6 py-8 md:px-10 md:py-10 flex flex-col gap-3 cursor-default transition-all duration-300 border border-white/8 rounded-2xl bg-white/[0.02] hover:bg-white/[0.06] hover:border-white/10 overflow-hidden reveal relative">
+      <div class="w-10 h-10 rounded-xl bg-zinc-900/50 border border-white/10 flex items-center justify-center mb-2 group-hover:border-fire-500/50 transition-colors relative z-10">
+        <i data-lucide="layers" class="w-5 h-5 text-fire-500"></i>
+      </div>
+      <p class="text-[10px] font-bold text-zinc-400 tracking-[0.35em] uppercase relative z-10">${p.title}</p>
+      <h3 class="text-2xl font-bold text-white tracking-tighter leading-snug relative z-10">${p.headline}</h3>
+      <p class="text-zinc-400 text-sm font-light leading-relaxed flex-grow relative z-10">${p.desc}</p>
+      <div class="mt-4 pt-4 border-t border-white/5 flex items-center justify-between relative z-10">
+        <p class="text-fire-500 text-xs font-medium italic">"${p.highlight}"</p>
+        <i data-lucide="arrow-right" class="w-4 h-4 text-zinc-600 group-hover:text-fire-500 transition-colors transform group-hover:translate-x-1"></i>
+      </div>
     </div>
   `).join('');
 }
@@ -437,9 +462,9 @@ function initMetrics() {
           data-end="${m.end}" data-suffix="${m.suffix}">0</span>
         <span class="text-2xl md:text-4xl font-black text-zinc-600">${m.suffix}</span>
       </div>
-      <p class="text-[9px] font-bold text-zinc-500 uppercase tracking-[0.2em] mt-0.5">${m.label}</p>
+      <p class="text-[9px] font-bold text-zinc-400 tracking-[0.2em] mt-0.5">${m.label}</p>
     </div>
-  `).join('');
+    `).join('');
   lucide.createIcons();
 }
 
@@ -464,7 +489,7 @@ function initTestimonials() {
             </div>
             <div class="flex items-center gap-1.5">
               <img src="https://www.google.com/favicon.ico" class="w-3 h-3 opacity-50" alt="" />
-              <span class="text-[9px] font-bold uppercase tracking-[0.2em] text-zinc-600">Google Review</span>
+              <span class="text-[9px] font-bold tracking-[0.2em] text-zinc-600">Google Review</span>
             </div>
           </div>
 
@@ -485,7 +510,7 @@ function initTestimonials() {
               </div>
             </div>
             <div class="text-right">
-              <p class="text-[8px] font-bold uppercase tracking-[0.2em] text-zinc-600 mb-1">Serviço</p>
+              <p class="text-[8px] font-bold tracking-[0.2em] text-zinc-600 mb-1">Serviço</p>
               <span class="text-xs text-zinc-400 border border-white/8 px-3 py-1 rounded-full">
                 ${t.date}
               </span>
@@ -494,7 +519,7 @@ function initTestimonials() {
         </div>
       </div>
     </div>
-  `).join('');
+    `).join('');
 
   if (typeof lucide !== 'undefined') lucide.createIcons();
 
@@ -512,7 +537,7 @@ function initTestimonials() {
       el: '#testimonial-dots',
       clickable: true,
       renderBullet: function (index, className) {
-        return `<span class="${className}" style="display:inline-block;width:6px;height:6px;border-radius:9999px;background:#3f3f46;opacity:1;margin:0 2px;cursor:pointer;transition:all 0.3s;"></span>`;
+        return `<span class="${className}" role="button" aria-label="Ir para depoimento ${index + 1}" style="display:inline-block;width:6px;height:6px;border-radius:9999px;background:#3f3f46;opacity:1;margin:0 2px;cursor:pointer;transition:all 0.3s;"></span>`;
       },
     },
     navigation: {
@@ -688,11 +713,14 @@ function initCustomCursor() {
 
   if (!cursor) return;
 
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   const isTouch = 'ontouchstart' in window;
-  if (!isTouch) {
-    cursor.classList.remove('opacity-0');
-    document.body.classList.add('hide-system-cursor');
-  }
+
+  // Skip custom cursor entirely for touch and reduced-motion users
+  if (isTouch || prefersReducedMotion) return;
+
+  cursor.classList.remove('opacity-0');
+  document.body.classList.add('hide-system-cursor');
 
   let targetX = 0, targetY = 0;
   let currentX = 0, currentY = 0;
@@ -736,6 +764,7 @@ function initCustomCursor() {
 
 
 function initParticles() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   if (typeof particlesJS !== 'undefined' && window.innerWidth >= 768) {
     const ids = ["particles-narrative", "particles-cta", "particles-footer", "particles-marquee"];
 
@@ -811,6 +840,7 @@ function animateValue(obj, start, end, duration, suffix) {
 
 // --- 11. REFINED SPARK CURSOR (CANVAS ENGINE) ---
 function initSparkCursor() {
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
   const canvas = document.getElementById('spark-canvas');
   if (!canvas) return;
   const ctx = canvas.getContext('2d');

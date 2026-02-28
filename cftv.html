@@ -1,0 +1,1044 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Primary Meta Tags -->
+    <title>CFTV & Videomonitoramento Inteligente | Firecam Tecnologia</title>
+    <meta name="title" content="CFTV & Videomonitoramento Inteligente | Firecam Tecnologia" />
+    <meta name="description"
+        content="Sistemas de monitoramento 4K com inteligência artificial. Detecção facial, análise perimetral e acesso remoto seguro." />
+    <meta name="keywords"
+        content="cftv, câmeras de segurança, monitoramento, inteligência artificial, segurança eletrônica, Firecam" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#09090b" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://www.firecam.com.br/cftv.html" />
+    <meta property="og:title" content="CFTV & Videomonitoramento Inteligente | Firecam Tecnologia" />
+    <meta property="og:description"
+        content="Tecnologia 4K e IA para proteção total. Monitoramento em tempo real com análise analítica de vídeo." />
+    <meta property="og:image" content="assets/img/optimized/_MG_6862_1.webp" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://www.firecam.com.br/cftv.html" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml"
+        href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23ea580c'%3E%3Cpath d='M12 2L4 5V11C4 16.55 7.4 21.74 12 23C16.6 21.74 20 16.55 20 11V5L12 2ZM12 18C9.24 18 7 15.76 7 13C7 10.24 9.24 8 12 8C14.76 8 17 10.24 17 13C17 15.76 14.76 18 12 18Z'/%3E%3C/svg%3E" />
+    <link rel="manifest" href="manifest.json" />
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "CFTV & Videomonitoramento Inteligente",
+      "description": "Sistemas avançados de videomonitoramento com câmeras 4K e inteligência artificial para detecção de anomalias e segurança perimetral.",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Firecam Tecnologia",
+        "telephone": "+554730863186",
+        "email": "comercial@firecam.com.br",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Joinville",
+          "addressRegion": "SC",
+          "addressCountry": "BR"
+        }
+      },
+      "areaServed": "Brasil",
+      "hasOfferCatalog": {
+        "@type": "OfferCatalog",
+        "name": "Soluções de Segurança",
+        "itemListElement": [
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Câmeras 4K Ultra HD" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Analíticos de Vídeo com IA" } },
+          { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Monitoramento Remoto Mobile" } }
+        ]
+      }
+    }
+    </script>
+
+    <!-- Performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="preload" as="image" href="assets/img/optimized/_MG_6862_1.webp" fetchpriority="high" />
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <!-- Swiper & Lucide -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <script defer src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script defer src="https://unpkg.com/lucide@0.469.0/dist/umd/lucide.min.js"></script>
+</head>
+
+<body class="bg-mesh-dark text-zinc-300 selection:bg-fire-600 selection:text-white relative font-sans">
+    <a href="#main-content" class="skip-link">Pular para o conteúdo</a>
+
+    <div id="precision-cursor" aria-hidden="true"
+        class="fixed top-0 left-0 w-7 h-7 rounded-full pointer-events-none z-[9999] opacity-0 -translate-x-1/2 -translate-y-1/2 transition-opacity duration-300 hidden md:block border border-zinc-400"
+        style="transition: opacity 300ms, transform 80ms linear;"></div>
+
+    <canvas id="spark-canvas" aria-hidden="true" class="fixed inset-0 pointer-events-none z-[9998]"></canvas>
+
+    <div id="dot-grid-base" aria-hidden="true"
+        class="fixed inset-0 pointer-events-none z-0 opacity-10 bg-[radial-gradient(circle,#d4d4d8_1px,transparent_1px)]"
+        style="background-size: 24px 24px;"></div>
+    <div id="dot-grid-flashlight" aria-hidden="true"></div>
+
+    <div id="scroll-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"
+        aria-label="Progresso de leitura"
+        class="fixed top-0 left-0 h-1 bg-fire-600 z-[100] transition-all duration-300 shadow-[0_0_10px_rgba(234,88,12,0.8)]"
+        style="width: 0%"></div>
+
+    <a data-wa-trigger="true" data-wa-message="Olá, gostaria de saber mais." target="_blank" rel="noopener noreferrer"
+        aria-label="Falar no WhatsApp (abre em nova janela)"
+        class="fixed bottom-6 right-6 z-[90] p-4 bg-[#25D366] text-white rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group">
+        <i data-lucide="message-square" class="w-6 h-6" aria-hidden="true"></i>
+        <span
+            class="absolute right-full mr-4 bg-zinc-900 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none"
+            aria-hidden="true">Falar
+            no WhatsApp</span>
+    </a>
+
+    <!-- ATMOSPHERE LAYER -->
+    <div class="fixed inset-0 pointer-events-none overflow-hidden z-0" aria-hidden="true">
+        <div id="blob1"
+            class="absolute top-[-20%] left-[10%] w-[40%] h-[70%] bg-gradient-to-br from-indigo-50/50 via-zinc-100/30 to-transparent blur-[120px] opacity-30"
+            style="animation: blobDrift1 22s ease-in-out infinite;"></div>
+        <div id="blob2"
+            class="absolute top-[-10%] right-[5%] w-[50%] h-[80%] bg-gradient-to-bl from-orange-50/40 via-white to-transparent blur-[100px] opacity-25"
+            style="animation: blobDrift2 28s ease-in-out infinite;"></div>
+        <div id="blob3"
+            class="absolute bottom-[10%] left-[30%] w-[45%] h-[50%] bg-gradient-to-tr from-fire-600/5 via-transparent to-transparent blur-[140px] opacity-20"
+            style="animation: blobDrift3 16s ease-in-out infinite;"></div>
+        <div id="blob4"
+            class="absolute top-[40%] left-[-15%] w-[40%] h-[60%] bg-gradient-to-tr from-fire-600/15 via-zinc-400/5 to-transparent blur-[130px] opacity-30"
+            style="animation: blobDrift1 20s ease-in-out infinite reverse;"></div>
+        <div id="ambient-mouse-glow" class="absolute inset-0 pointer-events-none"
+            style="background: radial-gradient(1200px circle at calc(50% + var(--mouse-x, 0) * 15%) calc(50% + var(--mouse-y, 0) * 15%), rgba(234, 88, 12, 0.05), transparent 100%);">
+        </div>
+    </div>
+
+    <!-- NAVBAR TRIGGER -->
+    <div id="navbar-trigger" aria-hidden="true"
+        class="fixed top-0 left-0 right-0 h-10 z-[49] group cursor-pointer hidden">
+        <div
+            class="absolute top-0 left-1/2 -translate-x-1/2 bg-zinc-950/40 backdrop-blur-md border border-white/10 border-t-0 rounded-b-xl px-6 py-2 shadow-lg transform translate-y-0 group-hover:bg-zinc-950/90 transition-all duration-300 flex items-center gap-2 opacity-60 group-hover:opacity-100">
+            <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest">Menu</span>
+            <i aria-hidden="true" data-lucide="chevron-down" class="w-3.5 h-3.5 text-fire-500"></i>
+        </div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav id="navbar" aria-label="Navegação principal"
+        class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 py-5 lg:py-6">
+        <div id="navbar-bg"
+            class="absolute inset-0 w-full h-full -z-10 transition-all duration-500 opacity-0 bg-transparent"></div>
+        <div class="container max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center relative z-20">
+            <a href="index.html" class="flex items-center gap-3 group cursor-pointer relative z-50">
+                <img src="assets/logo/firecam-logo-web.png" alt="Firecam"
+                    class="h-16 md:h-20 w-auto object-contain transition-all duration-500 group-hover:scale-105"
+                    loading="lazy">
+            </a>
+            <div class="hidden lg:flex items-center gap-8">
+                <a href="index.html"
+                    class="text-sm font-bold text-zinc-200 hover:text-white transition-colors">Início</a>
+                <a href="sobre.html" class="text-sm font-bold text-zinc-200 hover:text-white transition-colors">A
+                    Firecam</a>
+
+                <!-- Solutions Dropdown -->
+                <div class="relative group/solutions" id="dropdown-solutions">
+                    <button
+                        class="flex items-center gap-1 text-sm font-bold text-zinc-200 hover:text-white transition-colors py-2">
+                        Soluções
+                        <i aria-hidden="true" data-lucide="chevron-down"
+                            class="w-3.5 h-3.5 transition-transform group-hover/solutions:rotate-180"></i>
+                    </button>
+                    <div id="dropdown-solutions-menu" role="menu"
+                        class="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 invisible group-hover/solutions:opacity-100 group-hover/solutions:visible transition-all duration-300">
+                        <div
+                            class="bg-zinc-950/60 backdrop-blur-3xl rounded-xl border border-white/10 ring-1 ring-white/5 p-2 min-w-[260px] flex flex-col gap-1 overflow-hidden">
+                            <a href="alarme-incendio.html" role="menuitem"
+                                class="w-full px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 rounded-lg transition-all text-left">Alarme
+                                de Incêndio (NBR 17240)</a>
+                            <a href="controle-acesso.html" role="menuitem"
+                                class="w-full px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 rounded-lg transition-all text-left">Controle
+                                de Acesso</a>
+                            <a href="cabeamento-estruturado.html" role="menuitem"
+                                class="w-full px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 rounded-lg transition-all text-left">Cabeamento
+                                Estruturado & Redes</a>
+                            <a href="cftv.html" role="menuitem" aria-current="page"
+                                class="w-full px-4 py-3 text-sm font-medium text-white bg-white/10 rounded-lg transition-all text-left">CFTV
+                                & Videomonitoramento</a>
+                        </div>
+                    </div>
+                </div>
+
+                <a href="index.html#cases"
+                    class="text-sm font-bold text-zinc-200 hover:text-white transition-colors">Casos de Sucesso</a>
+            </div>
+            <div class="hidden lg:block">
+                <button class="link-cta sm"
+                    onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">
+                    <div class="premium-cta"><span class="premium-cta-text">Orçamento Técnico</span></div>
+                </button>
+            </div>
+            <button id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu"
+                class="lg:hidden p-2 relative z-50 text-white">
+                <i aria-hidden="true" data-lucide="menu" size="28"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- MOBILE MENU OVERLAY -->
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-zinc-950/95 backdrop-blur-3xl z-40 lg:hidden transition-all duration-500 opacity-0 invisible -translate-y-4 pointer-events-none">
+        <div class="h-full w-full overflow-y-auto flex flex-col items-center justify-start pt-32 pb-12 px-6 gap-8">
+            <a href="index.html" class="mobile-link text-3xl font-black text-white">Início</a>
+            <a href="sobre.html" class="mobile-link text-3xl font-black text-white">A Firecam</a>
+            <a href="cftv.html" class="mobile-link text-3xl font-black text-fire-500">Videomonitoramento</a>
+            <div class="w-16 h-px bg-zinc-800"></div>
+            <a href="index.html#cases" class="mobile-link text-3xl font-black text-white">Casos de Sucesso</a>
+            <button type="button" class="link-cta md w-full max-w-xs"
+                onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'}); document.getElementById('mobile-menu').classList.add('invisible');">
+                <div class="premium-cta">
+                    <span class="premium-cta-text">Orçamento Técnico</span>
+                </div>
+            </button>
+        </div>
+    </div>
+
+    <main id="main-content" class="relative z-10">
+
+        <!-- HERO -->
+        <section class="relative h-[100dvh] min-h-[600px] w-full overflow-hidden bg-zinc-950 text-white">
+            <div class="absolute inset-0 w-full h-full bg-cover bg-center"
+                style="background-image: url(assets/img/_MG_6862_1.webp); animation: kenburns 20s ease-out forwards;">
+            </div>
+            <div class="absolute inset-0 bg-black/50"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-black/95 via-black/50 to-transparent"></div>
+            <div class="absolute inset-0 z-20 container max-w-7xl mx-auto px-6 lg:px-12 flex flex-col justify-center">
+                <div class="hero-content opacity-0 translate-y-8 transition-all duration-1000 max-w-3xl">
+                    <div
+                        class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md mb-6 border border-white/10">
+                        <i data-lucide="shield-check" class="w-3.5 h-3.5 text-fire-500" aria-hidden="true"></i>
+                        <span class="text-zinc-200 text-xs font-bold uppercase tracking-wide">CFTV IP · Inteligência
+                            Artificial</span>
+                    </div>
+
+                    <h1 class="text-4xl sm:text-5xl md:text-7xl font-bold tracking-tight mb-4 leading-tight">
+                        Instalação e Integração<br />
+                        <span class="text-zinc-300 font-light">de</span> <span class="text-fire-600">CFTV IP com
+                            IA.</span>
+                    </h1>
+
+                    <p class="text-zinc-200 text-base md:text-lg max-w-xl mb-8 leading-relaxed">
+                        Execução completa de projetos de videomonitoramento: Infraestrutura de rede, instalação de
+                        câmeras de alta resolução e <strong class="text-white">configuração de analíticos</strong> para
+                        proteção perimetral e interna.
+                    </p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 mb-8 max-w-xl">
+                        <div class="flex items-center gap-2">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-fire-600/20 border border-fire-500/30 flex items-center justify-center shrink-0">
+                                <i data-lucide="check-circle" class="w-4 h-4 text-fire-500" aria-hidden="true"></i>
+                            </div>
+                            <span class="text-zinc-300 text-sm font-medium">Evidências Forenses</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-fire-600/20 border border-fire-500/30 flex items-center justify-center shrink-0">
+                                <i data-lucide="zap" class="w-4 h-4 text-fire-500" aria-hidden="true"></i>
+                            </div>
+                            <span class="text-zinc-300 text-sm font-medium">Alertas Proativos</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-fire-600/20 border border-fire-500/30 flex items-center justify-center shrink-0">
+                                <i data-lucide="shield" class="w-4 h-4 text-fire-500" aria-hidden="true"></i>
+                            </div>
+                            <span class="text-zinc-300 text-sm font-medium">Proteção Perimetral</span>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-fire-600/20 border border-fire-500/30 flex items-center justify-center shrink-0">
+                                <i data-lucide="monitor" class="w-4 h-4 text-fire-500" aria-hidden="true"></i>
+                            </div>
+                            <span class="text-zinc-300 text-sm font-medium">Monitoramento IP 4K</span>
+                        </div>
+                    </div>
+
+                    <button type="button" class="link-cta lg"
+                        onclick="document.getElementById('contato').scrollIntoView({behavior: 'smooth'})">
+                        <div class="premium-cta">
+                            <span class="premium-cta-text">Cotar Sistema de Câmeras</span>
+                        </div>
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <!-- NARRATIVE / A DOR DO MERCADO -->
+        <section class="section-pad bg-transparent relative overflow-hidden noise-overlay">
+            <div id="particles-narrative" class="absolute inset-0 z-0 pointer-events-none opacity-20"></div>
+            <div class="container max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
+                <div class="text-center mb-12 max-w-4xl mx-auto reveal">
+                    <span class="text-fire-600 font-bold uppercase tracking-widest text-xs block mb-4">Atenção</span>
+                    <h2 class="text-editorial-headline text-white mb-6 font-display">
+                        Câmeras que Apenas "Filmam" <span class="text-fire-600">Não Protegem Sua Empresa</span>
+                    </h2>
+                    <p class="text-zinc-300 text-xl leading-relaxed">
+                        Sistemas analógicos antigos ou instalações amadoras que resultam em imagens granuladas e falhas
+                        no momento crítico. A <strong class="text-zinc-200">Firecam</strong> transforma seu
+                        monitoramento com sistemas IP modernos que entregam evidências reais.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
+                    <div class="alarm-risk-card glass-panel-dark rounded-2xl p-8 relative overflow-hidden reveal">
+                        <div class="alarm-bar" aria-hidden="true"></div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-fire-600/10 border border-fire-600/20 flex items-center justify-center shrink-0">
+                                <i aria-hidden="true" data-lucide="eye-off" class="w-4 h-4 text-fire-600"></i>
+                            </div>
+                            <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Risco 01</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 tracking-tight">Falsa Sensação de Segurança</h3>
+                        <p class="text-zinc-400 leading-relaxed text-sm">
+                            Imagens inúteis na hora da necessidade por baixa resolução ou pontos cegos ignorados.
+                        </p>
+                    </div>
+
+                    <div
+                        class="alarm-risk-card glass-panel-dark rounded-2xl p-8 relative overflow-hidden reveal delay-100">
+                        <div class="alarm-bar" aria-hidden="true"></div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-fire-600/10 border border-fire-600/20 flex items-center justify-center shrink-0">
+                                <i aria-hidden="true" data-lucide="database-zap" class="w-4 h-4 text-fire-600"></i>
+                            </div>
+                            <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Risco 02</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 tracking-tight">Falhas de Gravação</h3>
+                        <p class="text-zinc-400 leading-relaxed text-sm">
+                            HDs comuns que falham em uso 24/7, resultando em perda total de evidências.
+                        </p>
+                    </div>
+
+                    <div
+                        class="alarm-risk-card glass-panel-dark rounded-2xl p-8 relative overflow-hidden reveal delay-200">
+                        <div class="alarm-bar" aria-hidden="true"></div>
+                        <div class="flex items-center gap-3 mb-6">
+                            <div
+                                class="w-8 h-8 rounded-lg bg-fire-600/10 border border-fire-600/20 flex items-center justify-center shrink-0">
+                                <i aria-hidden="true" data-lucide="alert-circle" class="w-4 h-4 text-fire-600"></i>
+                            </div>
+                            <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Risco 03</span>
+                        </div>
+                        <h3 class="text-xl font-bold text-white mb-3 tracking-tight">Reação Tardia</h3>
+                        <p class="text-zinc-400 leading-relaxed text-sm">
+                            Sistemas sem analíticos que só mostram o prejuízo após o ocorrido, sem alertas antecipados.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="max-w-3xl mx-auto reveal delay-300 pt-8 border-t border-zinc-800/50">
+                    <div class="flex items-start gap-4 pt-8">
+                        <div
+                            class="w-8 h-8 rounded-lg bg-fire-600/15 border border-fire-600/25 flex items-center justify-center shrink-0 mt-1">
+                            <i aria-hidden="true" data-lucide="shield-check" class="w-4 h-4 text-fire-500"></i>
+                        </div>
+                        <p class="text-zinc-300 text-xl leading-relaxed">
+                            A <strong class="text-white">Firecam</strong> especifica e instala a tecnologia correta para
+                            cada ponto cego, garantindo <strong class="text-fire-500">imagens nítidas</strong> e alertas
+                            proativos.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HARDWARE E DISPOSITIVOS -->
+        <section id="native-scroll-section" class="relative w-full bg-transparent text-white">
+
+            <!-- Premium vertical progress rail (desktop only) -->
+            <div id="device-progress-rail" class="hidden lg:flex" aria-hidden="true">
+                <div class="rail-track">
+                    <div class="rail-fill" id="rail-fill"></div>
+                </div>
+                <div class="rail-node active" data-rail="0">
+                    <span class="rail-num">01</span>
+                    <span class="rail-label">Bullet</span>
+                </div>
+                <div class="rail-node" data-rail="1">
+                    <span class="rail-num">02</span>
+                    <span class="rail-label">Dome</span>
+                </div>
+                <div class="rail-node" data-rail="2">
+                    <span class="rail-num">03</span>
+                    <span class="rail-label">Robótica</span>
+                </div>
+                <div class="rail-node" data-rail="3">
+                    <span class="rail-num">04</span>
+                    <span class="rail-label">Full Color</span>
+                </div>
+                <div class="rail-node" data-rail="4">
+                    <span class="rail-num">05</span>
+                    <span class="rail-label">Cérebro</span>
+                </div>
+            </div>
+
+            <div class="container max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-16">
+                <div class="mb-16 reveal relative flex flex-col items-center text-center">
+                    <div
+                        class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-fire-600/10 blur-[100px] rounded-full pointer-events-none">
+                    </div>
+
+                    <span class="text-fire-600 font-bold uppercase tracking-widest text-xs block mb-6">Hardware de Alta
+                        Performance</span>
+                    <h2 class="section-hero-title mb-8">
+                        Hardware de Captura e Gravação
+                    </h2>
+                    <p class="text-zinc-300 text-lg md:text-xl leading-relaxed max-w-2xl mx-auto">
+                        Trabalhamos com marcas líderes <span class="text-zinc-200 font-medium">(Intelbras, Hikvision,
+                            Dahua, Axis)</span>, especificando a tecnologia exata para cada ponto cego.
+                    </p>
+                </div>
+
+                <div class="lg:grid lg:grid-cols-2 lg:gap-16">
+
+                    <!-- LEFT: scrollable text content -->
+                    <div class="relative z-10 pb-16">
+
+                        <!-- Device 01 — Câmeras Bullet -->
+                        <div class="scroll-item min-h-[60vh] flex items-center py-10" data-index="0"
+                            data-name="Câmeras Bullet (Canhão)" data-category="EXTERNO">
+                            <div class="relative flex flex-col justify-center w-full">
+                                <span class="device-watermark" aria-hidden="true">01</span>
+                                <div
+                                    class="item-mobile-img lg:hidden w-full aspect-video rounded-2xl overflow-hidden mb-8 opacity-30 scale-95 transition-all duration-500">
+                                    <img src="assets/img/optimized/_MG_6862_1.webp" class="w-full h-full object-cover"
+                                        alt="Câmera Bullet" loading="lazy">
+                                </div>
+                                <div class="w-12 h-12 bg-zinc-900/60 rounded-xl flex items-center justify-center text-fire-600 mb-6 item-icon transition-all duration-500"
+                                    style="transition-delay: 0ms;">
+                                    <i aria-hidden="true" data-lucide="video" class="w-5 h-5"></i>
+                                </div>
+                                <div class="flex items-center gap-4 mb-5 item-counter transition-all duration-500 opacity-0 translate-y-2"
+                                    style="transition-delay: 80ms;">
+                                    <span
+                                        class="text-fire-600/25 text-2xl font-display font-bold tracking-tighter">01</span>
+                                    <span class="device-category-pill">Externo</span>
+                                </div>
+                                <h3 class="text-4xl md:text-5xl font-display font-medium text-white tracking-tighter mb-6 transition-all duration-700 opacity-40 item-title transform-gpu"
+                                    style="transition-delay: 160ms;">
+                                    Câmeras Bullet</h3>
+                                <p class="text-zinc-300 text-base md:text-lg font-light leading-relaxed transition-all duration-700 opacity-40 item-desc max-w-lg mb-8"
+                                    style="transition-delay: 280ms;">
+                                    Ideal para perímetros externos e muros. Proteção IP67 (à prova d'água) com visão
+                                    noturna de longa distância (30m a 80m).
+                                </p>
+                                <div class="flex flex-wrap gap-2.5 item-specs transition-all duration-500 opacity-0 translate-x-[-8px]"
+                                    style="transition-delay: 400ms;">
+                                    <span class="device-spec-badge">Proteção IP67</span>
+                                    <span class="device-spec-badge">Infravermelho 80m</span>
+                                    <span class="device-spec-badge">Lente Varifocal</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Device 02 — Câmeras Dome -->
+                        <div class="scroll-item min-h-[60vh] flex items-center py-10" data-index="1"
+                            data-name="Câmeras Dome (Cúpula)" data-category="INTERNO">
+                            <div class="relative flex flex-col justify-center w-full">
+                                <span class="device-watermark" aria-hidden="true">02</span>
+                                <div
+                                    class="item-mobile-img lg:hidden w-full aspect-video rounded-2xl overflow-hidden mb-8 opacity-30 scale-95 transition-all duration-500">
+                                    <img src="assets/img/optimized/_MG_6846.webp" class="w-full h-full object-cover"
+                                        alt="Câmera Dome" loading="lazy">
+                                </div>
+                                <div class="w-12 h-12 bg-zinc-900/60 rounded-xl flex items-center justify-center text-fire-600 mb-6 item-icon transition-all duration-500"
+                                    style="transition-delay: 0ms;">
+                                    <i aria-hidden="true" data-lucide="scan" class="w-5 h-5"></i>
+                                </div>
+                                <div class="flex items-center gap-4 mb-5 item-counter transition-all duration-500 opacity-0 translate-y-2"
+                                    style="transition-delay: 80ms;">
+                                    <span
+                                        class="text-fire-600/25 text-2xl font-display font-bold tracking-tighter">02</span>
+                                    <span class="device-category-pill">Interno</span>
+                                </div>
+                                <h3 class="text-4xl md:text-5xl font-display font-medium text-white tracking-tighter mb-6 transition-all duration-700 opacity-40 item-title transform-gpu"
+                                    style="transition-delay: 160ms;">
+                                    Câmeras Dome</h3>
+                                <p class="text-zinc-300 text-base md:text-lg font-light leading-relaxed transition-all duration-700 opacity-40 item-desc max-w-lg mb-8"
+                                    style="transition-delay: 280ms;">
+                                    Discretas e resistentes. Ideal para recepções e corredores, dificultando a percepção
+                                    da direção da lente.
+                                </p>
+                                <div class="flex flex-wrap gap-2.5 item-specs transition-all duration-500 opacity-0 translate-x-[-8px]"
+                                    style="transition-delay: 400ms;">
+                                    <span class="device-spec-badge">Proteção IK10</span>
+                                    <span class="device-spec-badge">Antivandalismo</span>
+                                    <span class="device-spec-badge">Ângulo 108°</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Device 03 — Speed Domes -->
+                        <div class="scroll-item min-h-[60vh] flex items-center py-10" data-index="2"
+                            data-name="Speed Domes (PTZ)" data-category="ROBÓTICA">
+                            <div class="relative flex flex-col justify-center w-full">
+                                <span class="device-watermark" aria-hidden="true">03</span>
+                                <div
+                                    class="item-mobile-img lg:hidden w-full aspect-video rounded-2xl overflow-hidden mb-8 opacity-30 scale-95 transition-all duration-500">
+                                    <img src="assets/img/optimized/_MG_6845.webp" class="w-full h-full object-cover"
+                                        alt="Câmera Speed Dome" loading="lazy">
+                                </div>
+                                <div class="w-12 h-12 bg-zinc-900/60 rounded-xl flex items-center justify-center text-fire-600 mb-6 item-icon transition-all duration-500"
+                                    style="transition-delay: 0ms;">
+                                    <i aria-hidden="true" data-lucide="refresh-cw" class="w-5 h-5"></i>
+                                </div>
+                                <div class="flex items-center gap-4 mb-5 item-counter transition-all duration-500 opacity-0 translate-y-2"
+                                    style="transition-delay: 80ms;">
+                                    <span
+                                        class="text-fire-600/25 text-2xl font-display font-bold tracking-tighter">03</span>
+                                    <span class="device-category-pill">Robótica</span>
+                                </div>
+                                <h3 class="text-4xl md:text-5xl font-display font-medium text-white tracking-tighter mb-6 transition-all duration-700 opacity-40 item-title transform-gpu"
+                                    style="transition-delay: 160ms;">
+                                    Speed Domes (PTZ)</h3>
+                                <p class="text-zinc-300 text-base md:text-lg font-light leading-relaxed transition-all duration-700 opacity-40 item-desc max-w-lg mb-8"
+                                    style="transition-delay: 280ms;">
+                                    Giro 360º com zoom óptico poderoso (até 32x). Identifica rostos e placas a centenas
+                                    de metros.
+                                </p>
+                                <div class="flex flex-wrap gap-2.5 item-specs transition-all duration-500 opacity-0 translate-x-[-8px]"
+                                    style="transition-delay: 400ms;">
+                                    <span class="device-spec-badge">Zoom Óptico 32x</span>
+                                    <span class="device-spec-badge">Giro 360º</span>
+                                    <span class="device-spec-badge">Auto-tracking</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Device 04 — Full Color -->
+                        <div class="scroll-item min-h-[60vh] flex items-center py-10" data-index="3"
+                            data-name="Câmeras Full Color" data-category="DETALHE">
+                            <div class="relative flex flex-col justify-center w-full">
+                                <span class="device-watermark" aria-hidden="true">04</span>
+                                <div
+                                    class="item-mobile-img lg:hidden w-full aspect-video rounded-2xl overflow-hidden mb-8 opacity-30 scale-95 transition-all duration-500">
+                                    <img src="assets/img/optimized/_MG_6828.webp" class="w-full h-full object-cover"
+                                        alt="Câmera Full Color" loading="lazy">
+                                </div>
+                                <div class="w-12 h-12 bg-zinc-900/60 rounded-xl flex items-center justify-center text-fire-600 mb-6 item-icon transition-all duration-500"
+                                    style="transition-delay: 0ms;">
+                                    <i aria-hidden="true" data-lucide="sun" class="w-5 h-5"></i>
+                                </div>
+                                <div class="flex items-center gap-4 mb-5 item-counter transition-all duration-500 opacity-0 translate-y-2"
+                                    style="transition-delay: 80ms;">
+                                    <span
+                                        class="text-fire-600/25 text-2xl font-display font-bold tracking-tighter">04</span>
+                                    <span class="device-category-pill">Detalhe</span>
+                                </div>
+                                <h3 class="text-4xl md:text-5xl font-display font-medium text-white tracking-tighter mb-6 transition-all duration-700 opacity-40 item-title transform-gpu"
+                                    style="transition-delay: 160ms;">
+                                    ColorVu / Full Color</h3>
+                                <p class="text-zinc-300 text-base md:text-lg font-light leading-relaxed transition-all duration-700 opacity-40 item-desc max-w-lg mb-8"
+                                    style="transition-delay: 280ms;">
+                                    Imagens coloridas 24 horas por dia, mesmo em breu total. Essencial para identificar
+                                    cores de roupas e veículos à noite.
+                                </p>
+                                <div class="flex flex-wrap gap-2.5 item-specs transition-all duration-500 opacity-0 translate-x-[-8px]"
+                                    style="transition-delay: 400ms;">
+                                    <span class="device-spec-badge">F1.0 Super Abertura</span>
+                                    <span class="device-spec-badge">24h Colorido</span>
+                                    <span class="device-spec-badge">WDR Real</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Device 05 — Gravação -->
+                        <div class="scroll-item min-h-[60vh] flex items-center py-10" data-index="4"
+                            data-name="Gravação e Gerenciamento" data-category="CÉREBRO">
+                            <div class="relative flex flex-col justify-center w-full">
+                                <span class="device-watermark" aria-hidden="true">05</span>
+                                <div
+                                    class="item-mobile-img lg:hidden w-full aspect-video rounded-2xl overflow-hidden mb-8 opacity-30 scale-95 transition-all duration-500">
+                                    <img src="assets/img/optimized/_MG_6820.webp" class="w-full h-full object-cover"
+                                        alt="NVR e HDs" loading="lazy">
+                                </div>
+                                <div class="w-12 h-12 bg-zinc-900/60 rounded-xl flex items-center justify-center text-fire-600 mb-6 item-icon transition-all duration-500"
+                                    style="transition-delay: 0ms;">
+                                    <i aria-hidden="true" data-lucide="database" class="w-5 h-5"></i>
+                                </div>
+                                <div class="flex items-center gap-4 mb-5 item-counter transition-all duration-500 opacity-0 translate-y-2"
+                                    style="transition-delay: 80ms;">
+                                    <span
+                                        class="text-fire-600/25 text-2xl font-display font-bold tracking-tighter">05</span>
+                                    <span class="device-category-pill">Gerenciamento</span>
+                                </div>
+                                <h3 class="text-4xl md:text-5xl font-display font-medium text-white tracking-tighter mb-6 transition-all duration-700 opacity-40 item-title transform-gpu"
+                                    style="transition-delay: 160ms;">
+                                    NVRs e HDs de Elite</h3>
+                                <p class="text-zinc-300 text-base md:text-lg font-light leading-relaxed transition-all duration-700 opacity-40 item-desc max-w-lg mb-8"
+                                    style="transition-delay: 280ms;">
+                                    Network Video Recorders 4K com HDs de grau de vigilância 24/7 (WD Purple/Skyhawk),
+                                    garantindo que sua gravação nunca falhe.
+                                </p>
+                                <div class="flex flex-wrap gap-2.5 item-specs transition-all duration-500 opacity-0 translate-x-[-8px]"
+                                    style="transition-delay: 400ms;">
+                                    <span class="device-spec-badge">Codec H.265+</span>
+                                    <span class="device-spec-badge">HD Vigilância 24/7</span>
+                                    <span class="device-spec-badge">Acesso Nuvem P2P</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="h-px"></div>
+                    </div>
+
+                    <!-- RIGHT: sticky image panel (desktop only) — Premium Frame -->
+                    <div class="hidden lg:flex items-start">
+                        <div class="sticky top-0 h-screen w-full flex items-center py-16">
+                            <div id="device-ambient-glow"
+                                class="absolute inset-0 pointer-events-none transition-opacity duration-1000"
+                                style="background: radial-gradient(ellipse at center, rgba(234,88,12,0.06) 0%, transparent 70%); filter: blur(60px);">
+                            </div>
+                            <div class="device-image-frame relative w-full rounded-3xl overflow-hidden"
+                                style="height: calc(100vh - 8rem);">
+                                <img id="media-img-0" src="assets/img/optimized/_MG_6862_1.webp"
+                                    class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-100 scale-100 transform-gpu"
+                                    alt="Câmera Bullet" loading="lazy">
+                                <img id="media-img-1" src="assets/img/optimized/_MG_6846.webp"
+                                    class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-0 scale-[1.02] transform-gpu"
+                                    alt="Câmera Dome" loading="lazy">
+                                <img id="media-img-2" src="assets/img/optimized/_MG_6845.webp"
+                                    class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-0 scale-[1.02] transform-gpu"
+                                    alt="Speed Dome" loading="lazy">
+                                <img id="media-img-3" src="assets/img/optimized/_MG_6828.webp"
+                                    class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-0 scale-[1.02] transform-gpu"
+                                    alt="Câmera Full Color" loading="lazy">
+                                <img id="media-img-4" src="assets/img/optimized/_MG_6820.webp"
+                                    class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-0 scale-[1.02] transform-gpu"
+                                    alt="NVR e Central" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- INTELIGÊNCIA ARTIFICIAL -->
+        <section class="section-pad bg-transparent relative overflow-hidden">
+            <div class="container max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="mb-12 reveal">
+                    <span class="text-zinc-500 font-bold uppercase tracking-widest text-xs block mb-4">Analíticos de
+                        Vídeo</span>
+                    <h2 class="text-editorial-headline font-display font-medium text-white mb-6 tracking-tight">
+                        Inteligência Artificial na Borda</h2>
+                    <p class="text-zinc-400 text-base leading-relaxed max-w-3xl">
+                        Transformamos vídeo passivo em dados proativos de segurança, reduzindo alarmes falsos e
+                        automatizando a vigilância.
+                    </p>
+                </div>
+
+                <div class="grid md:grid-cols-2 gap-16 items-center">
+                    <div class="reveal">
+                        <ul class="space-y-8">
+                            <li class="flex items-start gap-5">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-fire-600/10 flex items-center justify-center flex-shrink-0 text-fire-600 border border-fire-600/20 mt-0.5">
+                                    <i aria-hidden="true" data-lucide="split" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-base font-bold text-white mb-1">Cerca Virtual</h4>
+                                    <p class="text-zinc-400 text-sm leading-relaxed">Alertas imediatos se alguém cruzar
+                                        linhas digitais ou invadir áreas restritas após horários configurados.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-5">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-fire-600/10 flex items-center justify-center flex-shrink-0 text-fire-600 border border-fire-600/20 mt-0.5">
+                                    <i aria-hidden="true" data-lucide="scan-text" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-base font-bold text-white mb-1">Leitura de Placas (LPR)</h4>
+                                    <p class="text-zinc-400 text-sm leading-relaxed">Captura de caracteres e criação de
+                                        banco de dados pesquisável de entradas e saídas de veículos.</p>
+                                </div>
+                            </li>
+                            <li class="flex items-start gap-5">
+                                <div
+                                    class="w-10 h-10 rounded-lg bg-fire-600/10 flex items-center justify-center flex-shrink-0 text-fire-600 border border-fire-600/20 mt-0.5">
+                                    <i aria-hidden="true" data-lucide="user-check" class="w-5 h-5"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-base font-bold text-white mb-1">Filtro de Falso Positivo</h4>
+                                    <p class="text-zinc-400 text-sm leading-relaxed">IA que distingue humanos e veículos
+                                        de animais, chuva ou folhas, focando no que realmente importa.</p>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- DIFERENCIAIS -->
+                    <div class="reveal delay-200">
+                        <div class="glass-panel-dark rounded-2xl overflow-hidden relative p-8">
+                            <h3 class="text-xl font-bold text-white mb-6">Por que a Firecam não falha?</h3>
+                            <div class="space-y-6">
+                                <div class="flex items-start gap-4">
+                                    <i aria-hidden="true" data-lucide="link-2" class="w-5 h-5 text-fire-600 mt-1"></i>
+                                    <div>
+                                        <p class="text-white font-bold text-sm">Infraestrutura Dedicada</p>
+                                        <p class="text-zinc-500 text-xs">Rede exclusiva via Cabo UTP Cat6 ou Fibra, zero
+                                            atraso.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <i aria-hidden="true" data-lucide="zap" class="w-5 h-5 text-fire-600 mt-1"></i>
+                                    <div>
+                                        <p class="text-white font-bold text-sm">Proteção Elétrica</p>
+                                        <p class="text-zinc-500 text-xs">Switches PoE e DPS para evitar queima por raios
+                                            ou surtos.</p>
+                                    </div>
+                                </div>
+                                <div class="flex items-start gap-4">
+                                    <i aria-hidden="true" data-lucide="sliders" class="w-5 h-5 text-fire-600 mt-1"></i>
+                                    <div>
+                                        <p class="text-white font-bold text-sm">Ajuste de Cena Pro</p>
+                                        <p class="text-zinc-500 text-xs">Configuração de WDR e HLC para equilíbrio de
+                                            luz
+                                            extremo.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROCESSO DE INSTALAÇÃO -->
+        <section class="section-pad bg-transparent">
+            <div class="container max-w-7xl mx-auto px-6 lg:px-12">
+                <div class="text-center mb-16 reveal">
+                    <span
+                        class="text-fire-600 font-bold uppercase tracking-widest text-xs block mb-4">Metodologia</span>
+                    <h2 class="text-editorial-headline text-white mb-6 font-display">
+                        Fluxo de Trabalho: Do Ponto Cego à Visão Total
+                    </h2>
+                </div>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Step 1 -->
+                    <div class="glass-panel-dark p-8 rounded-2xl border border-white/5 reveal">
+                        <span class="text-4xl font-black text-white/10 mb-6 block font-display">01</span>
+                        <h4 class="text-lg font-bold text-white mb-3">Análise Técnica</h4>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Mapeamos vulnerabilidades e definimos as lentes
+                            e resoluções ideais para cada ambiente.</p>
+                    </div>
+                    <!-- Step 2 -->
+                    <div class="glass-panel-dark p-8 rounded-2xl border border-white/5 reveal delay-100">
+                        <span class="text-4xl font-black text-white/10 mb-6 block font-display">02</span>
+                        <h4 class="text-lg font-bold text-white mb-3">Infraestrutura Seca</h4>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Instalação de eletrodutos galvanizados e caixas
+                            estanques para proteção total dos cabos.</p>
+                    </div>
+                    <!-- Step 3 -->
+                    <div class="glass-panel-dark p-8 rounded-2xl border border-white/5 reveal delay-200">
+                        <span class="text-4xl font-black text-white/10 mb-6 block font-display">03</span>
+                        <h4 class="text-lg font-bold text-white mb-3">Lançamento e Crimpagem</h4>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Passagem de cabeamento estruturado com
+                            conectorização profissional de alto padrão.</p>
+                    </div>
+                    <!-- Step 4 -->
+                    <div class="glass-panel-dark p-8 rounded-2xl border border-white/5 reveal">
+                        <span class="text-4xl font-black text-white/10 mb-6 block font-display">04</span>
+                        <h4 class="text-lg font-bold text-white mb-3">Fixação e Montagem</h4>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Instalação das câmeras em alturas estratégicas
+                            para evitar vandalismo e facilitar manutenção.</p>
+                    </div>
+                    <!-- Step 5 -->
+                    <div class="glass-panel-dark p-8 rounded-2xl border border-white/5 reveal delay-100">
+                        <span class="text-4xl font-black text-white/10 mb-6 block font-display">05</span>
+                        <h4 class="text-lg font-bold text-white mb-3">Configuração de Rede</h4>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Definição de sub-redes exclusivas, IPs fixos e
+                            configuração de acesso remoto Cloud/P2P.</p>
+                    </div>
+                    <!-- Step 6 -->
+                    <div class="glass-panel-dark p-8 rounded-2xl border border-white/5 reveal delay-200">
+                        <span class="text-4xl font-black text-white/10 mb-6 block font-display">06</span>
+                        <h4 class="text-lg font-bold text-white mb-3">Treinamento</h4>
+                        <p class="text-zinc-400 text-sm leading-relaxed">Capacitação para busca de gravações, exportação
+                            de clipes e visualização mobile.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section id="faq" class="section-pad">
+            <div class="container max-w-4xl mx-auto px-6 lg:px-12">
+                <div class="text-center mb-16 reveal">
+                    <h2 class="text-editorial-headline font-display font-bold text-white mb-4">Dúvidas sobre Instalação
+                    </h2>
+                    <p class="text-zinc-400 text-lg">Respostas técnicas para suas principais questões.</p>
+                </div>
+                <div class="space-y-3">
+                    <div class="border border-white/10 rounded-2xl overflow-hidden reveal">
+                        <button class="w-full flex items-center justify-between p-6 text-left"
+                            onclick="toggleFAQ(this)">
+                            <span class="text-base font-bold text-white">Qual a diferença de câmera Analógica para
+                                IP?</span>
+                            <i aria-hidden="true" data-lucide="chevron-down" class="w-5 h-5"></i>
+                        </button>
+                        <div class="max-h-0 overflow-hidden transition-all duration-500">
+                            <div class="px-6 pb-6 text-zinc-400 text-sm border-t border-zinc-800 pt-4">
+                                A câmera IP é um computador com lente. Ela fornece resoluções superiores (4K), é imune a
+                                interferências e permite analíticos de IA nativos. analógicas são limitadas e mais
+                                suscetíveis a ruídos.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border border-white/10 rounded-2xl overflow-hidden reveal">
+                        <button class="w-full flex items-center justify-between p-6 text-left"
+                            onclick="toggleFAQ(this)">
+                            <span class="text-base font-bold text-white">Consigo ver as imagens pelo celular de fora da
+                                empresa?</span>
+                            <i aria-hidden="true" data-lucide="chevron-down" class="w-5 h-5"></i>
+                        </button>
+                        <div class="max-h-0 overflow-hidden transition-all duration-500">
+                            <div class="px-6 pb-6 text-zinc-400 text-sm border-t border-zinc-800 pt-4">
+                                Sim. Configuramos acesso remoto seguro via Nuvem P2P. Você visualiza imagens ao vivo e o
+                                histórico de gravações de qualquer lugar via App oficial no Android ou iOS.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border border-white/10 rounded-2xl overflow-hidden reveal">
+                        <button class="w-full flex items-center justify-between p-6 text-left"
+                            onclick="toggleFAQ(this)">
+                            <span class="text-base font-bold text-white">Quanto tempo as imagens ficam gravadas?</span>
+                            <i aria-hidden="true" data-lucide="chevron-down" class="w-5 h-5"></i>
+                        </button>
+                        <div class="max-h-0 overflow-hidden transition-all duration-500">
+                            <div class="px-6 pb-6 text-zinc-400 text-sm border-t border-zinc-800 pt-4">
+                                Depende do HD e da configuração de compressão. Projetamos o armazenamento para atender
+                                sua necessidade legal ou operacional, seja 7, 15 ou 30 dias de gravação contínua.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border border-white/10 rounded-2xl overflow-hidden reveal">
+                        <button class="w-full flex items-center justify-between p-6 text-left"
+                            onclick="toggleFAQ(this)">
+                            <span class="text-base font-bold text-white">O sistema funciona sem internet?</span>
+                            <i aria-hidden="true" data-lucide="chevron-down" class="w-5 h-5"></i>
+                        </button>
+                        <div class="max-h-0 overflow-hidden transition-all duration-500">
+                            <div class="px-6 pb-6 text-zinc-400 text-sm border-t border-zinc-800 pt-4">
+                                Sim. O NVR grava localmente no HD independente da internet. A conexão só é necessária
+                                para visualização remota. Sua segurança interna permanece ativa 100% do tempo.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER CTA -->
+        <section id="contato" class="section-pad bg-transparent relative overflow-hidden text-center noise-overlay">
+            <div class="container max-w-7xl mx-auto px-6 lg:px-12">
+                <div
+                    class="relative w-full glass-panel-dark rounded-[2rem] px-8 py-14 md:px-16 md:py-20 overflow-hidden noise-overlay premium-shadow reveal">
+                    <!-- Ambient fire glow -->
+                    <div
+                        class="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-48 bg-fire-600/10 blur-[80px] pointer-events-none rounded-full">
+                    </div>
+                    <!-- Top accent line -->
+                    <div
+                        class="absolute top-0 left-1/2 -translate-x-1/2 w-48 h-px bg-gradient-to-r from-transparent via-fire-500/60 to-transparent">
+                    </div>
+
+                    <div class="relative z-10">
+                        <p class="text-[10px] font-bold uppercase tracking-[0.35em] text-zinc-500 mb-6">Próximo Passo
+                        </p>
+
+                        <h3 class="text-4xl md:text-6xl font-bold text-white tracking-tighter leading-[1.05] mb-4">
+                            Monitore com Inteligência<br class="hidden md:block" />
+                            <span class="text-zinc-400 font-light">e</span> Visibilidade Total.
+                        </h3>
+
+                        <p class="text-zinc-300 text-base mb-10 max-w-md mx-auto">Chega de pontos cegos e imagens
+                            degradadas. Envie sua planta para a Firecam.</p>
+
+                        <a data-wa-trigger="true" data-wa-message="Olá, gostaria de cotar um sistema de CFTV."
+                            target="_blank" rel="noopener noreferrer"
+                            class="group inline-flex items-center gap-3 bg-white text-zinc-950 font-bold text-sm px-8 py-4 rounded-full shadow-[0_4px_24px_rgba(255,255,255,0.15)] hover:shadow-[0_6px_32px_rgba(255,255,255,0.25)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-200">
+                            Cotar Sistema de Câmeras
+                            <span
+                                class="w-7 h-7 rounded-full bg-zinc-950 text-white flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
+                                <i data-lucide="arrow-right" class="w-3.5 h-3.5" aria-hidden="true"></i>
+                            </span>
+                            <span class="sr-only">(abre em nova janela)</span>
+                        </a>
+
+                        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
+                            <div class="flex items-center gap-2 text-xs text-zinc-500">
+                                <i aria-hidden="true" data-lucide="shield-check" class="w-3.5 h-3.5 text-zinc-600"></i>
+                                <span>Orçamento completo: Equipamentos + <strong class="text-zinc-400 font-semibold">Mão
+                                        de Obra Especializada</strong></span>
+                            </div>
+                            <div class="w-px h-3 bg-zinc-800 hidden sm:block"></div>
+                            <a data-wa-trigger="true"
+                                data-wa-message="Olá, preciso tirar uma dúvida técnica sobre CFTV." target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex items-center gap-2 text-xs text-zinc-400 hover:text-zinc-200 transition-colors group/wa">
+                                <i data-lucide="message-circle"
+                                    class="w-3.5 h-3.5 text-green-400/80 group-hover/wa:text-green-400 transition-colors"
+                                    aria-hidden="true"></i>
+                                <span>Ou tire sua dúvida com um <strong
+                                        class="text-zinc-300 font-semibold">Técnico</strong></span>
+                                <span class="sr-only">(abre em nova janela)</span>
+                            </a>
+                            <div class="w-px h-3 bg-zinc-800 hidden sm:block"></div>
+                            <div class="flex items-center gap-2 text-xs text-zinc-500">
+                                <i aria-hidden="true" data-lucide="phone" class="w-3.5 h-3.5 text-zinc-600"></i>
+                                <span><strong class="text-zinc-400 font-semibold">(47) 3086-3186</strong></span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="relative z-20 overflow-hidden mt-10">
+        <div class="container max-w-7xl mx-auto px-6 lg:px-12 py-16 border-t border-white/5">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16">
+                <!-- Column 1: Brand -->
+                <div class="flex flex-col items-start gap-8">
+                    <a href="index.html" class="flex items-center gap-3 group">
+                        <img src="assets/logo/firecam-logo-web.png" alt="Firecam"
+                            class="h-16 w-auto transition-all duration-500 group-hover:scale-105" loading="lazy">
+                    </a>
+                    <p class="text-sm font-medium text-zinc-500 leading-relaxed max-w-xs">
+                        Infraestrutura técnica premium para sistemas de segurança eletrônica e prevenção de incêndio.
+                    </p>
+                </div>
+
+                <!-- Column 2: Site Map -->
+                <div>
+                    <div class="h-[76px] flex items-start mb-6 pt-5">
+                        <h3 class="text-xs font-semibold text-zinc-500 flex items-center gap-2">
+                            <span class="w-3.5 h-3.5 flex items-center justify-center"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-fire-600/40"></span></span> Mapa do site
+                        </h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li><a href="index.html"
+                                class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>Início</a>
+                        </li>
+                        <li><a href="sobre.html"
+                                class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>A
+                                Firecam</a></li>
+                        <li><a href="#contato"
+                                class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>Contato</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 3: Solutions -->
+                <div>
+                    <div class="h-[76px] flex items-start mb-6 pt-5">
+                        <h3 class="text-xs font-semibold text-zinc-500 flex items-center gap-2">
+                            <span class="w-3.5 h-3.5 flex items-center justify-center"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-fire-600/40"></span></span> Soluções
+                        </h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li><a href="alarme-incendio.html"
+                                class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>Alarme
+                                de Incêndio</a></li>
+                        <li><a href="controle-acesso.html"
+                                class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>Controle
+                                de Acesso</a></li>
+                        <li><a href="cftv.html"
+                                class="text-sm font-medium text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group"><i
+                                    data-lucide="chevron-right"
+                                    class="w-3.5 h-3.5 text-fire-600 transition-colors"></i>Videomonitoramento</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Column 4: Social -->
+                <div>
+                    <div class="h-[76px] flex items-start mb-6 pt-5">
+                        <h3 class="text-xs font-semibold text-zinc-500 flex items-center gap-2">
+                            <span class="w-3.5 h-3.5 flex items-center justify-center"><span
+                                    class="w-1.5 h-1.5 rounded-full bg-fire-600/40"></span></span> Social
+                        </h3>
+                    </div>
+                    <ul class="space-y-4">
+                        <li><a href="https://www.instagram.com/firecam" target="_blank" rel="noopener noreferrer"
+                                class="flex items-center gap-4 text-sm font-medium text-zinc-400 hover:text-white transition-colors group"><span
+                                    class="w-10 h-10 rounded-xl bg-zinc-900/50 border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-fire-600/40 group-hover:bg-fire-600/10 transition-all shadow-sm"><i
+                                        data-lucide="instagram"
+                                        class="w-4 h-4 text-zinc-400 group-hover:text-fire-400 transition-colors"
+                                        aria-hidden="true"></i></span>Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <div
+                class="pt-8 mt-12 border-t border-white/5 flex flex-col md:flex-row items-center justify-between gap-4">
+                <span class="text-[11px] font-medium text-zinc-600">
+                    © 2026 Firecam Tecnologia. Todos os direitos reservados.
+                </span>
+            </div>
+        </div>
+    </footer>
+
+    <script type="module" src="assets/js/main.js"></script>
+    <script>
+        function toggleFAQ(btn) {
+            const content = btn.nextElementSibling;
+            const isOpen = content.style.maxHeight && content.style.maxHeight !== '0px';
+            document.querySelectorAll('#faq .max-h-0').forEach(el => el.style.maxHeight = '0px');
+            if (!isOpen) content.style.maxHeight = content.scrollHeight + 'px';
+        }
+
+        window.addEventListener('load', () => {
+            const heroContent = document.querySelector('.hero-content');
+            if (heroContent) {
+                setTimeout(() => {
+                    heroContent.classList.remove('opacity-0', 'translate-y-8');
+                    heroContent.classList.add('opacity-100', 'translate-y-0');
+                }, 100);
+            }
+        });
+    </script>
+    <script src="assets/js/lead-router.js" defer></script>
+</body>
+
+</html>

@@ -20,16 +20,16 @@
     <meta property="og:url" content="https://www.firecam.com.br/alarme-incendio.html" />
     <meta property="og:title" content="Alarme de Incêndio NBR 17240 | Firecam Tecnologia" />
     <meta property="og:description"
-        content="Execução técnica de infraestrutura, cabeamento blindado e instalação de dispositivos certificados para aprovação de AVCB." />
-    <meta property="og:image" content="assets/img/_MG_6806.webp" />
+        content="Execução técnica de infraestrutura, cabeamento blindado e instalação de dispositivos certificados para aprovação de AVCB e proteção real do patrimônio." />
+    <meta property="og:image" content="assets/img/optimized/_MG_6806.webp" />
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://www.firecam.com.br/alarme-incendio.html" />
     <meta property="twitter:title" content="Alarme de Incêndio NBR 17240 | Firecam Tecnologia" />
     <meta property="twitter:description"
-        content="Execução técnica de infraestrutura, cabeamento blindado e instalação de dispositivos certificados para aprovação de AVCB." />
-    <meta property="twitter:image" content="assets/img/_MG_6806.webp" />
+        content="Execução técnica de infraestrutura, cabeamento blindado e instalação de dispositivos certificados para aprovação de AVCB e proteção real do patrimônio." />
+    <meta property="twitter:image" content="assets/img/optimized/_MG_6806.webp" />
 
     <!-- Canonical -->
     <link rel="canonical" href="https://www.firecam.com.br/alarme-incendio.html" />
@@ -74,7 +74,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-    <link rel="preload" as="image" href="assets/img/_MG_6806.webp" fetchpriority="high" />
+    <link rel="preload" as="image" href="assets/img/optimized/_MG_6806.webp" fetchpriority="high" />
     <link rel="preload" as="style"
         href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" />
     <link rel="stylesheet"
@@ -110,11 +110,13 @@
         style="width: 0%"></div>
 
     <!-- WHATSAPP BUTTON -->
-    <a href="https://wa.me/5547996660234" target="_blank" rel="noopener noreferrer"
+    <a data-wa-trigger="true" data-wa-message="Olá, gostaria de saber mais." target="_blank" rel="noopener noreferrer"
+        aria-label="Falar no WhatsApp (abre em nova janela)"
         class="fixed bottom-6 right-6 z-[90] p-4 bg-[#25D366] text-white rounded-full shadow-2xl hover:scale-110 active:scale-95 transition-all duration-300 group">
-        <i data-lucide="message-square" class="w-6 h-6"></i>
+        <i data-lucide="message-square" class="w-6 h-6" aria-hidden="true"></i>
         <span
-            class="absolute right-full mr-4 bg-zinc-900 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">Falar
+            class="absolute right-full mr-4 bg-zinc-900 text-white text-[10px] font-bold uppercase tracking-widest px-3 py-1.5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none"
+            aria-hidden="true">Falar
             no WhatsApp</span>
     </a>
 
@@ -143,7 +145,7 @@
         <div
             class="absolute top-0 left-1/2 -translate-x-1/2 bg-zinc-950/40 backdrop-blur-md border border-white/10 border-t-0 rounded-b-xl px-6 py-2 shadow-lg transform translate-y-0 group-hover:bg-zinc-950/90 transition-all duration-300 flex items-center gap-2 opacity-60 group-hover:opacity-100">
             <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest">Menu</span>
-            <i data-lucide="chevron-down" class="w-3.5 h-3.5 text-fire-500"></i>
+            <i aria-hidden="true" data-lucide="chevron-down" class="w-3.5 h-3.5 text-fire-500"></i>
         </div>
     </div>
 
@@ -155,13 +157,13 @@
         <div class="container max-w-7xl mx-auto px-6 lg:px-12 flex justify-between items-center relative z-20">
             <a href="index.html" class="flex items-center gap-3 group cursor-pointer relative z-50">
                 <img src="assets/logo/firecam-logo-web.png" alt="Firecam" width="480" height="320" decoding="async"
-                    class="h-16 md:h-20 w-auto object-contain transition-all duration-500 group-hover:scale-105" />
+                    class="h-16 md:h-20 w-auto object-contain transition-all duration-500 group-hover:scale-105"
+                    loading="lazy">
             </a>
             <div class="hidden lg:flex items-center gap-8">
                 <a href="index.html" class="text-sm font-bold text-zinc-200 hover:text-white transition-colors"
                     aria-label="Voltar ao início">Início</a>
-                <a href="index.html#institutional"
-                    class="text-sm font-bold text-zinc-200 hover:text-white transition-colors"
+                <a href="sobre.html" class="text-sm font-bold text-zinc-200 hover:text-white transition-colors"
                     aria-label="Ir para seção A Firecam">A Firecam</a>
 
                 <!-- Solutions Dropdown -->
@@ -170,22 +172,25 @@
                         class="flex items-center gap-1 text-sm font-bold text-zinc-200 hover:text-white transition-colors py-2"
                         aria-expanded="false" aria-haspopup="true" aria-controls="dropdown-solutions-menu">
                         Soluções
-                        <i data-lucide="chevron-down"
+                        <i aria-hidden="true" data-lucide="chevron-down"
                             class="w-3.5 h-3.5 transition-transform group-hover/solutions:rotate-180 group-focus-within/solutions:rotate-180"></i>
                     </button>
                     <div id="dropdown-solutions-menu" role="menu"
                         class="absolute top-full left-1/2 -translate-x-1/2 pt-6 opacity-0 invisible group-hover/solutions:opacity-100 group-hover/solutions:visible group-focus-within/solutions:opacity-100 group-focus-within/solutions:visible transition-all duration-300 transform group-hover/solutions:translate-y-0 group-focus-within/solutions:translate-y-0 translate-y-2">
                         <div
                             class="bg-zinc-950/60 backdrop-blur-3xl rounded-xl shadow-[0_20px_50px_rgba(0,0,0,0.5)] border border-white/10 ring-1 ring-white/5 p-2 min-w-[260px] flex flex-col gap-1 overflow-hidden">
-                            <a href="#" role="menuitem" aria-current="page"
+                            <a href="alarme-incendio.html" role="menuitem" aria-current="page"
                                 class="w-full px-4 py-3 text-sm font-medium text-white bg-white/10 rounded-lg transition-all duration-200 text-left whitespace-nowrap">Alarme
                                 de Incêndio (NBR 17240)</a>
-                            <a href="index.html#contato" role="menuitem"
+                            <a href="controle-acesso.html" role="menuitem"
                                 class="w-full px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 text-left whitespace-nowrap">Controle
-                                de Acesso Biométrico</a>
-                            <a href="index.html#contato" role="menuitem"
+                                de Acesso</a>
+                            <a href="cabeamento-estruturado.html" role="menuitem"
                                 class="w-full px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 text-left whitespace-nowrap">Cabeamento
                                 Estruturado &amp; Redes</a>
+                            <a href="cftv.html" role="menuitem"
+                                class="w-full px-4 py-3 text-sm font-medium text-zinc-300 hover:text-white hover:bg-white/10 rounded-lg transition-all duration-200 text-left whitespace-nowrap">CFTV
+                                &amp; Videomonitoramento</a>
                         </div>
                     </div>
                 </div>
@@ -196,7 +201,7 @@
                         class="flex items-center gap-1 text-sm font-bold text-zinc-200 hover:text-white transition-colors py-2"
                         aria-expanded="false" aria-haspopup="true" aria-controls="dropdown-cases-menu">
                         Casos de Sucesso
-                        <i data-lucide="chevron-down"
+                        <i aria-hidden="true" data-lucide="chevron-down"
                             class="w-3.5 h-3.5 transition-transform group-hover/cases:rotate-180 group-focus-within/cases:rotate-180"></i>
                     </a>
                     <div id="dropdown-cases-menu" role="menu"
@@ -226,7 +231,7 @@
             </div>
             <button id="mobile-menu-toggle" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menu"
                 class="lg:hidden p-2 relative z-50 text-white">
-                <i data-lucide="menu" size="28"></i>
+                <i aria-hidden="true" data-lucide="menu" size="28"></i>
             </button>
         </div>
     </nav>
@@ -236,7 +241,7 @@
         class="fixed inset-0 bg-zinc-950/95 backdrop-blur-3xl z-40 lg:hidden transition-all duration-500 opacity-0 invisible -translate-y-4 pointer-events-none">
         <div class="h-full w-full overflow-y-auto flex flex-col items-center justify-start pt-32 pb-12 px-6 gap-8">
             <a href="index.html" class="mobile-link text-3xl font-black text-white">Início</a>
-            <a href="index.html#institutional" class="mobile-link text-3xl font-black text-white">A Firecam</a>
+            <a href="sobre.html" class="mobile-link text-3xl font-black text-white">A Firecam</a>
             <button class="mobile-link text-3xl font-black text-fire-500" data-target="main-content">Incêndio</button>
             <div class="w-16 h-px bg-zinc-800"></div>
             <a href="index.html#cases" class="mobile-link text-3xl font-black text-white">Casos de Sucesso</a>
@@ -266,7 +271,7 @@
 
                     <div
                         class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-white/10 backdrop-blur-md mb-6 border border-white/10">
-                        <i data-lucide="shield-check" class="w-3.5 h-3.5 text-fire-500"></i>
+                        <i aria-hidden="true" data-lucide="shield-check" class="w-3.5 h-3.5 text-fire-500"></i>
                         <span class="text-zinc-200 text-xs font-bold uppercase tracking-wide">NBR 17240 · SDAI</span>
                     </div>
 
@@ -286,28 +291,28 @@
                         <div class="flex items-center gap-2">
                             <div
                                 class="w-8 h-8 rounded-lg bg-fire-600/20 border border-fire-500/30 flex items-center justify-center shrink-0">
-                                <i data-lucide="check-circle" class="w-4 h-4 text-fire-500"></i>
+                                <i aria-hidden="true" data-lucide="check-circle" class="w-4 h-4 text-fire-500"></i>
                             </div>
                             <span class="text-zinc-300 text-sm font-medium">100% Aprovação AVCB</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <div
                                 class="w-8 h-8 rounded-lg bg-fire-600/20 border border-fire-500/30 flex items-center justify-center shrink-0">
-                                <i data-lucide="monitor" class="w-4 h-4 text-fire-500"></i>
+                                <i aria-hidden="true" data-lucide="monitor" class="w-4 h-4 text-fire-500"></i>
                             </div>
                             <span class="text-zinc-300 text-sm font-medium">Monitoramento 24/7</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <div
                                 class="w-8 h-8 rounded-lg bg-fire-600/20 border border-fire-500/30 flex items-center justify-center shrink-0">
-                                <i data-lucide="file-check" class="w-4 h-4 text-fire-500"></i>
+                                <i aria-hidden="true" data-lucide="file-check" class="w-4 h-4 text-fire-500"></i>
                             </div>
                             <span class="text-zinc-300 text-sm font-medium">ART + Laudo Técnico</span>
                         </div>
                         <div class="flex items-center gap-2">
                             <div
                                 class="w-8 h-8 rounded-lg bg-fire-600/20 border border-fire-500/30 flex items-center justify-center shrink-0">
-                                <i data-lucide="flame" class="w-4 h-4 text-fire-500"></i>
+                                <i aria-hidden="true" data-lucide="flame" class="w-4 h-4 text-fire-500"></i>
                             </div>
                             <span class="text-zinc-300 text-sm font-medium">Conformidade NBR 17240</span>
                         </div>
@@ -329,17 +334,17 @@
                         <div class="w-2 h-2 rounded-full bg-fire-600 animate-pulse"></div>
                         <span class="text-[10px] font-bold text-zinc-300 uppercase tracking-widest">O risco que você
                             precisa conhecer</span>
-                        <i data-lucide="chevron-down" class="w-4 h-4 text-zinc-400"></i>
+                        <i aria-hidden="true" data-lucide="chevron-down" class="w-4 h-4 text-zinc-400"></i>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- SALES ARGUMENTS -->
-        <section class="section-pad-luxury bg-transparent relative overflow-hidden noise-overlay">
+        <section class="section-pad bg-transparent relative overflow-hidden noise-overlay">
             <div id="particles-narrative" class="absolute inset-0 z-0 pointer-events-none opacity-20"></div>
             <div class="container max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
-                <div class="text-center mb-20 max-w-4xl mx-auto reveal">
+                <div class="text-center mb-12 max-w-4xl mx-auto reveal">
                     <span class="text-fire-600 font-bold uppercase tracking-widest text-xs block mb-4">Atenção</span>
                     <h2 class="text-editorial-headline text-white mb-6 font-display">
                         Uma Instalação Fora da Norma <span class="text-fire-600">Gera Reprovação</span> no Bombeiro
@@ -351,15 +356,15 @@
                     </p>
                 </div>
 
-                <div class="grid md:grid-cols-3 gap-6 mb-20">
+                <div class="grid md:grid-cols-3 gap-6 mb-12">
                     <div class="alarm-risk-card glass-panel-dark rounded-2xl p-8 relative overflow-hidden reveal">
                         <div class="alarm-bar" aria-hidden="true"></div>
                         <div class="flex items-center gap-3 mb-6">
                             <div
                                 class="w-8 h-8 rounded-lg bg-fire-600/10 border border-fire-600/20 flex items-center justify-center shrink-0">
-                                <i data-lucide="alert-triangle" class="w-4 h-4 text-fire-600"></i>
+                                <i aria-hidden="true" data-lucide="alert-triangle" class="w-4 h-4 text-fire-600"></i>
                             </div>
-                            <span class="text-[10px] font-bold text-zinc-600 uppercase tracking-widest">Risco 01</span>
+                            <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Risco 01</span>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-3 tracking-tight">Falhas de Laço</h3>
                         <p class="text-zinc-400 leading-relaxed text-sm">
@@ -373,9 +378,9 @@
                         <div class="flex items-center gap-3 mb-6">
                             <div
                                 class="w-8 h-8 rounded-lg bg-fire-600/10 border border-fire-600/20 flex items-center justify-center shrink-0">
-                                <i data-lucide="ban" class="w-4 h-4 text-fire-600"></i>
+                                <i aria-hidden="true" data-lucide="ban" class="w-4 h-4 text-fire-600"></i>
                             </div>
-                            <span class="text-[10px] font-bold text-zinc-600 uppercase tracking-widest">Risco 02</span>
+                            <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Risco 02</span>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-3 tracking-tight">Reprovação em Vistoria</h3>
                         <p class="text-zinc-400 leading-relaxed text-sm">
@@ -390,9 +395,9 @@
                         <div class="flex items-center gap-3 mb-6">
                             <div
                                 class="w-8 h-8 rounded-lg bg-fire-600/10 border border-fire-600/20 flex items-center justify-center shrink-0">
-                                <i data-lucide="cpu" class="w-4 h-4 text-fire-600"></i>
+                                <i aria-hidden="true" data-lucide="cpu" class="w-4 h-4 text-fire-600"></i>
                             </div>
-                            <span class="text-[10px] font-bold text-zinc-600 uppercase tracking-widest">Risco 03</span>
+                            <span class="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">Risco 03</span>
                         </div>
                         <h3 class="text-xl font-bold text-white mb-3 tracking-tight">Equipamentos Incompatíveis</h3>
                         <p class="text-zinc-400 leading-relaxed text-sm">
@@ -401,11 +406,11 @@
                     </div>
                 </div>
 
-                <div class="max-w-3xl mx-auto reveal delay-300 pt-12">
-                    <div class="flex items-start gap-4">
+                <div class="max-w-3xl mx-auto reveal delay-300 pt-8 border-t border-zinc-800/50">
+                    <div class="flex items-start gap-4 pt-8">
                         <div
                             class="w-8 h-8 rounded-lg bg-fire-600/15 border border-fire-600/25 flex items-center justify-center shrink-0 mt-1">
-                            <i data-lucide="shield-check" class="w-4 h-4 text-fire-500"></i>
+                            <i aria-hidden="true" data-lucide="shield-check" class="w-4 h-4 text-fire-500"></i>
                         </div>
                         <p class="text-zinc-300 text-xl leading-relaxed">
                             A <strong class="text-white">Firecam</strong> é sua integradora técnica. Transformamos o
@@ -424,14 +429,14 @@
                 <div class="mb-12 reveal">
                     <span class="text-zinc-500 font-bold uppercase tracking-widest text-xs block mb-4">Escopo Completo ·
                         Do Cabeamento ao Start-up</span>
-                    <p class="text-zinc-500 text-sm leading-relaxed max-w-3xl">
+                    <p class="text-zinc-400 text-base leading-relaxed max-w-3xl">
                         Nossa atuação cobre 100% da parte física e lógica do sistema. Entenda o que compõe uma
                         instalação profissional Firecam:
                     </p>
                 </div>
                 <div class="grid md:grid-cols-2 gap-16 items-center">
                     <div class="reveal">
-                        <h2 class="text-4xl md:text-5xl font-display font-medium text-white mb-6 tracking-tight">
+                        <h2 class="text-editorial-headline font-display font-medium text-white mb-6 tracking-tight">
                             Infraestrutura e Cabeamento</h2>
                         <p class="text-zinc-300 text-lg leading-relaxed mb-8">
                             Não usamos "fio de campainha". Garantimos a integridade do sinal de dados:
@@ -440,7 +445,7 @@
                             <li class="flex items-start gap-5">
                                 <div
                                     class="w-10 h-10 rounded-lg bg-fire-600/10 flex items-center justify-center flex-shrink-0 text-fire-600 border border-fire-600/20 mt-0.5">
-                                    <i data-lucide="cable" class="w-5 h-5"></i>
+                                    <i aria-hidden="true" data-lucide="cable" class="w-5 h-5"></i>
                                 </div>
                                 <div>
                                     <h4 class="text-base font-bold text-white mb-1">Cabos Blindados</h4>
@@ -453,7 +458,7 @@
                             <li class="flex items-start gap-5">
                                 <div
                                     class="w-10 h-10 rounded-lg bg-fire-600/10 flex items-center justify-center flex-shrink-0 text-fire-600 border border-fire-600/20 mt-0.5">
-                                    <i data-lucide="shield" class="w-5 h-5"></i>
+                                    <i aria-hidden="true" data-lucide="shield" class="w-5 h-5"></i>
                                 </div>
                                 <div>
                                     <h4 class="text-base font-bold text-white mb-1">Eletrodutos Galvanizados</h4>
@@ -483,36 +488,36 @@
                                 <div class="flex items-start gap-4 py-5">
                                     <div
                                         class="w-9 h-9 rounded-lg bg-fire-600/10 flex items-center justify-center flex-shrink-0 border border-fire-600/20 mt-0.5">
-                                        <i data-lucide="zap" class="w-4 h-4 text-fire-600"></i>
+                                        <i aria-hidden="true" data-lucide="zap" class="w-4 h-4 text-fire-600"></i>
                                     </div>
                                     <div>
                                         <p class="text-white font-bold text-sm tracking-tight mb-0.5 font-mono">CA-STP
                                             2×0,9mm</p>
-                                        <p class="text-zinc-600 text-xs leading-relaxed">Cabo blindado SDAI · 70°C · NBR
+                                        <p class="text-zinc-500 text-xs leading-relaxed">Cabo blindado SDAI · 70°C · NBR
                                             14306 / NBR 5410</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start gap-4 py-5">
                                     <div
                                         class="w-9 h-9 rounded-lg bg-fire-600/10 flex items-center justify-center flex-shrink-0 border border-fire-600/20 mt-0.5">
-                                        <i data-lucide="minus-square" class="w-4 h-4 text-fire-600"></i>
+                                        <i aria-hidden="true" data-lucide="minus-square" class="w-4 h-4 text-fire-600"></i>
                                     </div>
                                     <div>
                                         <p class="text-white font-bold text-sm tracking-tight mb-0.5 font-mono">
                                             Eletroduto EMT ¾"</p>
-                                        <p class="text-zinc-600 text-xs leading-relaxed">Galvanizado antichama ·
+                                        <p class="text-zinc-500 text-xs leading-relaxed">Galvanizado antichama ·
                                             Abraçadeiras D/U · Industrial</p>
                                     </div>
                                 </div>
                                 <div class="flex items-start gap-4 py-5">
                                     <div
                                         class="w-9 h-9 rounded-lg bg-fire-600/10 flex items-center justify-center flex-shrink-0 border border-fire-600/20 mt-0.5">
-                                        <i data-lucide="check-circle" class="w-4 h-4 text-fire-600"></i>
+                                        <i aria-hidden="true" data-lucide="check-circle" class="w-4 h-4 text-fire-600"></i>
                                     </div>
                                     <div>
                                         <p class="text-white font-bold text-sm tracking-tight mb-0.5 font-mono">NBR
                                             17240 Compliant</p>
-                                        <p class="text-zinc-600 text-xs leading-relaxed">Infraestrutura especificada e
+                                        <p class="text-zinc-500 text-xs leading-relaxed">Infraestrutura especificada e
                                             executada conforme norma vigente</p>
                                     </div>
                                 </div>
@@ -553,8 +558,8 @@
                 </div>
             </div>
 
-            <div class="container max-w-7xl mx-auto px-6 lg:px-12 pt-32">
-                <div class="mb-32 reveal relative flex flex-col items-center text-center">
+            <div class="container max-w-7xl mx-auto px-6 lg:px-12 pt-16 pb-16">
+                <div class="mb-16 reveal relative flex flex-col items-center text-center">
                     <!-- Subtle centered glow behind title -->
                     <div
                         class="absolute -top-24 left-1/2 -translate-x-1/2 w-96 h-96 bg-fire-600/10 blur-[100px] rounded-full pointer-events-none">
@@ -574,24 +579,24 @@
                 <div class="lg:grid lg:grid-cols-2 lg:gap-16">
 
                     <!-- LEFT: scrollable text content -->
-                    <div class="relative z-10 pb-32">
+                    <div class="relative z-10 pb-16">
 
                         <!-- Device 01 — Detector Óptico -->
-                        <div class="scroll-item min-h-[75vh] flex items-center py-12" data-index="0"
+                        <div class="scroll-item min-h-[60vh] flex items-center py-10" data-index="0"
                             data-name="Detector Óptico de Fumaça" data-category="DETECÇÃO">
                             <div class="relative flex flex-col justify-center w-full">
                                 <!-- Ghost watermark number -->
                                 <span class="device-watermark" aria-hidden="true">01</span>
                                 <!-- Mobile image -->
                                 <div
-                                    class="item-mobile-img lg:hidden w-full aspect-video rounded-2xl overflow-hidden mb-8 opacity-40 scale-95 transition-all duration-500">
+                                    class="item-mobile-img lg:hidden w-full aspect-video rounded-2xl overflow-hidden mb-8 opacity-30 scale-95 transition-all duration-500">
                                     <img src="assets/img/_MG_6846.webp" class="w-full h-full object-cover"
                                         alt="Detector Óptico" loading="lazy">
                                 </div>
                                 <!-- Icon -->
                                 <div class="w-12 h-12 bg-zinc-900/60 rounded-xl flex items-center justify-center text-fire-600 mb-6 item-icon transition-all duration-500"
                                     style="transition-delay: 0ms;">
-                                    <i data-lucide="eye" class="w-5 h-5"></i>
+                                    <i aria-hidden="true" data-lucide="eye" class="w-5 h-5"></i>
                                 </div>
                                 <!-- Counter + Category -->
                                 <div class="flex items-center gap-4 mb-5 item-counter transition-all duration-500 opacity-0 translate-y-2"
@@ -601,11 +606,11 @@
                                     <span class="device-category-pill">Detecção</span>
                                 </div>
                                 <!-- Title -->
-                                <h3 class="text-5xl md:text-6xl font-display font-medium text-white tracking-tighter mb-6 transition-all duration-700 opacity-40 item-title transform-gpu"
+                                <h3 class="text-4xl md:text-5xl font-display font-medium text-white tracking-tighter mb-6 transition-all duration-700 opacity-40 item-title transform-gpu"
                                     style="transition-delay: 160ms;">
                                     Detectores Ópticos</h3>
                                 <!-- Description -->
-                                <p class="text-zinc-300 text-lg md:text-xl font-light leading-relaxed transition-all duration-700 opacity-40 item-desc max-w-lg mb-8"
+                                <p class="text-zinc-300 text-base md:text-lg font-light leading-relaxed transition-all duration-700 opacity-40 item-desc max-w-lg mb-8"
                                     style="transition-delay: 280ms;">
                                     Sensores fotoelétricos que identificam a presença de partículas de fumaça visível no
                                     ar através de uma câmara escura interna. Ideais para escritórios, corredores e áreas
@@ -622,18 +627,18 @@
                         </div>
 
                         <!-- Device 02 — Termovelocimétrico -->
-                        <div class="scroll-item min-h-[75vh] flex items-center py-12" data-index="1"
+                        <div class="scroll-item min-h-[60vh] flex items-center py-10" data-index="1"
                             data-name="Detector Termovelocimétrico" data-category="DETECÇÃO">
                             <div class="relative flex flex-col justify-center w-full">
                                 <span class="device-watermark" aria-hidden="true">02</span>
                                 <div
-                                    class="item-mobile-img lg:hidden w-full aspect-video rounded-2xl overflow-hidden mb-8 opacity-40 scale-95 transition-all duration-500">
+                                    class="item-mobile-img lg:hidden w-full aspect-video rounded-2xl overflow-hidden mb-8 opacity-30 scale-95 transition-all duration-500">
                                     <img src="assets/img/_MG_6803.webp" class="w-full h-full object-cover"
                                         alt="Termovelocimétrico" loading="lazy">
                                 </div>
                                 <div class="w-12 h-12 bg-zinc-900/60 rounded-xl flex items-center justify-center text-fire-600 mb-6 item-icon transition-all duration-500"
                                     style="transition-delay: 0ms;">
-                                    <i data-lucide="thermometer" class="w-5 h-5"></i>
+                                    <i aria-hidden="true" data-lucide="thermometer" class="w-5 h-5"></i>
                                 </div>
                                 <div class="flex items-center gap-4 mb-5 item-counter transition-all duration-500 opacity-0 translate-y-2"
                                     style="transition-delay: 80ms;">
@@ -641,10 +646,10 @@
                                         class="text-fire-600/25 text-2xl font-display font-bold tracking-tighter">02</span>
                                     <span class="device-category-pill">Detecção</span>
                                 </div>
-                                <h3 class="text-5xl md:text-6xl font-display font-medium text-white tracking-tighter mb-6 transition-all duration-700 opacity-40 item-title transform-gpu"
+                                <h3 class="text-4xl md:text-5xl font-display font-medium text-white tracking-tighter mb-6 transition-all duration-700 opacity-40 item-title transform-gpu"
                                     style="transition-delay: 160ms;">
                                     Termovelocimétricos</h3>
-                                <p class="text-zinc-300 text-lg md:text-xl font-light leading-relaxed transition-all duration-700 opacity-40 item-desc max-w-lg mb-8"
+                                <p class="text-zinc-300 text-base md:text-lg font-light leading-relaxed transition-all duration-700 opacity-40 item-desc max-w-lg mb-8"
                                     style="transition-delay: 280ms;">
                                     Sensores que disparam por variação brusca de temperatura (ex: aumento rápido de
                                     graus em minutos) ou temperatura fixa (57°C/60°C). Essenciais para cozinhas,
@@ -661,18 +666,18 @@
                         </div>
 
                         <!-- Device 03 — Acionador Manual -->
-                        <div class="scroll-item min-h-[75vh] flex items-center py-12" data-index="2"
+                        <div class="scroll-item min-h-[60vh] flex items-center py-10" data-index="2"
                             data-name="Acionador Manual" data-category="COMANDO">
                             <div class="relative flex flex-col justify-center w-full">
                                 <span class="device-watermark" aria-hidden="true">03</span>
                                 <div
-                                    class="item-mobile-img lg:hidden w-full aspect-video rounded-2xl overflow-hidden mb-8 opacity-40 scale-95 transition-all duration-500">
+                                    class="item-mobile-img lg:hidden w-full aspect-video rounded-2xl overflow-hidden mb-8 opacity-30 scale-95 transition-all duration-500">
                                     <img src="assets/img/_MG_6831.webp" class="w-full h-full object-cover"
                                         alt="Acionador Manual" loading="lazy">
                                 </div>
                                 <div class="w-12 h-12 bg-zinc-900/60 rounded-xl flex items-center justify-center text-fire-600 mb-6 item-icon transition-all duration-500"
                                     style="transition-delay: 0ms;">
-                                    <i data-lucide="hand-metal" class="w-5 h-5"></i>
+                                    <i aria-hidden="true" data-lucide="hand-metal" class="w-5 h-5"></i>
                                 </div>
                                 <div class="flex items-center gap-4 mb-5 item-counter transition-all duration-500 opacity-0 translate-y-2"
                                     style="transition-delay: 80ms;">
@@ -680,10 +685,10 @@
                                         class="text-fire-600/25 text-2xl font-display font-bold tracking-tighter">03</span>
                                     <span class="device-category-pill">Comando</span>
                                 </div>
-                                <h3 class="text-5xl md:text-6xl font-display font-medium text-white tracking-tighter mb-6 transition-all duration-700 opacity-40 item-title transform-gpu"
+                                <h3 class="text-4xl md:text-5xl font-display font-medium text-white tracking-tighter mb-6 transition-all duration-700 opacity-40 item-title transform-gpu"
                                     style="transition-delay: 160ms;">
                                     Acionadores Manuais</h3>
-                                <p class="text-zinc-300 text-lg md:text-xl font-light leading-relaxed transition-all duration-700 opacity-40 item-desc max-w-lg mb-8"
+                                <p class="text-zinc-300 text-base md:text-lg font-light leading-relaxed transition-all duration-700 opacity-40 item-desc max-w-lg mb-8"
                                     style="transition-delay: 280ms;">
                                     Dispositivos de quebra-vidro ou rearmáveis (ação direta), instalados a 1,20m do piso
                                     acabado, permitindo que qualquer pessoa inicie o alarme ao perceber um princípio de
@@ -699,18 +704,18 @@
                         </div>
 
                         <!-- Device 04 — Sirene Audiovisual -->
-                        <div class="scroll-item min-h-[75vh] flex items-center py-12" data-index="3"
+                        <div class="scroll-item min-h-[60vh] flex items-center py-10" data-index="3"
                             data-name="Sirene Audiovisual" data-category="ALERTA">
                             <div class="relative flex flex-col justify-center w-full">
                                 <span class="device-watermark" aria-hidden="true">04</span>
                                 <div
-                                    class="item-mobile-img lg:hidden w-full aspect-video rounded-2xl overflow-hidden mb-8 opacity-40 scale-95 transition-all duration-500">
+                                    class="item-mobile-img lg:hidden w-full aspect-video rounded-2xl overflow-hidden mb-8 opacity-30 scale-95 transition-all duration-500">
                                     <img src="assets/img/_MG_6801.webp" class="w-full h-full object-cover"
                                         alt="Sirene Audiovisual" loading="lazy">
                                 </div>
                                 <div class="w-12 h-12 bg-zinc-900/60 rounded-xl flex items-center justify-center text-fire-600 mb-6 item-icon transition-all duration-500"
                                     style="transition-delay: 0ms;">
-                                    <i data-lucide="bell-ring" class="w-5 h-5"></i>
+                                    <i aria-hidden="true" data-lucide="bell-ring" class="w-5 h-5"></i>
                                 </div>
                                 <div class="flex items-center gap-4 mb-5 item-counter transition-all duration-500 opacity-0 translate-y-2"
                                     style="transition-delay: 80ms;">
@@ -718,10 +723,10 @@
                                         class="text-fire-600/25 text-2xl font-display font-bold tracking-tighter">04</span>
                                     <span class="device-category-pill">Alerta</span>
                                 </div>
-                                <h3 class="text-5xl md:text-6xl font-display font-medium text-white tracking-tighter mb-6 transition-all duration-700 opacity-40 item-title transform-gpu"
+                                <h3 class="text-4xl md:text-5xl font-display font-medium text-white tracking-tighter mb-6 transition-all duration-700 opacity-40 item-title transform-gpu"
                                     style="transition-delay: 160ms;">
                                     Audiovisuais</h3>
-                                <p class="text-zinc-300 text-lg md:text-xl font-light leading-relaxed transition-all duration-700 opacity-40 item-desc max-w-lg mb-8"
+                                <p class="text-zinc-300 text-base md:text-lg font-light leading-relaxed transition-all duration-700 opacity-40 item-desc max-w-lg mb-8"
                                     style="transition-delay: 280ms;">
                                     Equipamentos híbridos que emitem alerta sonoro de alta potência (acima de 90dB) e
                                     flashes estroboscópicos (luz intermitente), garantindo o aviso inclusive para
@@ -737,18 +742,18 @@
                         </div>
 
                         <!-- Device 05 — Central de Alarme -->
-                        <div class="scroll-item min-h-[75vh] flex items-center py-12" data-index="4"
+                        <div class="scroll-item min-h-[60vh] flex items-center py-10" data-index="4"
                             data-name="Central de Alarme" data-category="CONTROLE">
                             <div class="relative flex flex-col justify-center w-full">
                                 <span class="device-watermark" aria-hidden="true">05</span>
                                 <div
-                                    class="item-mobile-img lg:hidden w-full aspect-video rounded-2xl overflow-hidden mb-8 opacity-40 scale-95 transition-all duration-500">
+                                    class="item-mobile-img lg:hidden w-full aspect-video rounded-2xl overflow-hidden mb-8 opacity-30 scale-95 transition-all duration-500">
                                     <img src="assets/img/_MG_6802.webp" class="w-full h-full object-cover"
                                         alt="Central de Alarme" loading="lazy">
                                 </div>
                                 <div class="w-12 h-12 bg-zinc-900/60 rounded-xl flex items-center justify-center text-fire-600 mb-6 item-icon transition-all duration-500"
                                     style="transition-delay: 0ms;">
-                                    <i data-lucide="cpu" class="w-5 h-5"></i>
+                                    <i aria-hidden="true" data-lucide="cpu" class="w-5 h-5"></i>
                                 </div>
                                 <div class="flex items-center gap-4 mb-5 item-counter transition-all duration-500 opacity-0 translate-y-2"
                                     style="transition-delay: 80ms;">
@@ -756,10 +761,10 @@
                                         class="text-fire-600/25 text-2xl font-display font-bold tracking-tighter">05</span>
                                     <span class="device-category-pill">Controle</span>
                                 </div>
-                                <h3 class="text-5xl md:text-6xl font-display font-medium text-white tracking-tighter mb-6 transition-all duration-700 opacity-40 item-title transform-gpu"
+                                <h3 class="text-4xl md:text-5xl font-display font-medium text-white tracking-tighter mb-6 transition-all duration-700 opacity-40 item-title transform-gpu"
                                     style="transition-delay: 160ms;">
                                     Central de Alarme</h3>
-                                <p class="text-zinc-300 text-lg md:text-xl font-light leading-relaxed transition-all duration-700 opacity-40 item-desc max-w-lg mb-8"
+                                <p class="text-zinc-300 text-base md:text-lg font-light leading-relaxed transition-all duration-700 opacity-40 item-desc max-w-lg mb-8"
                                     style="transition-delay: 280ms;">
                                     Painel microprocessado que monitora constantemente todos os dispositivos, verifica
                                     falhas de fiação e bateria, e comunica o local exato do sinistro. Baterias de backup
@@ -790,19 +795,19 @@
                                 style="height: calc(100vh - 8rem);">
                                 <img id="media-img-0" src="assets/img/_MG_6846.webp"
                                     class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-100 scale-100 transform-gpu"
-                                    alt="Detector Óptico de Fumaça">
+                                    alt="Detector Óptico de Fumaça" loading="lazy">
                                 <img id="media-img-1" src="assets/img/_MG_6803.webp"
                                     class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-0 scale-[1.02] transform-gpu"
-                                    alt="Detector Termovelocimétrico">
+                                    alt="Detector Termovelocimétrico" loading="lazy">
                                 <img id="media-img-2" src="assets/img/_MG_6831.webp"
                                     class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-0 scale-[1.02] transform-gpu"
-                                    alt="Acionador Manual">
+                                    alt="Acionador Manual" loading="lazy">
                                 <img id="media-img-3" src="assets/img/_MG_6801.webp"
                                     class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-0 scale-[1.02] transform-gpu"
-                                    alt="Sirene Audiovisual">
+                                    alt="Sirene Audiovisual" loading="lazy">
                                 <img id="media-img-4" src="assets/img/_MG_6802.webp"
                                     class="absolute inset-0 w-full h-full object-cover transition-all duration-1000 opacity-0 scale-[1.02] transform-gpu"
-                                    alt="Central de Alarme">
+                                    alt="Central de Alarme" loading="lazy">
                                 <!-- Gradient ground -->
                                 <div
                                     class="absolute inset-0 bg-gradient-to-t from-zinc-950/50 via-transparent to-zinc-950/10 pointer-events-none">
@@ -857,7 +862,8 @@
                 <div class="text-center mb-16 reveal">
                     <span class="text-zinc-500 font-bold uppercase tracking-widest text-xs block mb-4">Tecnologias
                         Aplicadas</span>
-                    <h2 class="text-4xl md:text-5xl font-display font-medium text-white mb-5 tracking-tighter">Soluções
+                    <h2 class="text-editorial-headline font-display font-medium text-white mb-5 tracking-tighter">
+                        Soluções
                         Técnicas para Cada Tipo de Planta</h2>
                     <p class="text-zinc-300 text-lg leading-relaxed max-w-2xl mx-auto">Adaptamos a tecnologia ao tamanho
                         e criticidade da sua operação. A escolha correta impacta no custo, na precisão do alarme e na
@@ -874,7 +880,7 @@
                             <div class="flex items-center gap-3 mb-6">
                                 <div
                                     class="w-10 h-10 rounded-xl bg-zinc-800/80 border border-zinc-700/60 flex items-center justify-center text-zinc-400">
-                                    <i data-lucide="layers" class="w-5 h-5"></i>
+                                    <i aria-hidden="true" data-lucide="layers" class="w-5 h-5"></i>
                                 </div>
                                 <span class="text-[10px] font-bold text-zinc-600 uppercase tracking-widest">Médio
                                     Porte</span>
@@ -885,15 +891,15 @@
                                 como galpões e edifícios menores.</p>
                             <ul class="space-y-3">
                                 <li class="flex items-center gap-3 text-sm text-zinc-500">
-                                    <i data-lucide="check" class="w-4 h-4 text-zinc-600 shrink-0"></i>
+                                    <i aria-hidden="true" data-lucide="check" class="w-4 h-4 text-zinc-500 shrink-0"></i>
                                     Instalação e manutenção mais simples
                                 </li>
                                 <li class="flex items-center gap-3 text-sm text-zinc-500">
-                                    <i data-lucide="check" class="w-4 h-4 text-zinc-600 shrink-0"></i>
+                                    <i aria-hidden="true" data-lucide="check" class="w-4 h-4 text-zinc-500 shrink-0"></i>
                                     Menor custo de equipamentos
                                 </li>
                                 <li class="flex items-center gap-3 text-sm text-zinc-500">
-                                    <i data-lucide="check" class="w-4 h-4 text-zinc-600 shrink-0"></i>
+                                    <i aria-hidden="true" data-lucide="check" class="w-4 h-4 text-zinc-500 shrink-0"></i>
                                     Atende exigências de AVCB em edificações simples
                                 </li>
                             </ul>
@@ -909,7 +915,7 @@
                             <div class="flex items-center gap-3 mb-6">
                                 <div
                                     class="w-10 h-10 rounded-xl bg-fire-600/10 border border-fire-600/20 flex items-center justify-center text-fire-500">
-                                    <i data-lucide="network" class="w-5 h-5"></i>
+                                    <i aria-hidden="true" data-lucide="network" class="w-5 h-5"></i>
                                 </div>
                                 <span class="text-[10px] font-bold text-fire-600/70 uppercase tracking-widest">Grande
                                     Porte · Alta Criticidade</span>
@@ -920,15 +926,15 @@
                                 agilizando brigada e evacuação.</p>
                             <ul class="space-y-3">
                                 <li class="flex items-center gap-3 text-sm text-zinc-400">
-                                    <i data-lucide="check" class="w-4 h-4 text-fire-600 shrink-0"></i>
+                                    <i aria-hidden="true" data-lucide="check" class="w-4 h-4 text-fire-600 shrink-0"></i>
                                     Localização precisa do sinistro
                                 </li>
                                 <li class="flex items-center gap-3 text-sm text-zinc-400">
-                                    <i data-lucide="check" class="w-4 h-4 text-fire-600 shrink-0"></i>
+                                    <i aria-hidden="true" data-lucide="check" class="w-4 h-4 text-fire-600 shrink-0"></i>
                                     Laço único para centenas de dispositivos
                                 </li>
                                 <li class="flex items-center gap-3 text-sm text-zinc-400">
-                                    <i data-lucide="check" class="w-4 h-4 text-fire-600 shrink-0"></i>
+                                    <i aria-hidden="true" data-lucide="check" class="w-4 h-4 text-fire-600 shrink-0"></i>
                                     Diagnóstico remoto e integração predial
                                 </li>
                             </ul>
@@ -947,8 +953,7 @@
                 <div class="text-center mb-16 reveal">
                     <span class="text-zinc-500 font-bold uppercase tracking-widest text-xs block mb-4">Diferenciais
                         Competitivos</span>
-                    <h2
-                        class="text-3xl md:text-4xl lg:text-5xl font-display font-bold mb-6 text-white tracking-tighter">
+                    <h2 class="text-editorial-headline font-display font-bold mb-6 text-white tracking-tighter">
                         Por que a Instalação da Firecam Aprova no Bombeiro?</h2>
                 </div>
                 <div>
@@ -967,7 +972,7 @@
                         </div>
                         <div
                             class="shrink-0 w-11 h-11 rounded-2xl bg-zinc-900 border border-zinc-800/80 flex items-center justify-center text-zinc-700 group-hover:border-fire-600/30 group-hover:text-fire-500 group-hover:bg-fire-600/5 transition-all duration-500 mt-4 hidden md:flex">
-                            <i data-lucide="git-branch" class="w-5 h-5"></i>
+                            <i aria-hidden="true" data-lucide="git-branch" class="w-5 h-5"></i>
                         </div>
                     </div>
                     <!-- Editorial row 02 -->
@@ -985,7 +990,7 @@
                         </div>
                         <div
                             class="shrink-0 w-11 h-11 rounded-2xl bg-zinc-900 border border-zinc-800/80 flex items-center justify-center text-zinc-700 group-hover:border-fire-600/30 group-hover:text-fire-500 group-hover:bg-fire-600/5 transition-all duration-500 mt-4 hidden md:flex">
-                            <i data-lucide="ruler" class="w-5 h-5"></i>
+                            <i aria-hidden="true" data-lucide="ruler" class="w-5 h-5"></i>
                         </div>
                     </div>
                     <!-- Editorial row 03 -->
@@ -997,14 +1002,14 @@
                         <div class="flex-1 min-w-0 pt-2 md:pt-4">
                             <h3 class="text-xl md:text-2xl font-bold text-white tracking-tight mb-3">Comissionamento
                                 Real</h3>
-                            <p class="text-zinc-500 text-sm md:text-base leading-relaxed max-w-2xl">Não apenas "ligamos"
+                            <p class="text-zinc-400 text-sm md:text-base leading-relaxed max-w-2xl">Não apenas "ligamos"
                                 o sistema. Realizamos testes com <strong class="text-zinc-300">spray de fumaça
                                     artificial</strong> e medição de decibéis das sirenes para garantir que o sistema
                                 reaja conforme o esperado.</p>
                         </div>
                         <div
                             class="shrink-0 w-11 h-11 rounded-2xl bg-zinc-900 border border-zinc-800/80 flex items-center justify-center text-zinc-700 group-hover:border-fire-600/30 group-hover:text-fire-500 group-hover:bg-fire-600/5 transition-all duration-500 mt-4 hidden md:flex">
-                            <i data-lucide="check-circle" class="w-5 h-5"></i>
+                            <i aria-hidden="true" data-lucide="check-circle" class="w-5 h-5"></i>
                         </div>
                     </div>
                     <div class="border-t border-zinc-800/60"></div>
@@ -1013,7 +1018,7 @@
         </section>
 
         <!-- PROCESSO DE TRABALHO -->
-        <section class="py-20 md:py-28 bg-transparent text-white relative overflow-hidden">
+        <section class="section-pad bg-transparent text-white relative overflow-hidden">
             <div class="absolute inset-0 z-0"></div>
             <div class="container max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
                 <div class="text-center mb-16 reveal">
@@ -1033,37 +1038,37 @@
                         <div class="relative flex flex-col items-start md:items-center md:text-center reveal">
                             <span
                                 class="process-num text-4xl font-display font-bold text-zinc-700 mb-5 relative bg-transparent md:bg-[inherit] z-10 tabular-nums leading-none transition-colors duration-500">1</span>
-                            <h4 class="font-bold mb-2 text-sm tracking-tight text-white">Análise de Materiais</h4>
-                            <p class="text-xs text-zinc-500 leading-relaxed">Recebemos sua lista (BOM) ou projeto para
+                            <h4 class="font-bold mb-2 text-base tracking-tight text-white">Análise de Materiais</h4>
+                            <p class="text-sm text-zinc-500 leading-relaxed">Recebemos sua lista (BOM) ou projeto para
                                 quantificação.</p>
                         </div>
                         <div class="relative flex flex-col items-start md:items-center md:text-center reveal delay-100">
                             <span
                                 class="process-num text-4xl font-display font-bold text-zinc-700 mb-5 relative z-10 tabular-nums leading-none transition-colors duration-500">2</span>
-                            <h4 class="font-bold mb-2 text-sm tracking-tight text-white">Execução de Infra</h4>
-                            <p class="text-xs text-zinc-500 leading-relaxed">Fixação de tubulação, caixas de passagem e
+                            <h4 class="font-bold mb-2 text-base tracking-tight text-white">Execução de Infra</h4>
+                            <p class="text-sm text-zinc-500 leading-relaxed">Fixação de tubulação, caixas de passagem e
                                 lançamento de cabos.</p>
                         </div>
                         <div class="relative flex flex-col items-start md:items-center md:text-center reveal delay-200">
                             <span
                                 class="process-num text-4xl font-display font-bold text-zinc-700 mb-5 relative z-10 tabular-nums leading-none transition-colors duration-500">3</span>
-                            <h4 class="font-bold mb-2 text-sm tracking-tight text-white">Montagem e Conexão</h4>
-                            <p class="text-xs text-zinc-500 leading-relaxed">Instalação física dos dispositivos e
+                            <h4 class="font-bold mb-2 text-base tracking-tight text-white">Montagem e Conexão</h4>
+                            <p class="text-sm text-zinc-500 leading-relaxed">Instalação física dos dispositivos e
                                 fechamento dos laços na central.</p>
                         </div>
                         <div class="relative flex flex-col items-start md:items-center md:text-center reveal delay-300">
                             <span
                                 class="process-num text-4xl font-display font-bold text-zinc-700 mb-5 relative z-10 tabular-nums leading-none transition-colors duration-500">4</span>
-                            <h4 class="font-bold mb-2 text-sm tracking-tight text-white">Start-up</h4>
-                            <p class="text-xs text-zinc-500 leading-relaxed">Configuração da lógica da central (zonas,
+                            <h4 class="font-bold mb-2 text-base tracking-tight text-white">Start-up</h4>
+                            <p class="text-sm text-zinc-500 leading-relaxed">Configuração da lógica da central (zonas,
                                 nomes dos pontos, tempos de retardo).</p>
                         </div>
                         <div class="relative flex flex-col items-start md:items-center md:text-center reveal delay-400">
                             <span
-                                class="process-num text-4xl font-display font-bold text-zinc-700 mb-5 relative z-10 tabular-nums leading-none transition-colors duration-500">5</span>
-                            <h4 class="font-bold mb-2 text-sm tracking-tight text-white">Entrega com Certificação</h4>
-                            <p class="text-xs text-zinc-300 leading-relaxed font-medium">ART de Execução + Laudo de
-                                Comissionamento NBR 17240.</p>
+                                class="process-num text-4xl font-display font-bold text-fire-600 mb-5 relative z-10 tabular-nums leading-none transition-colors duration-500">5</span>
+                            <h4 class="font-bold mb-2 text-base tracking-tight text-white">Entrega com ART</h4>
+                            <p class="text-sm text-zinc-300 leading-relaxed font-medium">Fornecimento da Anotação de
+                                Responsabilidade Técnica de Execução, necessária para o processo de AVCB.</p>
                         </div>
                     </div>
                 </div>
@@ -1074,10 +1079,11 @@
         <section class="section-pad bg-transparent relative">
             <div class="container max-w-7xl mx-auto px-6 lg:px-12">
                 <!-- Section heading — full width, centered -->
-                <div class="text-center mb-14 reveal">
+                <div class="text-center mb-10 reveal">
                     <span class="text-zinc-500 font-bold uppercase tracking-widest text-xs block mb-4">Manutenção
                         Preventiva</span>
-                    <h2 class="text-4xl md:text-5xl font-display font-medium text-white mb-5 tracking-tighter">Garanta a
+                    <h2 class="text-editorial-headline font-display font-medium text-white mb-5 tracking-tighter">
+                        Garanta a
                         Longevidade do seu Sistema</h2>
                     <p class="text-zinc-300 text-lg leading-relaxed max-w-2xl mx-auto">Sistemas de incêndio parados
                         degradam. Poeira nos sensores e baterias viciadas são as maiores causas de falha na vistoria do
@@ -1119,16 +1125,16 @@
                             <div class="flex items-center gap-3 flex-1 min-w-0">
                                 <div
                                     class="w-8 h-8 rounded-lg bg-fire-600/10 border border-fire-600/20 flex items-center justify-center shrink-0 text-fire-600">
-                                    <i data-lucide="spray-can" class="w-3.5 h-3.5"></i>
+                                    <i aria-hidden="true" data-lucide="spray-can" class="w-3.5 h-3.5"></i>
                                 </div>
                                 <div>
                                     <p class="text-white font-bold text-sm leading-tight">Limpeza de Câmaras Ópticas</p>
-                                    <p class="text-zinc-600 text-xs mt-0.5">Remoção de poeira interna dos detectores
+                                    <p class="text-zinc-500 text-sm mt-0.5">Remoção de poeira interna dos detectores
                                         para evitar disparos falsos</p>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-[3px] w-40 mx-0 sm:mx-6 shrink-0" aria-hidden="true"
-                                title="Meses de execução: Jun e Dez">
+                            <div class="flex items-center gap-[3px] w-40 max-w-full mx-0 sm:mx-6 shrink-0 overflow-x-auto"
+                                aria-hidden="true" title="Meses de execução: Jun e Dez">
                                 <span class="freq-dot"></span><span class="freq-dot"></span><span
                                     class="freq-dot"></span><span class="freq-dot"></span><span
                                     class="freq-dot"></span><span class="freq-dot freq-active" title="Jun"></span><span
@@ -1145,16 +1151,16 @@
                             <div class="flex items-center gap-3 flex-1 min-w-0">
                                 <div
                                     class="w-8 h-8 rounded-lg bg-fire-600/10 border border-fire-600/20 flex items-center justify-center shrink-0 text-fire-600">
-                                    <i data-lucide="battery-charging" class="w-3.5 h-3.5"></i>
+                                    <i aria-hidden="true" data-lucide="battery-charging" class="w-3.5 h-3.5"></i>
                                 </div>
                                 <div>
                                     <p class="text-white font-bold text-sm leading-tight">Teste de Carga de Baterias</p>
-                                    <p class="text-zinc-600 text-xs mt-0.5">Autonomia do sistema na falta de energia AC
+                                    <p class="text-zinc-500 text-sm mt-0.5">Autonomia do sistema na falta de energia AC
                                     </p>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-[3px] w-40 mx-0 sm:mx-6 shrink-0" aria-hidden="true"
-                                title="Mês de execução: Dez">
+                            <div class="flex items-center gap-[3px] w-40 max-w-full mx-0 sm:mx-6 shrink-0 overflow-x-auto"
+                                aria-hidden="true" title="Mês de execução: Dez">
                                 <span class="freq-dot"></span><span class="freq-dot"></span><span
                                     class="freq-dot"></span><span class="freq-dot"></span><span
                                     class="freq-dot"></span><span class="freq-dot"></span><span
@@ -1171,17 +1177,17 @@
                             <div class="flex items-center gap-3 flex-1 min-w-0">
                                 <div
                                     class="w-8 h-8 rounded-lg bg-fire-600/10 border border-fire-600/20 flex items-center justify-center shrink-0 text-fire-600">
-                                    <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                                    <i aria-hidden="true" data-lucide="volume-2" class="w-3.5 h-3.5"></i>
                                 </div>
                                 <div>
                                     <p class="text-white font-bold text-sm leading-tight">Teste de Sirenes e Acionadores
                                     </p>
-                                    <p class="text-zinc-600 text-xs mt-0.5">Validação funcional de todos os pontos de
+                                    <p class="text-zinc-500 text-sm mt-0.5">Validação funcional de todos os pontos de
                                         alerta</p>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-[3px] w-40 mx-0 sm:mx-6 shrink-0" aria-hidden="true"
-                                title="Meses de execução: Jun e Dez">
+                            <div class="flex items-center gap-[3px] w-40 max-w-full mx-0 sm:mx-6 shrink-0 overflow-x-auto"
+                                aria-hidden="true" title="Meses de execução: Jun e Dez">
                                 <span class="freq-dot"></span><span class="freq-dot"></span><span
                                     class="freq-dot"></span><span class="freq-dot"></span><span
                                     class="freq-dot"></span><span class="freq-dot freq-active" title="Jun"></span><span
@@ -1198,16 +1204,16 @@
                             <div class="flex items-center gap-3 flex-1 min-w-0">
                                 <div
                                     class="w-8 h-8 rounded-lg bg-fire-600/10 border border-fire-600/20 flex items-center justify-center shrink-0 text-fire-600">
-                                    <i data-lucide="scan-line" class="w-3.5 h-3.5"></i>
+                                    <i aria-hidden="true" data-lucide="scan-line" class="w-3.5 h-3.5"></i>
                                 </div>
                                 <div>
                                     <p class="text-white font-bold text-sm leading-tight">Varredura de Laços</p>
-                                    <p class="text-zinc-600 text-xs mt-0.5">Continuidade e integridade do circuito de
+                                    <p class="text-zinc-500 text-sm mt-0.5">Continuidade e integridade do circuito de
                                         detecção</p>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-[3px] w-40 mx-0 sm:mx-6 shrink-0" aria-hidden="true"
-                                title="Meses de execução: Jun e Dez">
+                            <div class="flex items-center gap-[3px] w-40 max-w-full mx-0 sm:mx-6 shrink-0 overflow-x-auto"
+                                aria-hidden="true" title="Meses de execução: Jun e Dez">
                                 <span class="freq-dot"></span><span class="freq-dot"></span><span
                                     class="freq-dot"></span><span class="freq-dot"></span><span
                                     class="freq-dot"></span><span class="freq-dot freq-active" title="Jun"></span><span
@@ -1224,15 +1230,15 @@
                             <div class="flex items-center gap-3 flex-1 min-w-0">
                                 <div
                                     class="w-8 h-8 rounded-lg bg-fire-600/10 border border-fire-600/20 flex items-center justify-center shrink-0 text-fire-600">
-                                    <i data-lucide="file-check-2" class="w-3.5 h-3.5"></i>
+                                    <i aria-hidden="true" data-lucide="file-check-2" class="w-3.5 h-3.5"></i>
                                 </div>
                                 <div>
                                     <p class="text-white font-bold text-sm leading-tight">Laudo de Conformidade</p>
-                                    <p class="text-zinc-600 text-xs mt-0.5">Documentação NBR para o dossiê do AVCB</p>
+                                    <p class="text-zinc-500 text-sm mt-0.5">Documentação NBR para o dossiê do AVCB</p>
                                 </div>
                             </div>
-                            <div class="flex items-center gap-[3px] w-40 mx-0 sm:mx-6 shrink-0" aria-hidden="true"
-                                title="Meses de execução: Jun e Dez">
+                            <div class="flex items-center gap-[3px] w-40 max-w-full mx-0 sm:mx-6 shrink-0 overflow-x-auto"
+                                aria-hidden="true" title="Meses de execução: Jun e Dez">
                                 <span class="freq-dot"></span><span class="freq-dot"></span><span
                                     class="freq-dot"></span><span class="freq-dot"></span><span
                                     class="freq-dot"></span><span class="freq-dot freq-active" title="Jun"></span><span
@@ -1248,7 +1254,7 @@
                     </div>
                     <!-- Card footer -->
                     <div class="px-6 md:px-8 py-4 border-t border-white/5 bg-white/[0.01] flex items-center gap-2.5">
-                        <i data-lucide="info" class="w-3 h-3 text-zinc-500 shrink-0"></i>
+                        <i aria-hidden="true" data-lucide="info" class="w-3 h-3 text-zinc-500 shrink-0"></i>
                         <p class="text-zinc-500 text-xs">Calendário ilustrativo baseado no plano semestral padrão ·
                             Frequência ajustável conforme contrato</p>
                     </div>
@@ -1257,12 +1263,12 @@
         </section>
 
         <!-- FAQ -->
-        <section id="faq" class="section-pad-luxury relative bg-transparent noise-overlay">
+        <section id="faq" class="section-pad relative bg-transparent noise-overlay">
             <div class="container max-w-4xl mx-auto px-6 lg:px-12">
                 <div class="text-center mb-16 reveal">
                     <h2 class="text-editorial-headline font-display font-bold text-white mb-4 tracking-tight">
                         Perguntas Frequentes</h2>
-                    <p class="text-zinc-400 text-lg">Dúvidas comuns sobre instalação e normas.</p>
+                    <p class="text-zinc-400 text-lg">Dúvidas sobre Instalação de SDAI</p>
                 </div>
 
                 <div class="space-y-3 max-w-3xl mx-auto">
@@ -1274,11 +1280,12 @@
                                 que é um sistema endereçável?</span>
                             <span
                                 class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center text-zinc-400 group-hover:bg-fire-600/20 group-hover:text-fire-400 transition-all flex-shrink-0 ml-4">
-                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                                <i aria-hidden="true" data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
                             </span>
                             <div class="faq-sweep-line" aria-hidden="true"></div>
                         </button>
-                        <div id="faq-answer-1" role="region" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div id="faq-answer-1" role="region"
+                            class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                             <div class="px-6 pb-6 text-zinc-400 text-sm leading-relaxed border-t border-zinc-800 pt-4">
                                 Sistema onde a central "conversa" individualmente com cada sensor. Se o detector da sala
                                 304
@@ -1298,11 +1305,12 @@
                                 emitem laudo para o Bombeiro?</span>
                             <span
                                 class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center text-zinc-400 group-hover:bg-fire-600/20 group-hover:text-fire-400 transition-all flex-shrink-0 ml-4">
-                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                                <i aria-hidden="true" data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
                             </span>
                             <div class="faq-sweep-line" aria-hidden="true"></div>
                         </button>
-                        <div id="faq-answer-2" role="region" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div id="faq-answer-2" role="region"
+                            class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                             <div class="px-6 pb-6 text-zinc-400 text-sm leading-relaxed border-t border-zinc-800 pt-4">
                                 Emitimos a <strong class="text-zinc-200">ART de Execução/Instalação</strong> e o
                                 <strong class="text-zinc-200">Laudo de Comissionamento</strong>, atestando que o sistema
@@ -1321,11 +1329,12 @@
                                 usar cabeamento de rede (UTP)?</span>
                             <span
                                 class="w-8 h-8 rounded-full bg-zinc-800 flex items-center justify-center text-zinc-400 group-hover:bg-fire-600/20 group-hover:text-fire-400 transition-all flex-shrink-0 ml-4">
-                                <i data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
+                                <i aria-hidden="true" data-lucide="chevron-down" class="w-5 h-5 transition-transform duration-300"></i>
                             </span>
                             <div class="faq-sweep-line" aria-hidden="true"></div>
                         </button>
-                        <div id="faq-answer-3" role="region" class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
+                        <div id="faq-answer-3" role="region"
+                            class="max-h-0 overflow-hidden transition-all duration-500 ease-in-out">
                             <div class="px-6 pb-6 text-zinc-400 text-sm leading-relaxed border-t border-zinc-800 pt-4">
                                 Não recomendado e frequentemente reprovado. A norma exige cabos com blindagem específica
                                 contra interferências e resistência térmica adequada. Usamos cabos blindados apropriados
@@ -1363,34 +1372,37 @@
                         <p class="text-zinc-300 text-base mb-10 max-w-md mx-auto">Evite retrabalho e reprovação na
                             vistoria. Envie sua lista de materiais para a Firecam.</p>
 
-                        <a href="https://wa.me/5547996660234?text=Ol%C3%A1%2C%20gostaria%20de%20cotar%20uma%20instala%C3%A7%C3%A3o%20de%20SDAI."
+                        <a data-wa-trigger="true" data-wa-message="Olá, gostaria de cotar uma instalação de SDAI."
                             target="_blank" rel="noopener noreferrer"
                             class="group inline-flex items-center gap-3 bg-white text-zinc-950 font-bold text-sm px-8 py-4 rounded-full shadow-[0_4px_24px_rgba(255,255,255,0.15)] hover:shadow-[0_6px_32px_rgba(255,255,255,0.25)] hover:scale-[1.03] active:scale-[0.98] transition-all duration-200">
                             Cotar Instalação de SDAI
                             <span
                                 class="w-7 h-7 rounded-full bg-zinc-950 text-white flex items-center justify-center group-hover:translate-x-0.5 transition-transform">
-                                <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+                                <i data-lucide="arrow-right" class="w-3.5 h-3.5" aria-hidden="true"></i>
                             </span>
+                            <span class="sr-only">(abre em nova janela)</span>
                         </a>
 
                         <div class="mt-8 flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-6">
                             <div class="flex items-center gap-2 text-xs text-zinc-500">
-                                <i data-lucide="shield-check" class="w-3.5 h-3.5 text-zinc-600"></i>
+                                <i aria-hidden="true" data-lucide="shield-check" class="w-3.5 h-3.5 text-zinc-600"></i>
                                 <span>Orçamento completo: Equipamentos + <strong class="text-zinc-400 font-semibold">Mão
                                         de Obra Especializada</strong></span>
                             </div>
                             <div class="w-px h-3 bg-zinc-800 hidden sm:block"></div>
-                            <a href="https://wa.me/5547996660234?text=Ol%C3%A1%2C%20preciso%20tirar%20uma%20d%C3%BAvida%20t%C3%A9cnica%20sobre%20SDAI."
+                            <a data-wa-trigger="true" data-wa-message="Olá, preciso tirar uma dúvida técnica sobre SDAI."
                                 target="_blank" rel="noopener noreferrer"
-                                class="flex items-center gap-2 text-xs text-zinc-500 hover:text-zinc-300 transition-colors group/wa">
+                                class="flex items-center gap-2 text-xs text-zinc-400 hover:text-zinc-200 transition-colors group/wa">
                                 <i data-lucide="message-circle"
-                                    class="w-3.5 h-3.5 text-green-500/60 group-hover/wa:text-green-400 transition-colors"></i>
+                                    class="w-3.5 h-3.5 text-green-400/80 group-hover/wa:text-green-400 transition-colors"
+                                    aria-hidden="true"></i>
                                 <span>Ou tire sua dúvida com um <strong
-                                        class="text-zinc-400 font-semibold">Técnico</strong></span>
+                                        class="text-zinc-300 font-semibold">Técnico</strong></span>
+                                <span class="sr-only">(abre em nova janela)</span>
                             </a>
                             <div class="w-px h-3 bg-zinc-800 hidden sm:block"></div>
                             <div class="flex items-center gap-2 text-xs text-zinc-500">
-                                <i data-lucide="phone" class="w-3.5 h-3.5 text-zinc-600"></i>
+                                <i aria-hidden="true" data-lucide="phone" class="w-3.5 h-3.5 text-zinc-600"></i>
                                 <span><strong class="text-zinc-400 font-semibold">(47) 3086-3186</strong></span>
                             </div>
                         </div>
@@ -1432,7 +1444,7 @@
                                 class="flex items-center gap-4 group text-sm text-zinc-400 hover:text-white transition-colors">
                                 <span
                                     class="w-10 h-10 rounded-xl bg-zinc-900/50 border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-fire-600/40 group-hover:bg-fire-600/10 transition-all shadow-sm">
-                                    <i data-lucide="mail"
+                                    <i aria-hidden="true" data-lucide="mail"
                                         class="w-4 h-4 text-zinc-500 group-hover:text-fire-400 transition-colors"></i>
                                 </span>
                                 comercial@firecam.com.br
@@ -1441,7 +1453,7 @@
                                 class="flex items-center gap-4 group text-sm text-zinc-400 hover:text-white transition-colors">
                                 <span
                                     class="w-10 h-10 rounded-xl bg-zinc-900/50 border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-fire-600/40 group-hover:bg-fire-600/10 transition-all shadow-sm">
-                                    <i data-lucide="phone"
+                                    <i aria-hidden="true" data-lucide="phone"
                                         class="w-4 h-4 text-zinc-500 group-hover:text-fire-400 transition-colors"></i>
                                 </span>
                                 +55 (47) 3086-3186
@@ -1463,7 +1475,7 @@
                                         data-lucide="chevron-right"
                                         class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>Início</a>
                             </li>
-                            <li><a href="index.html#institutional"
+                            <li><a href="sobre.html"
                                     class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group"><i
                                         data-lucide="chevron-right"
                                         class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>A
@@ -1495,17 +1507,17 @@
                                         data-lucide="chevron-right"
                                         class="w-3.5 h-3.5 text-fire-600 transition-colors"></i>Alarme de
                                     Incêndio</a></li>
-                            <li><a href="index.html#contato"
+                            <li><a href="controle-acesso.html"
                                     class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group"><i
                                         data-lucide="chevron-right"
                                         class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>Controle
                                     de Acesso</a></li>
-                            <li><a href="index.html#contato"
+                            <li><a href="cabeamento-estruturado.html"
                                     class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group"><i
                                         data-lucide="chevron-right"
                                         class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>Cabeamento
                                     Estruturado</a></li>
-                            <li><a href="index.html#contato"
+                            <li><a href="cftv.html"
                                     class="text-sm font-medium text-zinc-400 hover:text-white hover:translate-x-1 inline-flex items-center gap-2 transition-all group"><i
                                         data-lucide="chevron-right"
                                         class="w-3.5 h-3.5 text-fire-600/0 group-hover:text-fire-600 transition-colors"></i>Videomonitoramento</a>
@@ -1526,26 +1538,29 @@
                                     class="flex items-center gap-4 text-sm font-medium text-zinc-400 hover:text-white transition-colors group"><span
                                         class="w-10 h-10 rounded-xl bg-zinc-900/50 border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-fire-600/40 group-hover:bg-fire-600/10 transition-all shadow-sm"><i
                                             data-lucide="instagram"
-                                            class="w-4 h-4 text-zinc-400 group-hover:text-fire-400 transition-colors"></i></span>Instagram<i
-                                        data-lucide="arrow-up-right"
-                                        class="w-3.5 h-3.5 opacity-0 group-hover:opacity-50 transition-opacity ml-auto"></i></a>
+                                            class="w-4 h-4 text-zinc-400 group-hover:text-fire-400 transition-colors"
+                                            aria-hidden="true"></i></span>Instagram<i data-lucide="arrow-up-right"
+                                        class="w-3.5 h-3.5 opacity-0 group-hover:opacity-50 transition-opacity ml-auto"
+                                        aria-hidden="true"></i><span class="sr-only">(abre em nova janela)</span></a>
                             </li>
                             <li><a href="https://www.linkedin.com/company/firecam" target="_blank"
                                     rel="noopener noreferrer"
                                     class="flex items-center gap-4 text-sm font-medium text-zinc-400 hover:text-white transition-colors group"><span
                                         class="w-10 h-10 rounded-xl bg-zinc-900/50 border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-fire-600/40 group-hover:bg-fire-600/10 transition-all shadow-sm"><i
                                             data-lucide="linkedin"
-                                            class="w-4 h-4 text-zinc-400 group-hover:text-fire-400 transition-colors"></i></span>LinkedIn<i
-                                        data-lucide="arrow-up-right"
-                                        class="w-3.5 h-3.5 opacity-0 group-hover:opacity-50 transition-opacity ml-auto"></i></a>
+                                            class="w-4 h-4 text-zinc-400 group-hover:text-fire-400 transition-colors"
+                                            aria-hidden="true"></i></span>LinkedIn<i data-lucide="arrow-up-right"
+                                        class="w-3.5 h-3.5 opacity-0 group-hover:opacity-50 transition-opacity ml-auto"
+                                        aria-hidden="true"></i><span class="sr-only">(abre em nova janela)</span></a>
                             </li>
-                            <li><a href="https://wa.me/5547996660234" target="_blank" rel="noopener noreferrer"
+                            <li><a data-wa-trigger="true" data-wa-message="Olá, gostaria de saber mais." target="_blank" rel="noopener noreferrer"
                                     class="flex items-center gap-4 text-sm font-medium text-zinc-400 hover:text-white transition-colors group"><span
                                         class="w-10 h-10 rounded-xl bg-zinc-900/50 border border-white/5 flex items-center justify-center flex-shrink-0 group-hover:border-green-600/40 group-hover:bg-green-600/10 transition-all shadow-sm"><i
                                             data-lucide="message-circle"
-                                            class="w-4 h-4 text-zinc-400 group-hover:text-green-400 transition-colors"></i></span>WhatsApp<i
-                                        data-lucide="arrow-up-right"
-                                        class="w-3.5 h-3.5 opacity-0 group-hover:opacity-50 transition-opacity ml-auto"></i></a>
+                                            class="w-4 h-4 text-zinc-400 group-hover:text-green-400 transition-colors"
+                                            aria-hidden="true"></i></span>WhatsApp<i data-lucide="arrow-up-right"
+                                        class="w-3.5 h-3.5 opacity-0 group-hover:opacity-50 transition-opacity ml-auto"
+                                        aria-hidden="true"></i><span class="sr-only">(abre em nova janela)</span></a>
                             </li>
                         </ul>
                     </div>
@@ -1656,6 +1671,7 @@
         });
     </script>
 
+    <script src="assets/js/lead-router.js" defer></script>
 </body>
 
 </html>

@@ -45,10 +45,10 @@
   top: 1rem;
   left: 1rem;
   z-index: 99999;
-  padding: 0.5rem 1.25rem;
+  padding: var(--space-2) var(--space-4);
   background: var(--fire-600);
   color: #fff;
-  border-radius: 0.5rem;
+  border-radius: var(--radius-sm);
   font-size: 0.875rem;
   font-weight: 700;
   width: auto;
@@ -97,7 +97,9 @@
   --cyber-red: var(--fire-600);
   --cyber-white: #eef4f6;
 
-  /* Premium Design System Spacing */
+  /* Premium Design System Spacing (8px grid) */
+  --space-2: 0.5rem;
+  /* 8px */
   --space-3: 1rem;
   /* 16px */
   --space-4: 1.5rem;
@@ -106,16 +108,20 @@
   /* 32px */
   --space-8: 4rem;
   /* 64px */
-  --space-12: 6rem;
+  --space-12: 4.5rem;
+  /* 72px */
+  --space-16: 6rem;
   /* 96px */
-  --space-16: 8rem;
-  /* 128px */
-  --space-20: 10rem;
-  /* 160px */
+  --space-20: 7.5rem;
+  /* 120px */
 
-  /* Section Padding (Luxury) */
+  /* Global Architectural Tokens */
+  --radius-sm: 0.5rem;
+  --transition-standard: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+  /* Section Padding */
   --section-padding-y: var(--space-12);
-  --section-padding-y-lg: var(--space-20);
+  --section-padding-y-lg: var(--space-16);
 }
 
 /* Global Refinements */
@@ -128,14 +134,37 @@ body {
   font-family: 'Inter', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  animation: pageEnter 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes pageEnter {
+  0% {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 3D Tilt Utilities */
+.perspective-1000 {
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+.tilt-inner {
+  transform: translateZ(30px);
+  will-change: transform;
 }
 
 /* Typography Hierarchy */
 h1,
 h2,
-h3,
-h4,
-.font-display {
+.font-display,
+.text-editorial-headline {
   font-family: 'Space Grotesk', sans-serif;
   letter-spacing: -0.04em;
   /* Tighter premium tracking */
@@ -164,17 +193,17 @@ h1 {
 
 /* Testimonial Buttons */
 .testimonial-btn {
-  width: 36px;
-  height: 36px;
+  width: 2.75rem;
+  height: 2.75rem;
   border-radius: 9999px;
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #52525b;
-  /* zinc-600 */
+  color: #a1a1aa;
+  /* zinc-400 — was zinc-600 which failed WCAG AA */
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: var(--transition-standard);
 }
 
 .testimonial-btn:hover {
@@ -342,13 +371,15 @@ h3 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.25em;
-  color: var(--zinc-500);
+  color: var(--zinc-400);
+  /* was zinc-500 (~3.5:1) → zinc-400 (~5.4:1) WCAG AA */
 }
 
 /* Accessible Focus States */
 :focus-visible {
-  outline: 2px solid var(--fire-600);
-  outline-offset: 4px;
+  outline: 2px solid rgba(234, 88, 12, 0.5);
+  outline-offset: 2px;
+  box-shadow: 0 0 10px rgba(234, 88, 12, 0.3);
 }
 
 
@@ -417,12 +448,17 @@ h3 {
 }
 
 .ken-burns {
-  will-change: transform;
+  /* will-change only promoted on the active slide to avoid redundant GPU layers */
   filter: brightness(1.1) contrast(1.05);
 }
 
 .swiper-slide-active .ken-burns {
+  will-change: transform;
   animation: kenburns 20s ease-out forwards;
+}
+
+.swiper-slide:not(.swiper-slide-active) .ken-burns {
+  will-change: auto;
 }
 
 /* Apply flipped animation if the element has scaleX(-1) transform from inline style */
@@ -434,15 +470,15 @@ h3 {
 .glass-panel-dark {
   background: rgba(18, 18, 20, 0.4);
   /* zinc-950/40 - Darker base */
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  backdrop-filter: blur(24px) saturate(180%);
+  -webkit-backdrop-filter: blur(24px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.05);
   /* Architectural edge */
   box-shadow:
     0 1px 0 rgba(255, 255, 255, 0.05) inset,
     /* Top highlight */
     0 8px 32px -8px rgba(0, 0, 0, 0.5);
-  transition: all 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 .glass-panel-dark:hover {
@@ -476,7 +512,7 @@ h3 {
   font-weight: 700;
   padding: var(--space-3) var(--space-5);
   border-radius: var(--radius-sm);
-  transition: all 0.2s ease;
+  transition: var(--transition-standard);
   display: inline-flex;
   align-items: center;
   gap: var(--space-2);
@@ -530,7 +566,7 @@ body.hide-system-cursor * {
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
@@ -644,15 +680,15 @@ body.hide-system-cursor * {
 }
 
 .animate-fade-in {
-  animation: fadeIn 0.7s ease-out forwards;
+  animation: fadeIn 0.4s ease-out forwards;
 }
 
 .animate-slide-up {
-  animation: slideUp 0.7s ease-out forwards;
+  animation: slideUp 0.4s ease-out forwards;
 }
 
 .animate-word-reveal {
-  animation: wordReveal 1.0s cubic-bezier(0.2, 0, 0.2, 1) forwards;
+  animation: wordReveal 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
 .animate-scan-vertical {
@@ -729,7 +765,8 @@ body.hide-system-cursor * {
 
 /* Size Variations */
 .link-cta.sm .premium-cta {
-  height: 40px;
+  height: 44px;
+  /* Minimum 44x44px target */
   padding: 0 1.5rem;
   font-size: 0.75rem;
 }
@@ -759,7 +796,8 @@ body.hide-system-cursor * {
   letter-spacing: 0.08em;
   /* Slightly wider for technical feel */
   color: white;
-  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: var(--transition-standard);
+  /* Max 300ms transition */
   box-shadow:
     0 10px 30px -5px rgba(234, 88, 12, 0.3),
     inset 0 1px 0 rgba(255, 255, 255, 0.2),
@@ -774,10 +812,11 @@ body.hide-system-cursor * {
   position: absolute;
   inset: -1px;
   border-radius: 9999px;
-  background: conic-gradient(from 90deg at 50% 50%, transparent 0%, rgba(255, 255, 255, 0.4) 50%, transparent 100%);
-  opacity: 0;
-  transition: opacity 0.5s ease;
+  background: conic-gradient(from 90deg at 50% 50%, transparent 0%, rgba(255, 255, 255, 0.6) 50%, transparent 100%);
+  opacity: 0.4;
+  transition: opacity 0.3s ease;
   z-index: 1;
+  animation: rotateGlow 4s linear infinite;
 }
 
 .premium-cta::after {
@@ -787,7 +826,7 @@ body.hide-system-cursor * {
   border-radius: 9999px;
   background: linear-gradient(135deg, var(--fire-600), var(--fire-800));
   z-index: 1;
-  transition: all 0.5s ease;
+  transition: all 0.3s ease;
 }
 
 .premium-cta:hover {
@@ -875,8 +914,8 @@ body.hide-system-cursor * {
 
 /* Luxury Spacing */
 .section-pad-luxury {
-  padding-top: 10rem;
-  padding-bottom: 10rem;
+  padding-top: 7.5rem;
+  padding-bottom: 7.5rem;
 }
 
 
@@ -1253,6 +1292,11 @@ body {
   transform: translateX(0);
 }
 
+.scroll-item.is-active .item-mobile-img {
+  opacity: 0.9;
+  transform: scale(1);
+}
+
 /* --- FAQ: fire sweep line under question on open --- */
 .faq-sweep-line {
   position: absolute;
@@ -1314,4 +1358,63 @@ body {
 .item-mobile-img {
   will-change: opacity, transform;
   transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ======== Reduced Motion ======== */
+@media (prefers-reduced-motion: reduce) {
+
+  /* Disable all keyframe animations */
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  /* Restore instant reveal for scroll-triggered elements */
+  .reveal,
+  .reveal-stagger>* {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  /* Keep scroll-behaviour instant */
+  html {
+    scroll-behavior: auto !important;
+  }
+
+  /* Hide purely decorative motion layers */
+  .hero-scanning-overlay,
+  #spark-canvas,
+  #dot-grid-flashlight,
+  #particles-narrative,
+  #particles-metrics,
+  #particles-cta,
+  #particles-footer,
+  #particles-marquee,
+  [id^="particles-inst-"] {
+    display: none !important;
+  }
+
+  /* Blob atmosphere — freeze in place instead of drifting */
+  #blob1,
+  #blob2,
+  #blob3,
+  #blob4 {
+    animation: none !important;
+    translate: 0 0 !important;
+  }
+
+  /* Ken-burns hero image — no zoom */
+  .ken-burns {
+    animation: none !important;
+    will-change: auto !important;
+  }
+
+  /* Marquee — pause autoplay (Swiper JS reads this via pauseOnMouseEnter; also freezes CSS fallback) */
+  .animate-marquee {
+    animation-play-state: paused !important;
+  }
 }
